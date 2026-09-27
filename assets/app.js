@@ -164,9 +164,10 @@
   // ---------- cards ----------
   function renderCards() {
     grid.innerHTML = "";
-    projects.forEach(function (p) {
+    projects.forEach(function (p, i) {
       var card = document.createElement("article");
-      card.className = "card reveal in";
+      card.className = "card reveal";
+      card.style.setProperty("--d", (i % 3) * 90 + "ms");
       card.dataset.category = p.category;
       var tags = (p.tags[lang] || []).map(function (x) { return "<span>" + x + "</span>"; }).join("");
       card.innerHTML =
@@ -187,6 +188,7 @@
       grid.appendChild(card);
     });
     applyFilter(currentFilter);
+    if (window.motion) window.motion.refresh();
   }
 
   function applyFilter(id) {
@@ -219,13 +221,8 @@
     b.classList.toggle("active", b.dataset.lang === lang);
   });
 
-  // reveal for non-card sections
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
-  document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+  // scroll reveals, image blur-up and card tilt are handled by motion.js
+  if (window.motion) window.motion.refresh();
 
   var y = document.getElementById("year");
   if (y) y.textContent = new Date().getFullYear();

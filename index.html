@@ -13,8 +13,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter:wght@400;500;600;650&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css">
+  <noscript><style>.reveal,.card.reveal{opacity:1!important;transform:none!important}.shot img{opacity:1!important;filter:none!important}</style></noscript>
 </head>
 <body>
+
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
   <header class="site-header">
     <div class="wrap">
@@ -39,6 +42,7 @@
 
     <!-- HERO -->
     <section class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
       <div class="wrap">
         <span class="kicker"><span class="dot"></span> <span data-i18n="hero.kicker">Conçus et développés avec l'IA</span></span>
         <h1 data-i18n-html="hero.h1">Des sites et des outils <em>livrés en quelques jours</em>, pas en plusieurs mois.</h1>
@@ -131,5 +135,6 @@
 
   <script src="assets/projects.js"></script>
   <script src="assets/app.js"></script>
+  <script src="assets/motion.js"></script>
 </body>
 </html>
