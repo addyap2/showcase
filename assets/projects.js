@@ -24,7 +24,7 @@ window.PROJECTS = [
   {
     slug: "speakup",
     title: "SpeakUp AI",
-    url: "https://speakup-ai-english-trainer-api-serv.vercel.app",
+    url: "https://speak.antonyaddy.com",
     category: "learning",
     blurb: {
       fr: "Un coach d'anglais IA pour de vraies conversations — entretiens, voyages et affaires à travers 38 scénarios, avec un retour CECR instantané en 12 langues d'interface.",
@@ -57,7 +57,7 @@ window.PROJECTS = [
   {
     slug: "listening-english",
     title: "ListenUp",
-    url: "https://listening-english-antonyaddy.vercel.app",
+    url: "https://listening.antonyaddy.com",
     category: "learning",
     blurb: {
       fr: "De la compréhension orale en anglais avec audio IA, surlignage karaoké mot à mot, quiz de compréhension et traductions instantanées en plus de dix langues.",
@@ -79,7 +79,7 @@ window.PROJECTS = [
   {
     slug: "anglais-a-distance",
     title: "Anglais à Distance",
-    url: "https://anglais-a-distance-learn.vercel.app",
+    url: "https://www.anglaisadistance.fr",
     category: "learning",
     blurb: {
       fr: "De l'anglais en ligne gratuit pour adultes francophones — grammaire, phrasal verbs, dialogues audio et quiz de vocabulaire, réunis au même endroit.",
@@ -90,7 +90,7 @@ window.PROJECTS = [
   {
     slug: "biz-fluent-coach",
     title: "TP English Pro",
-    url: "https://ad-ruddy.vercel.app",
+    url: "https://ad.antonyaddy.com",
     category: "learning",
     blurb: {
       fr: "Une plateforme gratuite d'anglais professionnel pour le TP Assistant de Direction — exercices interactifs, simulateur d'examen et vocabulaire administratif.",
@@ -103,7 +103,7 @@ window.PROJECTS = [
   {
     slug: "addys-english-pro",
     title: "Addy's English Pro",
-    url: "https://addys-english-pro.vercel.app",
+    url: "https://www.antonyaddy.com",
     category: "training",
     blurb: {
       fr: "Le site de coaching en anglais professionnel d'un formateur britannique certifié — pour entreprises, cadres et particuliers, dans le Var, les Alpes-Maritimes et à distance.",
@@ -114,7 +114,7 @@ window.PROJECTS = [
   {
     slug: "addy-genai-training",
     title: "Formation IA Générative",
-    url: "https://addy-genai-training.vercel.app",
+    url: "https://ia.antonyaddy.com",
     category: "training",
     blurb: {
       fr: "Un site de services pour des formations pratiques en IA générative — ChatGPT, Claude et Copilot pour entreprises et indépendants, en français ou en anglais.",
@@ -125,7 +125,7 @@ window.PROJECTS = [
   {
     slug: "addy-sap-connect",
     title: "SAP MM Training",
-    url: "https://addy-sap-connect.vercel.app",
+    url: "https://sap.antonyaddy.com",
     category: "training",
     blurb: {
       fr: "Un site de formation SAP Materials Management — achats, gestion des stocks et données de base, en pratique, par un formateur bilingue EN/FR.",
@@ -149,7 +149,7 @@ window.PROJECTS = [
   {
     slug: "ristorante-lola",
     title: "Ristorante da Lola",
-    url: "https://ristorante-lola.vercel.app",
+    url: "https://www.ristorantedalola.it",
     category: "business",
     blurb: {
       fr: "Un site chaleureux en quatre langues pour un restaurant familial des Marches à Fermignano — menu, galerie et réservation, avec une vraie identité de lieu.",
@@ -171,7 +171,7 @@ window.PROJECTS = [
   {
     slug: "essentia-myriam",
     title: "Essentia",
-    url: "https://essentia-myriam.vercel.app",
+    url: "https://www.essentiademdb.com",
     category: "business",
     blurb: {
       fr: "Un site de marque apaisant et multilingue pour une coach et psychothérapeute — coaching, psychothérapie et conseil RH réunis dans une identité soignée.",
@@ -182,7 +182,7 @@ window.PROJECTS = [
   {
     slug: "stephanie",
     title: "SR Bien-être",
-    url: "https://stephanie-plum.vercel.app",
+    url: "https://www.srbienetre.fr",
     category: "business",
     blurb: {
       fr: "Le site d'une praticienne du bien-être à Saint-Raphaël — sophrologie, soins énergétiques, drainage lymphatique et yoga enfants, avec réservation en ligne.",
@@ -204,7 +204,7 @@ window.PROJECTS = [
   {
     slug: "planb-global-connect",
     title: "Plan B Concept",
-    url: "https://planb-global-connect.vercel.app",
+    url: "https://www.planb-concept.com",
     category: "business",
     blurb: {
       fr: "Un site bilingue de gestion de projet pour la Côte d'Azur — plus de 30 ans d'expérience du bâtiment, du premier croquis à la livraison finale.",
@@ -217,7 +217,7 @@ window.PROJECTS = [
   {
     slug: "filton-athletic-fc",
     title: "Filton Athletic FC",
-    url: "https://filton-athletic-fc.vercel.app",
+    url: "https://filtonathletic.co.uk",
     category: "community",
     blurb: {
       fr: "Le site d'un club de football du nord de Bristol — calendrier, résultats, classements, programmes de match et moyens simples de s'impliquer.",
@@ -228,7 +228,7 @@ window.PROJECTS = [
   {
     slug: "filton-social-club",
     title: "Filton & District Social Club",
-    url: "https://filton-social-club.vercel.app",
+    url: "https://www.filtonsocialclub.co.uk",
     category: "community",
     blurb: {
       fr: "Le site associatif du Filton & District Social Club — événements, installations et adhésion, présentés simplement et clairement.",
