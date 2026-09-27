@@ -240,7 +240,8 @@
     var colB = ["addys-english-pro", "speakup", "stephanie", "planb-global-connect", "essentia-myriam"];
     function col(list, cls) {
       var items = list.concat(list).map(function (s) {
-        return '<figure class="thumb"><img src="screenshots/' + s + '.jpg" alt="" loading="eager" decoding="async" fetchpriority="low"></figure>';
+        // lazy: on mobile the wall is display:none, so these never download
+        return '<figure class="thumb"><img src="screenshots/' + s + '.jpg" alt="" loading="lazy" decoding="async"></figure>';
       }).join("");
       return '<div class="wall-col ' + cls + '"><div class="wall-track">' + items + "</div></div>";
     }
