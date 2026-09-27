@@ -85,8 +85,8 @@
       var px = (e.clientX - r.left) / r.width - 0.5;
       var py = (e.clientY - r.top) / r.height - 0.5;
       stage.style.transform =
-        "rotateY(" + (-15 + px * 7).toFixed(2) + "deg) rotateX(" +
-        (6 - py * 7).toFixed(2) + "deg) rotate(1.5deg)";
+        "rotateY(" + (-9 + px * 6).toFixed(2) + "deg) rotateX(" +
+        (4 - py * 6).toFixed(2) + "deg) rotate(1deg)";
     });
     hero.addEventListener("pointerleave", function () { stage.style.transform = ""; });
   })();

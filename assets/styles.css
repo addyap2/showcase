@@ -127,27 +127,27 @@ body:after{
 }
 .hero .wrap{position:relative;z-index:1}
 
-.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:44px;align-items:center}
+.hero-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:36px;align-items:center}
 .hero-content{min-width:0}
 @media(max-width:980px){.hero-grid{grid-template-columns:1fr}.hero-wall{display:none}}
 
 /* hero "wall of work" */
 .hero-wall{
-  position:relative;height:544px;perspective:1500px;pointer-events:none;
+  position:relative;height:648px;perspective:1700px;pointer-events:none;
   opacity:0;animation:fadeWall var(--dur-4) var(--ease-cine) .5s both;
-  -webkit-mask-image:linear-gradient(180deg,transparent,#000 13%,#000 87%,transparent);
-  mask-image:linear-gradient(180deg,transparent,#000 13%,#000 87%,transparent);
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 9%,#000 91%,transparent);
+  mask-image:linear-gradient(180deg,transparent,#000 9%,#000 91%,transparent);
 }
 /* soft left-edge scrim so the wall dissolves into the text column */
-.hero-wall:after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,var(--paper),rgba(250,247,242,0) 15%)}
+.hero-wall:after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,var(--paper),rgba(250,247,242,0) 11%)}
 @keyframes fadeWall{from{opacity:0}to{opacity:1}}
 .wall-stage{
-  position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;gap:18px;
-  transform:rotateY(-15deg) rotateX(6deg) rotate(1.5deg);transform-style:preserve-3d;
+  position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;gap:16px;
+  transform:rotateY(-9deg) rotateX(4deg) rotate(1deg);transform-style:preserve-3d;
   transition:transform .35s var(--ease-soft);will-change:transform;
 }
 .wall-col{overflow:hidden}
-.wall-track{display:flex;flex-direction:column;gap:18px;will-change:transform}
+.wall-track{display:flex;flex-direction:column;gap:16px;will-change:transform}
 .col-a .wall-track{animation:marqueeUp 34s linear infinite}
 .col-b .wall-track{animation:marqueeDown 40s linear infinite}
 @keyframes marqueeUp{from{transform:translateY(0)}to{transform:translateY(-50%)}}
@@ -173,8 +173,8 @@ body:after{
 .hero h1{
   font-family:var(--serif);
   font-weight:560;
-  font-size:clamp(34px,4.6vw,54px);
-  line-height:1.05;letter-spacing:-.02em;
+  font-size:clamp(32px,4.1vw,49px);
+  line-height:1.06;letter-spacing:-.02em;
   margin:0 0 22px;max-width:none;
   font-optical-sizing:auto;
 }
