@@ -70,6 +70,7 @@
   var bar = document.querySelector(".scroll-progress span");
   var header = document.querySelector(".site-header");
   var glow = document.querySelector(".hero-glow");
+  var wall = document.querySelector(".hero-wall");
   var parallaxOn = !reduce && finePointer && window.innerWidth > 820;
   var ticking = false;
 
@@ -82,6 +83,7 @@
     }
     if (header) header.classList.toggle("scrolled", y > 10);
     if (parallaxOn && glow) glow.style.transform = "translate3d(0," + (y * 0.15).toFixed(1) + "px,0)";
+    if (parallaxOn && wall && y < window.innerHeight) wall.style.transform = "translate3d(0," + (y * -0.06).toFixed(1) + "px,0)";
     ticking = false;
   }
   function onScroll() {

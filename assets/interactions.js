@@ -75,6 +75,22 @@
     })();
   }
 
+  // ---------- hero wall: subtle pointer tilt ----------
+  (function heroTilt() {
+    var hero = document.querySelector(".hero");
+    var stage = document.querySelector(".wall-stage");
+    if (!hero || !stage) return;
+    hero.addEventListener("pointermove", function (e) {
+      var r = hero.getBoundingClientRect();
+      var px = (e.clientX - r.left) / r.width - 0.5;
+      var py = (e.clientY - r.top) / r.height - 0.5;
+      stage.style.transform =
+        "rotateY(" + (-15 + px * 7).toFixed(2) + "deg) rotateX(" +
+        (6 - py * 7).toFixed(2) + "deg) rotate(1.5deg)";
+    });
+    hero.addEventListener("pointerleave", function () { stage.style.transform = ""; });
+  })();
+
   // ---------- magnetic buttons ----------
   var STRENGTH = 0.32, CAP = 10;
   document.querySelectorAll("[data-magnetic]").forEach(function (el) {

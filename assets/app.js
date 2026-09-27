@@ -232,6 +232,21 @@
     b.classList.toggle("active", b.dataset.lang === lang);
   });
 
+  // hero "wall of work" — curated screenshots drifting in two columns
+  (function heroWall() {
+    var wall = document.querySelector(".hero-wall");
+    if (!wall) return;
+    var colA = ["ristorante-lola", "grammatica", "filton-athletic-fc", "toeic-success-hub", "tandoor-global"];
+    var colB = ["addys-english-pro", "speakup", "stephanie", "planb-global-connect", "essentia-myriam"];
+    function col(list, cls) {
+      var items = list.concat(list).map(function (s) {
+        return '<figure class="thumb"><img src="screenshots/' + s + '.jpg" alt="" loading="eager" decoding="async" fetchpriority="low"></figure>';
+      }).join("");
+      return '<div class="wall-col ' + cls + '"><div class="wall-track">' + items + "</div></div>";
+    }
+    wall.innerHTML = '<div class="wall-stage">' + col(colA, "col-a") + col(colB, "col-b") + "</div>";
+  })();
+
   // scroll reveals, image blur-up and card tilt are handled by motion.js
   if (window.motion) window.motion.refresh();
 

@@ -100,6 +100,12 @@ a{color:inherit;text-decoration:none}
 .lang-toggle button:hover{color:var(--ink)}
 .lang-toggle button.active{background:var(--navy);color:#fff}
 @media(max-width:820px){.nav .nav-link{display:none}}
+.brand>span{white-space:nowrap}
+@media(max-width:560px){
+  .nav{gap:14px}
+  .nav-cta{display:none}
+  .brand small{display:none}
+}
 
 /* ---------- hero ---------- */
 .hero{position:relative;padding:78px 0 34px;overflow:hidden}
@@ -110,6 +116,32 @@ a{color:inherit;text-decoration:none}
     radial-gradient(50% 60% at 0% 0%,rgba(22,35,63,.06),transparent 55%);
 }
 .hero .wrap{position:relative;z-index:1}
+
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:44px;align-items:center}
+.hero-content{min-width:0}
+@media(max-width:980px){.hero-grid{grid-template-columns:1fr}.hero-wall{display:none}}
+
+/* hero "wall of work" */
+.hero-wall{
+  position:relative;height:544px;perspective:1500px;pointer-events:none;
+  opacity:0;animation:fadeWall var(--dur-4) var(--ease-cine) .5s both;
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 13%,#000 87%,transparent);
+  mask-image:linear-gradient(180deg,transparent,#000 13%,#000 87%,transparent);
+}
+@keyframes fadeWall{from{opacity:0}to{opacity:1}}
+.wall-stage{
+  position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;gap:18px;
+  transform:rotateY(-15deg) rotateX(6deg) rotate(1.5deg);transform-style:preserve-3d;
+  transition:transform .35s var(--ease-soft);will-change:transform;
+}
+.wall-col{overflow:hidden}
+.wall-track{display:flex;flex-direction:column;gap:18px;will-change:transform}
+.col-a .wall-track{animation:marqueeUp 34s linear infinite}
+.col-b .wall-track{animation:marqueeDown 40s linear infinite}
+@keyframes marqueeUp{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+@keyframes marqueeDown{from{transform:translateY(-50%)}to{transform:translateY(0)}}
+.thumb{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#fff}
+.thumb img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top center}
 
 /* hero entrance */
 @keyframes riseIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
@@ -316,4 +348,7 @@ a:focus-visible,button:focus-visible,.card:focus-visible{outline:none;box-shadow
   .shot img{opacity:1!important;filter:none!important}
   .hero-glow{transform:none!important}
   .scroll-progress{display:none}
+  .hero-wall{opacity:1!important;animation:none!important}
+  .wall-track{animation:none!important}
+  .wall-stage{transition:none!important}
 }
