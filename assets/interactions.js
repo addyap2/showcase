@@ -16,15 +16,22 @@
       .map(function (id) { return document.getElementById(id); })
       .filter(Boolean);
     if (!("IntersectionObserver" in window) || !sections.length) return;
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (!e.isIntersecting) return;
-        Object.keys(links).forEach(function (k) { links[k].classList.remove("active"); });
-        var a = links[e.target.id];
-        if (a) a.classList.add("active");
-      });
-    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
-    sections.forEach(function (s) { io.observe(s); });
+    var ids = sections.map(function (s) { return s.id; });
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var ref = window.pageYOffset + window.innerHeight * 0.35; // reference line
+      var current = null;
+      sections.forEach(function (s) { if (s.offsetTop <= ref) current = s.id; }); // last one passed
+      // at the very bottom, snap to the final section (it can't reach the line)
+      if (window.innerHeight + Math.ceil(window.pageYOffset) >= document.documentElement.scrollHeight - 2)
+        current = ids[ids.length - 1];
+      Object.keys(links).forEach(function (k) { links[k].classList.toggle("active", k === current); });
+    }
+    function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    update();
   })();
 
   if (!rich) return; // everything below is desktop-only richness
