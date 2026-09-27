@@ -51,8 +51,10 @@
       "contact.h2": "Un projet à concrétiser ?",
       "contact.p": "Dites-moi ce que vous avez en tête — une appli d'apprentissage, un site pour votre activité, un outil pour gagner du temps. Je vous dirai honnêtement ce qui est possible et à quelle vitesse.",
       "contact.btn1": "Écrivez-moi",
+      "contact.whatsapp": "WhatsApp",
       "contact.btn2": "Voir les réalisations",
       "mail.subject": "Demande de projet",
+      "wa.text": "Bonjour Antony, j'aimerais discuter d'un projet.",
       "footer.sub": "Sites web & outils, développés avec l'IA"
     },
     en: {
@@ -100,8 +102,10 @@
       "contact.h2": "Have something you'd like built?",
       "contact.p": "Tell me what you have in mind — a learning app, a site for your business, a tool to save you time. I'll tell you honestly what's possible and how fast.",
       "contact.btn1": "Email me",
+      "contact.whatsapp": "WhatsApp",
       "contact.btn2": "Browse the work",
       "mail.subject": "Project enquiry",
+      "wa.text": "Hi Antony, I'd like to discuss a project.",
       "footer.sub": "Websites & tools, built with AI"
     }
   };
@@ -135,6 +139,8 @@
     });
     var mail = document.getElementById("mail-link");
     if (mail) mail.href = "mailto:antony@antonyaddy.com?subject=" + encodeURIComponent(t("mail.subject"));
+    var wa = document.getElementById("wa-link");
+    if (wa) wa.href = "https://wa.me/33649829826?text=" + encodeURIComponent(t("wa.text"));
   }
 
   // ---------- filters ----------
