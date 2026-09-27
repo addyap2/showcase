@@ -77,6 +77,9 @@ body:after{
 .nav{display:flex;align-items:center;gap:28px}
 .nav a{font-size:14.5px;color:var(--ink-soft);font-weight:500}
 .nav a:hover{color:var(--ink)}
+/* the CTA is an <a> inside .nav — keep its button text white */
+.nav a.btn-primary{color:#fff}
+.nav a.btn-primary:hover{color:#fff}
 .nav-link{position:relative}
 .nav-link:after{
   content:"";position:absolute;left:0;right:0;bottom:-5px;height:1.5px;
