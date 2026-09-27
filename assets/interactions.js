@@ -12,7 +12,7 @@
       var id = a.getAttribute("href");
       if (id && id.charAt(0) === "#") links[id.slice(1)] = a;
     });
-    var sections = ["work", "about", "services", "contact"]
+    var sections = ["work", "about", "services", "faq", "contact"]
       .map(function (id) { return document.getElementById(id); })
       .filter(Boolean);
     if (!("IntersectionObserver" in window) || !sections.length) return;

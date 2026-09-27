@@ -12,6 +12,7 @@
       "nav.work": "Réalisations",
       "nav.about": "À propos",
       "nav.services": "Services",
+      "nav.faq": "FAQ",
       "nav.cta": "Démarrer un projet",
       "hero.kicker": "Conçus et développés avec l'IA",
       "hero.h1": "Des sites et des outils <em>livrés en quelques jours</em>, pas en plusieurs mois.",
@@ -47,6 +48,8 @@
       "svc3.p": "Sites de services et plateformes de cours qui présentent clairement votre expertise et transforment les visiteurs en demandes.",
       "svc4.h": "Outils & tableaux de bord",
       "svc4.p": "Espaces de travail privés, suivis et outils internes — sécurisés, ordonnés, taillés exactement pour votre organisation.",
+      "faq.eyebrow": "Questions fréquentes",
+      "faq.h2": "Ce qu'on me demande souvent.",
       "contact.eyebrow": "Démarrer un projet",
       "contact.h2": "Un projet à concrétiser ?",
       "contact.p": "Dites-moi ce que vous avez en tête — une appli d'apprentissage, un site pour votre activité, un outil pour gagner du temps. Je vous dirai honnêtement ce qui est possible et à quelle vitesse.",
@@ -63,6 +66,7 @@
       "nav.work": "Work",
       "nav.about": "About",
       "nav.services": "Services",
+      "nav.faq": "FAQ",
       "nav.cta": "Start a project",
       "hero.kicker": "Designed & built with AI",
       "hero.h1": "Websites and tools that <em>ship in days</em>, not months.",
@@ -98,6 +102,8 @@
       "svc3.p": "Service sites and course platforms that present your expertise clearly and turn visitors into enquiries.",
       "svc4.h": "Tools & dashboards",
       "svc4.p": "Private workspaces, trackers and internal tools — secure, tidy, and shaped exactly to your workflow.",
+      "faq.eyebrow": "Frequently asked",
+      "faq.h2": "What people usually ask.",
       "contact.eyebrow": "Start a project",
       "contact.h2": "Have something you'd like built?",
       "contact.p": "Tell me what you have in mind — a learning app, a site for your business, a tool to save you time. I'll tell you honestly what's possible and how fast.",
@@ -126,6 +132,21 @@
   var grid = document.getElementById("grid");
   var filterBar = document.getElementById("filters");
   var currentFilter = "all";
+
+  var FAQS = [
+    { q: { fr: "En combien de temps livrez-vous un site ?", en: "How fast can you deliver a site?" },
+      a: { fr: "Un site vitrine en quelques jours, une plateforme plus complète en une à deux semaines. Je vous donne un délai clair dès le départ.", en: "A brochure site in a few days, a fuller platform in one to two weeks. I give you a clear timeline up front." } },
+    { q: { fr: "Travaillez-vous en français et en anglais ?", en: "Do you work in French and English?" },
+      a: { fr: "Oui, entièrement bilingue — les échanges, le contenu et les sites eux-mêmes, souvent multilingues.", en: "Yes, fully bilingual — the conversation, the content and the sites themselves, often multilingual." } },
+    { q: { fr: "Combien coûte un projet ?", en: "How much does a project cost?" },
+      a: { fr: "Cela dépend du périmètre. Après un premier échange, je propose un devis clair et fixe — sans surprise.", en: "It depends on scope. After a short chat I give a clear, fixed quote — no surprises." } },
+    { q: { fr: "Puis-je mettre à jour le site moi-même ensuite ?", en: "Can I update the site myself afterwards?" },
+      a: { fr: "Oui. Je conçois le site pour que le contenu soit simple à modifier, et je peux vous former ou assurer la maintenance.", en: "Yes. I build it so the content is easy to edit, and I can train you or handle maintenance." } },
+    { q: { fr: "Gérez-vous l'hébergement et le nom de domaine ?", en: "Do you handle hosting and the domain?" },
+      a: { fr: "Oui, je déploie sur un hébergement rapide et fiable et je connecte votre nom de domaine.", en: "Yes, I deploy to fast, reliable hosting and connect your custom domain." } },
+    { q: { fr: "De quoi avez-vous besoin pour démarrer ?", en: "What do you need from me to start?" },
+      a: { fr: "Une idée, même approximative, et le contenu dont vous disposez. Je m'occupe du reste et je vous guide.", en: "A rough idea and whatever content you have. I take care of the rest and guide you through it." } }
+  ];
 
   // ---------- static text ----------
   function applyStatic() {
@@ -196,6 +217,18 @@
     if (window.motion) window.motion.refresh();
   }
 
+  function renderFaq() {
+    var el = document.getElementById("faq-list");
+    if (!el) return;
+    el.innerHTML = FAQS.map(function (f) {
+      return '<details class="faq-item">' +
+        '<summary><span class="faq-q">' + f.q[lang] + "</span>" +
+        '<svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>' +
+        '<div class="faq-a"><p>' + f.a[lang] + "</p></div>" +
+        "</details>";
+    }).join("");
+  }
+
   function applyFilter(id, animate) {
     document.querySelectorAll(".card").forEach(function (card) {
       var show = id === "all" || card.dataset.category === id;
@@ -218,6 +251,7 @@
     applyStatic();
     renderFilters();
     renderCards();
+    renderFaq();
   }
   document.querySelectorAll(".lang-toggle button").forEach(function (b) {
     b.addEventListener("click", function () { setLang(b.dataset.lang); });
@@ -227,6 +261,7 @@
   applyStatic();
   renderFilters();
   renderCards();
+  renderFaq();
   document.querySelectorAll(".lang-toggle button").forEach(function (b) {
     b.classList.toggle("active", b.dataset.lang === lang);
   });

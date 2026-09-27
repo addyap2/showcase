@@ -170,6 +170,24 @@ body:after{
   padding:7px 14px;border-radius:999px;margin-bottom:22px;
 }
 .kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.kicker .kick-spark{width:13px;height:13px;color:var(--accent);flex-shrink:0}
+
+/* hero decorative marks */
+.hero-deco{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;color:var(--accent)}
+.hero-deco .d{position:absolute;display:block}
+.d-ring{width:340px;height:340px;left:-118px;bottom:-128px;opacity:.2}
+.d-spark{width:26px;height:26px;left:46.5%;top:96px;opacity:.6;animation:floaty 7s var(--ease-in-out) infinite}
+.d-plus{width:15px;height:15px;left:43%;top:322px;opacity:.42;animation:floaty 9s var(--ease-in-out) infinite reverse}
+.d-dot{width:9px;height:9px;left:49%;top:250px;opacity:.5;animation:floaty 8s var(--ease-in-out) .6s infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+@media(max-width:980px){.d-spark,.d-plus,.d-dot{display:none}.d-ring{opacity:.16}}
+
+/* hand-drawn underline under the italic key phrase */
+.hero h1 em{
+  padding-bottom:.04em;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 10' preserveAspectRatio='none'%3E%3Cpath d='M3 6.5 C 42 1.5 82 1.5 120 4.8 S 200 8.8 237 3.2' fill='none' stroke='%23c07a2c' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:0 100%;background-size:100% .28em;
+}
 .hero h1{
   font-family:var(--serif);
   font-weight:560;
@@ -283,6 +301,24 @@ body:after{
 .svc h3{font-size:17px;margin:0 0 8px;font-weight:650}
 .svc p{color:var(--ink-soft);font-size:14.5px;margin:0}
 
+/* ---------- faq ---------- */
+.faq .section-head{text-align:center;max-width:none;margin-left:auto;margin-right:auto;margin-bottom:34px}
+.faq-list{max-width:780px;margin:0 auto;border-top:1px solid var(--line)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item summary{
+  list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:22px;
+  padding:22px 6px;font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:-.01em;color:var(--ink);
+  transition:color var(--dur-2) var(--ease-soft);
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary:hover{color:var(--accent-deep)}
+.faq-chevron{width:22px;height:22px;color:var(--muted);flex-shrink:0;transition:transform var(--dur-2) var(--ease-cine),color var(--dur-2) var(--ease-soft)}
+.faq-item[open] .faq-chevron{transform:rotate(180deg);color:var(--accent-deep)}
+.faq-a{padding:0 6px 24px}
+.faq-a p{margin:0;color:var(--ink-soft);font-size:16px;line-height:1.62;max-width:64ch}
+.faq-item[open] .faq-a{animation:faqIn .34s var(--ease-cine)}
+@keyframes faqIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
 /* ---------- contact ---------- */
 .contact{padding:0 0 80px}
 .contact-card{
@@ -370,4 +406,5 @@ a:focus-visible,button:focus-visible,.card:focus-visible{outline:none;box-shadow
   .hero-wall{opacity:1!important;animation:none!important}
   .wall-track{animation:none!important}
   .wall-stage{transition:none!important}
+  .d-spark,.d-plus,.d-dot{animation:none!important}
 }
