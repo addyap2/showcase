@@ -227,6 +227,22 @@
         '<div class="faq-a"><p>' + f.a[lang] + "</p></div>" +
         "</details>";
     }).join("");
+    injectFaqSchema();
+  }
+
+  // FAQPage structured data for rich results (updates with language)
+  function injectFaqSchema() {
+    var data = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "inLanguage": lang,
+      "mainEntity": FAQS.map(function (f) {
+        return { "@type": "Question", "name": f.q[lang], "acceptedAnswer": { "@type": "Answer", "text": f.a[lang] } };
+      })
+    };
+    var s = document.getElementById("faq-schema");
+    if (!s) { s = document.createElement("script"); s.type = "application/ld+json"; s.id = "faq-schema"; document.head.appendChild(s); }
+    s.textContent = JSON.stringify(data);
   }
 
   function applyFilter(id, animate) {
