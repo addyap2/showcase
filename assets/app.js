@@ -183,11 +183,10 @@
           '<img loading="lazy" src="screenshots/' + p.slug + '.jpg" alt="' + p.title + '">' +
         "</div>" +
         '<div class="card-body">' +
-          "<h3>" + p.title + "</h3>" +
+          '<h3 class="card-link">' + host(p.url) + "</h3>" +
           "<p>" + p.blurb[lang] + "</p>" +
           '<div class="tags">' + tags + "</div>" +
           '<div class="card-foot">' +
-            '<span class="host">' + host(p.url) + "</span>" +
             '<span class="visit">' + t("card.visit") + ' <span class="arr">↗</span></span>' +
           "</div>" +
         "</div>";
