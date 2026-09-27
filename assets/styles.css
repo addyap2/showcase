@@ -263,6 +263,47 @@ a{color:inherit;text-decoration:none}
 .site-footer a{color:var(--ink-soft);font-weight:500}
 .site-footer a:hover{color:var(--accent-deep)}
 
+/* ---------- interaction layer ---------- */
+/* custom cursor */
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;z-index:9999;pointer-events:none;border-radius:50%;mix-blend-mode:difference;transform:translate3d(-100px,-100px,0);will-change:transform;opacity:0}
+.cursor-active .cursor-dot,.cursor-active .cursor-ring{opacity:1}
+.cursor-dot{width:6px;height:6px;margin:-3px 0 0 -3px;background:#fff;transition:opacity .2s ease}
+.cursor-ring{width:30px;height:30px;margin:-15px 0 0 -15px;border:1.5px solid #fff;transition:width .28s var(--ease-soft),height .28s var(--ease-soft),margin .28s var(--ease-soft),background-color .28s ease,opacity .2s ease}
+.cursor-active{cursor:none}
+.cursor-active a,.cursor-active button,.cursor-active .card{cursor:none}
+.cursor-hover .cursor-ring{width:48px;height:48px;margin:-24px 0 0 -24px;background-color:rgba(255,255,255,.12)}
+.cursor-hover .cursor-dot{opacity:0}
+.cursor-down .cursor-ring{width:22px;height:22px;margin:-11px 0 0 -11px}
+
+/* magnetic buttons ease back when released */
+[data-magnetic]{transition:transform var(--dur-1) var(--ease-soft)}
+
+/* focus-visible feedback (keyboard only) */
+a:focus-visible,button:focus-visible,.card:focus-visible{outline:none;box-shadow:0 0 0 2px var(--paper),0 0 0 4px var(--accent)}
+.contact-card a:focus-visible{box-shadow:0 0 0 2px var(--navy),0 0 0 4px var(--accent)}
+
+/* scroll-spy active nav link */
+.nav-link.active{color:var(--ink)}
+.nav-link.active:after{transform:scaleX(1)}
+
+/* filter transition */
+@keyframes filterIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.card.filter-in{animation:filterIn .4s var(--ease-cine) both}
+
+/* touch-first feedback */
+@media(hover:none){
+  .card:active{transform:scale(.985)}
+  .btn:active{transform:scale(.96)}
+  .pill:active{transform:scale(.96)}
+  .cursor-dot,.cursor-ring{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .cursor-dot,.cursor-ring{display:none}
+  .cursor-active{cursor:auto}
+  [data-magnetic]{transform:none!important}
+  .card.filter-in{animation:none}
+}
+
 /* reveal */
 .reveal{opacity:0;transform:translateY(16px);transition:opacity var(--dur-3) var(--ease-cine),transform var(--dur-3) var(--ease-cine)}
 .reveal.in{opacity:1;transform:none}

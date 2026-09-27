@@ -159,7 +159,7 @@
         currentFilter = id;
         document.querySelectorAll(".pill").forEach(function (p) { p.classList.remove("active"); });
         b.classList.add("active");
-        applyFilter(id);
+        applyFilter(id, true);
       });
       return b;
     }
@@ -197,10 +197,15 @@
     if (window.motion) window.motion.refresh();
   }
 
-  function applyFilter(id) {
+  function applyFilter(id, animate) {
     document.querySelectorAll(".card").forEach(function (card) {
       var show = id === "all" || card.dataset.category === id;
       card.style.display = show ? "" : "none";
+      if (show && animate) {
+        card.classList.remove("filter-in");
+        void card.offsetWidth;            // restart the animation
+        card.classList.add("filter-in");
+      }
     });
   }
 
