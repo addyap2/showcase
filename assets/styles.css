@@ -79,6 +79,8 @@ body:after{
 }
 .site-header .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
 .brand{display:flex;align-items:center;gap:11px;font-weight:600;letter-spacing:-.01em}
+.brand-logo{height:38px;width:auto;display:block}
+.site-footer .brand-logo{height:44px}
 .brand .mark{
   width:30px;height:30px;border-radius:8px;display:grid;place-items:center;
   background:var(--navy);color:#fff;font-family:var(--serif);font-weight:600;font-size:16px;
@@ -132,9 +134,8 @@ body:after{
   .nav{gap:10px}
   /* keep the primary CTA on phones — it's the main conversion path */
   .nav-cta{margin-left:0;padding:9px 14px;font-size:13.5px}
-  .brand small{display:none}
-  /* collapse the brand to just the "A" mark so the WhatsApp icon + CTA fit */
-  .brand>span:not(.mark){display:none}
+  /* shrink the logo so it fits alongside the WhatsApp icon + CTA on phones */
+  .brand-logo{height:30px}
 }
 @media(max-width:380px){
   .lang-toggle button{padding:7px 9px}
