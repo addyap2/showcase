@@ -72,6 +72,7 @@
         soundBtn.setAttribute("aria-pressed", String(on));
         var label = soundBtn.getAttribute(on ? "data-label-on" : "data-label-off");
         if (label) soundBtn.setAttribute("aria-label", label);
+        if (on && window.track) window.track("video_sound_on");
       });
     }
   })();

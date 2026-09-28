@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://work.antonyaddy.com/sitemap.xml
+Sitemap: https://creations.antonyaddy.com/sitemap.xml

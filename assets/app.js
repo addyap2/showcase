@@ -150,6 +150,11 @@
   } catch (e) {}
 
   function t(key) { return (STRINGS[lang] && STRINGS[lang][key]) || (STRINGS.en[key]) || ""; }
+  // Vercel Web Analytics custom event (no-op if analytics isn't loaded / on Hobby)
+  function track(name, data) {
+    try { if (window.va) window.va("event", data ? { name: name, data: data } : { name: name }); } catch (e) {}
+  }
+  window.track = track;
   function host(url) {
     try { return new URL(url).hostname.replace(/^www\./, ""); }
     catch (e) { return url; }
@@ -221,6 +226,7 @@
         document.querySelectorAll(".pill").forEach(function (p) { p.classList.remove("active"); });
         b.classList.add("active");
         applyFilter(id, true);
+        track("filter", { category: id });
       });
       return b;
     }
@@ -251,6 +257,10 @@
             '<span class="visit">' + t("card.visit") + ' <span class="arr">↗</span></span>' +
           "</div>" +
         "</div>";
+      var cover = card.querySelector("a.cover");
+      if (cover) cover.addEventListener("click", function () {
+        track("project_visit", { slug: p.slug, category: p.category });
+      });
       grid.appendChild(card);
     });
     applyFilter(currentFilter);
@@ -310,8 +320,14 @@
     renderFaq();
   }
   document.querySelectorAll(".lang-toggle button").forEach(function (b) {
-    b.addEventListener("click", function () { setLang(b.dataset.lang); });
+    b.addEventListener("click", function () { track("lang_switch", { lang: b.dataset.lang }); setLang(b.dataset.lang); });
   });
+
+  // ---------- contact conversions ----------
+  var mailLink = document.getElementById("mail-link");
+  if (mailLink) mailLink.addEventListener("click", function () { track("email_click"); });
+  var waLink = document.getElementById("wa-link");
+  if (waLink) waLink.addEventListener("click", function () { track("whatsapp_click"); });
 
   // ---------- init ----------
   applyStatic();
