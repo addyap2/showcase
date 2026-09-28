@@ -195,8 +195,8 @@
     });
     var mail = document.getElementById("mail-link");
     if (mail) mail.href = "mailto:antony@antonyaddy.com?subject=" + encodeURIComponent(t("mail.subject"));
-    var wa = document.getElementById("wa-link");
-    if (wa) wa.href = "https://wa.me/33649829826?text=" + encodeURIComponent(t("wa.text"));
+    var waHref = "https://wa.me/33649829826?text=" + encodeURIComponent(t("wa.text"));
+    document.querySelectorAll(".js-wa").forEach(function (a) { a.href = waHref; });
     // video: label follows language (audio is spoken content)
     var vid = document.getElementById("pitch-video");
     if (vid) vid.setAttribute("aria-label", t("video.aria"));
@@ -338,8 +338,9 @@
   // ---------- contact conversions ----------
   var mailLink = document.getElementById("mail-link");
   if (mailLink) mailLink.addEventListener("click", function () { track("email_click"); });
-  var waLink = document.getElementById("wa-link");
-  if (waLink) waLink.addEventListener("click", function () { track("whatsapp_click"); });
+  document.querySelectorAll(".js-wa").forEach(function (a) {
+    a.addEventListener("click", function () { track("whatsapp_click"); });
+  });
 
   // ---------- init ----------
   applyStatic();
