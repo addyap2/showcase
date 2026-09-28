@@ -121,10 +121,10 @@ body:after{
 }
 .nav a.nav-wa:hover{background:#20c15c;color:#08331a;transform:translateY(-1px);box-shadow:0 10px 20px -10px rgba(37,211,102,.6)}
 .nav-wa .wa-ic{width:19px;height:19px}
-.lang-toggle{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang-toggle{display:inline-flex;align-items:center;gap:2px;padding:3px;background:#fff;border:1px solid var(--line);border-radius:999px}
 .lang-toggle button{
-  font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.02em;
-  padding:7px 12px;background:transparent;border:0;cursor:pointer;color:var(--muted);transition:.15s ease;
+  font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.02em;line-height:1;
+  padding:6px 12px;background:transparent;border:0;border-radius:999px;cursor:pointer;color:var(--muted);transition:.15s ease;
 }
 .lang-toggle button:hover{color:var(--ink)}
 .lang-toggle button.active{background:var(--navy);color:#fff}
@@ -137,10 +137,10 @@ body:after{
   /* shrink the logo so it fits alongside the WhatsApp icon + CTA on phones */
   .brand-logo{height:30px}
   /* larger touch target for the language toggle on phones (~44px tall) */
-  .lang-toggle button{padding:14px 15px}
+  .lang-toggle button{padding:12px 14px}
 }
 @media(max-width:380px){
-  .lang-toggle button{padding:14px 12px}
+  .lang-toggle button{padding:12px 12px}
   .nav-cta{padding:8px 12px}
 }
 
