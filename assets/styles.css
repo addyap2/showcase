@@ -13,6 +13,8 @@
   --accent-tint:rgba(192,122,44,.12);
   --radius:18px;
   --radius-sm:12px;
+  /* four-point spark, reused for section accents & watermarks */
+  --spark:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0c1.15 6.6 4.25 9.7 12 12-7.75 2.3-10.85 5.4-12 12-1.15-6.6-4.25-9.7-12-12 7.75-2.3 10.85-5.4 12-12z'/%3E%3C/svg%3E");
   --shadow:0 1px 2px rgba(16,24,40,.04),0 12px 32px -12px rgba(16,24,40,.18);
   --shadow-lg:0 30px 60px -24px rgba(16,24,40,.35);
   --maxw:1200px;
@@ -225,7 +227,9 @@ body:after{
 /* ---------- work section ---------- */
 .section{padding:72px 0}
 .section-head{max-width:60ch;margin-bottom:30px}
-.eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:12px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--accent-deep);margin-bottom:12px}
+.eyebrow:before{content:"";flex:0 0 auto;width:13px;height:13px;background:currentColor;
+  -webkit-mask:var(--spark) center/contain no-repeat;mask:var(--spark) center/contain no-repeat}
 .section-head h2{font-family:var(--serif);font-weight:560;font-size:clamp(28px,4vw,40px);letter-spacing:-.02em;margin:0 0 12px;line-height:1.08}
 .section-head p{color:var(--ink-soft);font-size:17px;margin:0}
 
@@ -356,6 +360,16 @@ body:after{
 .is-progress:hover .card-link{color:var(--ink)}
 .is-progress:hover .shot img{transform:none}
 
+/* ---------- section watermarks ---------- */
+.about,.faq{position:relative;overflow:hidden}
+.about .wrap,.faq .wrap{position:relative;z-index:1}
+.about:after,.faq:after{content:"";position:absolute;pointer-events:none;z-index:0;
+  opacity:.05;background:var(--accent);
+  -webkit-mask:var(--spark) center/contain no-repeat;mask:var(--spark) center/contain no-repeat}
+.about:after{width:300px;height:300px;right:-56px;top:-64px}
+.faq:after{width:250px;height:250px;left:-70px;bottom:-66px}
+@media(max-width:820px){.about:after,.faq:after{width:180px;height:180px}}
+
 /* ---------- about ---------- */
 .about{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .about-grid{display:grid;grid-template-columns:1.3fr .9fr;gap:56px;align-items:start}
@@ -405,6 +419,13 @@ body:after{
 }
 .contact-card:before{content:"";position:absolute;inset:0;background:radial-gradient(70% 120% at 80% -20%,rgba(192,122,44,.35),transparent 55%)}
 .contact-card>*{position:relative;z-index:1}
+/* floating spark accents (finale) */
+.contact-deco{position:absolute;inset:0;z-index:0;pointer-events:none;color:var(--accent)}
+.contact-deco .cd{position:absolute;display:block}
+.cd1{width:26px;height:26px;top:18%;left:8%;opacity:.5;animation:floaty 7s var(--ease-in-out) infinite}
+.cd2{width:15px;height:15px;bottom:22%;right:11%;opacity:.42;animation:floaty 9s var(--ease-in-out) .5s infinite reverse}
+.cd3{width:16px;height:16px;top:24%;right:16%;opacity:.4;animation:floaty 8s var(--ease-in-out) .8s infinite}
+@media(max-width:640px){.cd1{left:5%}.cd2{right:6%}.cd3{display:none}}
 .contact-card .eyebrow{color:var(--accent)}
 .contact-card h2{font-family:var(--serif);font-weight:560;font-size:clamp(28px,4.4vw,44px);letter-spacing:-.02em;margin:0 auto 16px;max-width:18ch;line-height:1.06}
 .contact-card p{color:rgba(255,255,255,.75);font-size:17.5px;max-width:52ch;margin:0 auto 30px}
