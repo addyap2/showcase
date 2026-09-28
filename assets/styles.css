@@ -319,6 +319,17 @@ body:after{
 .pill:hover{border-color:var(--ink-soft);color:var(--ink)}
 .pill.active{background:var(--navy);border-color:var(--navy);color:#fff}
 .pill.active .c{color:rgba(255,255,255,.6)}
+/* on phones: one compact, horizontally-scrollable row instead of 4 wrapped rows */
+@media(max-width:560px){
+  .filters{
+    flex-wrap:nowrap;overflow-x:auto;
+    gap:8px;padding:12px 0;margin-bottom:4px;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+    scroll-snap-type:x proximity;
+  }
+  .filters::-webkit-scrollbar{display:none}
+  .pill{flex:0 0 auto;padding:8px 14px;font-size:13.5px;scroll-snap-align:start}
+}
 
 .grid{
   display:grid;gap:26px;
