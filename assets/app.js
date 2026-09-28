@@ -373,8 +373,8 @@
   (function heroWall() {
     var wall = document.querySelector(".hero-wall");
     if (!wall) return;
-    var colA = ["ristorante-lola", "grammatica", "filton-athletic-fc", "toeic-success-hub", "tandoor-global"];
-    var colB = ["addys-english-pro", "speakup", "stephanie", "planb-global-connect", "listening-english"];
+    var colA = ["ristorante-lola", "wall-street", "grammatica", "filton-athletic-fc", "toeic-success-hub", "tandoor-global"];
+    var colB = ["stephanie", "planb-global-connect", "filton-social-club", "addys-english-pro", "speakup", "listening-english"];
     function col(list, cls) {
       var items = list.concat(list).map(function (s) {
         // lazy: on mobile the wall is display:none, so these never download
