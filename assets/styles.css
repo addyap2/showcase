@@ -136,9 +136,11 @@ body:after{
   .nav-cta{margin-left:0;padding:9px 14px;font-size:13.5px}
   /* shrink the logo so it fits alongside the WhatsApp icon + CTA on phones */
   .brand-logo{height:30px}
+  /* larger touch target for the language toggle on phones (~44px tall) */
+  .lang-toggle button{padding:14px 15px}
 }
 @media(max-width:380px){
-  .lang-toggle button{padding:7px 9px}
+  .lang-toggle button{padding:14px 12px}
   .nav-cta{padding:8px 12px}
 }
 
