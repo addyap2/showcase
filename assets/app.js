@@ -42,6 +42,7 @@
       "filter.all": "Tout",
       "card.visit": "Voir le site",
       "card.progress": "En cours",
+      "card.soon": "Bientôt en ligne",
       "about.eyebrow": "À propos",
       "about.h2": "Un formateur qui développe — avec l'IA comme atelier.",
       "about.p1": "Je m'appelle Antony Addy, formateur bilingue (anglais / français) certifié, basé dans le Sud de la France. Pendant des années, j'ai développé les outils dont mes propres apprenants avaient besoin ; aujourd'hui, je les conçois aussi pour d'autres.",
@@ -110,6 +111,7 @@
       "filter.all": "All work",
       "card.visit": "Visit site",
       "card.progress": "In progress",
+      "card.soon": "Coming soon",
       "about.eyebrow": "About",
       "about.h2": "A trainer who builds — with AI as the workshop.",
       "about.p1": "I'm Antony Addy, a certified bilingual (English / French) trainer based in the South of France. For years I've built the tools my own learners needed; today I design and build them for others too.",
@@ -245,20 +247,27 @@
       card.style.setProperty("--d", (i % 3) * 90 + "ms");
       card.dataset.category = p.category;
       var tags = (p.tags[lang] || []).map(function (x) { return "<span>" + x + "</span>"; }).join("");
+      // In-progress projects aren't live yet: show the card but don't link out.
+      var inProgress = p.status === "progress";
+      if (inProgress) card.className += " is-progress";
+      var heading = inProgress ? p.title : host(p.url);
+      var coverHtml = inProgress ? "" :
+        '<a class="cover" href="' + p.url + '" target="_blank" rel="noopener" aria-label="' + p.title + '"></a>';
+      var footHtml = inProgress
+        ? '<span class="soon">' + t("card.soon") + "</span>"
+        : '<span class="visit">' + t("card.visit") + ' <span class="arr">↗</span></span>';
       card.innerHTML =
-        '<a class="cover" href="' + p.url + '" target="_blank" rel="noopener" aria-label="' + p.title + '"></a>' +
+        coverHtml +
         '<div class="shot">' +
           '<span class="cat-tag">' + (catLabel[p.category][lang] || "") + "</span>" +
-          (p.status === "progress" ? '<span class="status-tag">' + t("card.progress") + "</span>" : "") +
+          (inProgress ? '<span class="status-tag">' + t("card.progress") + "</span>" : "") +
           '<img loading="lazy" src="screenshots/' + p.slug + '.jpg" alt="' + p.title + '">' +
         "</div>" +
         '<div class="card-body">' +
-          '<h3 class="card-link">' + host(p.url) + "</h3>" +
+          '<h3 class="card-link">' + heading + "</h3>" +
           "<p>" + p.blurb[lang] + "</p>" +
           '<div class="tags">' + tags + "</div>" +
-          '<div class="card-foot">' +
-            '<span class="visit">' + t("card.visit") + ' <span class="arr">↗</span></span>' +
-          "</div>" +
+          '<div class="card-foot">' + footHtml + "</div>" +
         "</div>";
       var cover = card.querySelector("a.cover");
       if (cover) cover.addEventListener("click", function () {
