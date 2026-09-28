@@ -35,7 +35,7 @@ window.PROJECTS = [
   {
     slug: "toeic-success-hub",
     title: "ToeicPath",
-    url: "https://toeic-success-hub.vercel.app",
+    url: "https://toeic.antonyaddy.com",
     category: "learning",
     blurb: {
       fr: "Une préparation au TOEIC complète et guidée, sur les quatre compétences et toutes les parties Listening & Reading — avec examens blancs et entraînement adaptatif, sans compte.",
@@ -46,7 +46,7 @@ window.PROJECTS = [
   {
     slug: "cloe-prep-path",
     title: "CLOE Prep",
-    url: "https://cloe-prep-path.vercel.app",
+    url: "https://cloe.antonyaddy.com",
     category: "learning",
     blurb: {
       fr: "Une préparation à la certification d'anglais CLOE orientée entreprise — les quatre compétences plus l'oral, autour de l'anglais réellement utilisé au travail.",
