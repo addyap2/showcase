@@ -68,7 +68,7 @@ window.PROJECTS = [
   {
     slug: "adventure-books",
     title: "English Reading Adventures",
-    url: "https://adventure-books-five.vercel.app",
+    url: "https://books.antonyaddy.com",
     category: "learning",
     blurb: {
       fr: "Des histoires interactives à embranchements où l'apprenant est le héros — à lire à son niveau, avec le sens disponible en huit langues.",
