@@ -128,20 +128,40 @@ body:after{
 }
 .lang-toggle button:hover{color:var(--ink)}
 .lang-toggle button.active{background:var(--navy);color:#fff}
-@media(max-width:820px){.nav .nav-link{display:none}}
 .brand>span{white-space:nowrap}
-@media(max-width:560px){
-  .nav{gap:10px}
-  /* keep the primary CTA on phones — it's the main conversion path */
-  .nav-cta{margin-left:0;padding:9px 14px;font-size:13.5px}
-  /* shrink the logo so it fits alongside the WhatsApp icon + CTA on phones */
-  .brand-logo{height:30px}
-  /* larger touch target for the language toggle on phones (~44px tall) */
-  .lang-toggle button{padding:12px 14px}
-}
-@media(max-width:380px){
-  .lang-toggle button{padding:12px 12px}
-  .nav-cta{padding:8px 12px}
+/* wrapper is invisible to layout on desktop; becomes a row inside the mobile menu */
+.nav-meta{display:contents}
+/* hamburger — desktop hidden */
+.nav-toggle{display:none;background:transparent;border:0;cursor:pointer}
+
+/* ---------- mobile menu ---------- */
+@media(max-width:820px){
+  .nav-toggle{
+    display:inline-flex;flex-direction:column;justify-content:center;gap:5px;
+    width:44px;height:44px;margin-left:auto;padding:11px;border-radius:12px;
+  }
+  .nav-toggle .nt-bar{display:block;width:22px;height:2px;border-radius:2px;background:var(--ink);
+    transition:transform .3s var(--ease-cine),opacity .2s ease}
+  .nav-toggle[aria-expanded="true"] .nt-bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle[aria-expanded="true"] .nt-bar:nth-child(2){opacity:0}
+  .nav-toggle[aria-expanded="true"] .nt-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  .nav{
+    position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    box-shadow:0 26px 44px -26px rgba(16,24,40,.45);
+    padding:6px 24px 22px;
+    transform:translateY(-12px);opacity:0;visibility:hidden;pointer-events:none;
+    transition:opacity .28s var(--ease-soft),transform .28s var(--ease-soft),visibility .28s;
+    max-height:calc(100dvh - 66px);overflow-y:auto;
+  }
+  .nav.open{transform:none;opacity:1;visibility:visible;pointer-events:auto}
+  .nav .nav-link{display:block;padding:15px 2px;font-size:18px;font-weight:600;color:var(--ink);border-bottom:1px solid var(--line-soft)}
+  .nav .nav-link:after{display:none}
+  .nav-meta{display:flex;align-items:center;gap:14px;margin-top:18px}
+  .nav .lang-toggle button{padding:11px 15px}          /* ~44px touch target */
+  .nav-cta{margin:18px 0 4px;justify-content:center;padding:15px 22px;font-size:15.5px}
 }
 
 /* ---------- hero ---------- */

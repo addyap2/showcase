@@ -77,6 +77,27 @@
     }
   })();
 
+  // ---------- mobile menu (all devices) ----------
+  (function mobileMenu() {
+    var btn = document.querySelector(".nav-toggle");
+    var nav = document.getElementById("primary-nav");
+    if (!btn || !nav) return;
+    function set(open) {
+      nav.classList.toggle("open", open);
+      btn.setAttribute("aria-expanded", String(open));
+    }
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      set(!nav.classList.contains("open"));
+    });
+    nav.addEventListener("click", function (e) { if (e.target.closest("a")) set(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") set(false); });
+    document.addEventListener("click", function (e) {
+      if (nav.classList.contains("open") && !nav.contains(e.target) && !btn.contains(e.target)) set(false);
+    });
+    window.addEventListener("resize", function () { if (window.innerWidth > 820) set(false); }, { passive: true });
+  })();
+
   if (!rich) return; // everything below is desktop-only richness
 
   // ---------- custom cursor ----------
