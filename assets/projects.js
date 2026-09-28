@@ -29,6 +29,17 @@ window.PROJECTS = [
     tags: { fr: ["Restaurant", "4 langues"], en: ["Restaurant", "4 languages"] }
   },
   {
+    slug: "wall-street",
+    title: "Wall Street Fréjus",
+    url: "https://www.wallstreetfrejus.fr",
+    category: "business",
+    blurb: {
+      fr: "Un pub-restaurant à Fréjus — concerts live, matchs sur écran géant et cuisine généreuse faite maison, avec menu de la semaine et réservation en ligne.",
+      en: "A pub and restaurant in Fréjus — live music, big-screen match days and generous homemade food, with a weekly menu and online booking."
+    },
+    tags: { fr: ["Pub & resto", "Matchs & concerts"], en: ["Pub & food", "Sport & live music"] }
+  },
+  {
     slug: "tandoor-global",
     title: "Mr. Tandoors",
     url: "https://tandoor-global.vercel.app",
