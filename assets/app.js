@@ -21,7 +21,7 @@
       "hero.lead": "Je conçois et développe des sites web et des plateformes d'apprentissage rapides et bilingues — des applis pour apprendre les langues aux sites de restaurants, en passant par les projets associatifs et les outils sur mesure. De vrais produits, en ligne, développés avec l'IA et l'œil d'un formateur pour ceux qui les utilisent.",
       "hero.cta1": "Voir les réalisations",
       "hero.cta2": "Démarrer un projet",
-      "stat1.n": "20", "stat1.l": "Projets en ligne livrés",
+      "stat1.n": "18", "stat1.l": "Projets en ligne livrés",
       "stat2.n": "FR / EN", "stat2.l": "Livraison entièrement bilingue",
       "stat3.n": "Jours", "stat3.l": "De l'idée au site en ligne",
       "stat4.n": "4", "stat4.l": "Domaines, de la formation à la restauration",
@@ -88,7 +88,7 @@
       "hero.lead": "I design and build fast, bilingual websites and learning platforms — from language-learning apps and restaurant sites to community projects and custom tools. Real, live products, built with AI in the loop and a trainer's eye for the people who use them.",
       "hero.cta1": "See the work",
       "hero.cta2": "Start a project",
-      "stat1.n": "20", "stat1.l": "Live projects shipped",
+      "stat1.n": "18", "stat1.l": "Live projects shipped",
       "stat2.n": "EN / FR", "stat2.l": "Fully bilingual delivery",
       "stat3.n": "Days", "stat3.l": "From idea to live site",
       "stat4.n": "4", "stat4.l": "Fields, from teaching to hospitality",
@@ -343,7 +343,7 @@
     var wall = document.querySelector(".hero-wall");
     if (!wall) return;
     var colA = ["ristorante-lola", "grammatica", "filton-athletic-fc", "toeic-success-hub", "tandoor-global"];
-    var colB = ["addys-english-pro", "speakup", "stephanie", "planb-global-connect", "essentia-myriam"];
+    var colB = ["addys-english-pro", "speakup", "stephanie", "planb-global-connect", "listening-english"];
     function col(list, cls) {
       var items = list.concat(list).map(function (s) {
         // lazy: on mobile the wall is display:none, so these never download

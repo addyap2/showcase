@@ -169,17 +169,6 @@ window.PROJECTS = [
     tags: { fr: ["Restaurant", "Commande en ligne"], en: ["Restaurant", "Order online"] }
   },
   {
-    slug: "essentia-myriam",
-    title: "Essentia",
-    url: "https://www.essentiademdb.com",
-    category: "business",
-    blurb: {
-      fr: "Un site de marque apaisant et multilingue pour une coach et psychothérapeute — coaching, psychothérapie et conseil RH réunis dans une identité soignée.",
-      en: "A calm, multilingual brand site for a coach and psychotherapist — coaching, psychotherapy and HR consulting in one considered identity."
-    },
-    tags: { fr: ["Bien-être", "Multilingue"], en: ["Wellbeing", "Multilingual"] }
-  },
-  {
     slug: "stephanie",
     title: "SR Bien-être",
     url: "https://www.srbienetre.fr",
@@ -189,17 +178,6 @@ window.PROJECTS = [
       en: "A wellbeing practitioner's site in Saint-Raphaël — sophrology, energy healing, lymphatic drainage and children's yoga, with online booking."
     },
     tags: { fr: ["Bien-être", "Réservation en ligne"], en: ["Wellbeing", "Online booking"] }
-  },
-  {
-    slug: "lumbacure-france",
-    title: "LumbaCure France",
-    url: "https://lumbacure-france.vercel.app",
-    category: "business",
-    blurb: {
-      fr: "Un site produit pour un dispositif innovant de mobilité lombo-pelvienne, présentant la science et la technologie à un public médical français.",
-      en: "A product site for an innovative lumbo-pelvic mobility device, presenting the science and the technology to a French medical audience."
-    },
-    tags: { fr: ["Produit", "Médical"], en: ["Product", "Medical"] }
   },
   {
     slug: "planb-global-connect",
