@@ -41,6 +41,7 @@
       "work.p": "Chaque projet ci-dessous est en ligne. Filtrez par domaine, puis cliquez sur une carte pour ouvrir le site.",
       "filter.all": "Tout",
       "card.visit": "Voir le site",
+      "card.progress": "En cours",
       "about.eyebrow": "À propos",
       "about.h2": "Un formateur qui développe — avec l'IA comme atelier.",
       "about.p1": "Je m'appelle Antony Addy, formateur bilingue (anglais / français) certifié, basé dans le Sud de la France. Pendant des années, j'ai développé les outils dont mes propres apprenants avaient besoin ; aujourd'hui, je les conçois aussi pour d'autres.",
@@ -108,6 +109,7 @@
       "work.p": "Every project below is deployed and online. Filter by field, then click any card to open the real site.",
       "filter.all": "All work",
       "card.visit": "Visit site",
+      "card.progress": "In progress",
       "about.eyebrow": "About",
       "about.h2": "A trainer who builds — with AI as the workshop.",
       "about.p1": "I'm Antony Addy, a certified bilingual (English / French) trainer based in the South of France. For years I've built the tools my own learners needed; today I design and build them for others too.",
@@ -247,6 +249,7 @@
         '<a class="cover" href="' + p.url + '" target="_blank" rel="noopener" aria-label="' + p.title + '"></a>' +
         '<div class="shot">' +
           '<span class="cat-tag">' + (catLabel[p.category][lang] || "") + "</span>" +
+          (p.status === "progress" ? '<span class="status-tag">' + t("card.progress") + "</span>" : "") +
           '<img loading="lazy" src="screenshots/' + p.slug + '.jpg" alt="' + p.title + '">' +
         "</div>" +
         '<div class="card-body">' +

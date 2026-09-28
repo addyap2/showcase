@@ -1,6 +1,7 @@
 // Edit this file to add, remove or reorder projects. Each project renders one card.
 // Every text field has { fr, en } — French is the default language.
 // category must match one of the CATEGORIES ids below.
+// Optional: add  status: "progress"  to show an "In progress" badge on a card.
 window.CATEGORIES = [
   { id: "learning",  label: { fr: "Applis d'apprentissage", en: "Language Learning Apps" } },
   { id: "training",  label: { fr: "Formation & enseignement", en: "Training & Teaching" } },
@@ -138,6 +139,7 @@ window.PROJECTS = [
     title: "Student Mark Tracker",
     url: "https://student-mark-tracker.vercel.app",
     category: "training",
+    status: "progress",
     blurb: {
       fr: "Un espace de travail privé et sécurisé pour un organisme de formation — documents, notes et progression de chaque apprenant, au propre et protégés par connexion.",
       en: "A private, secure workspace for a training business — documents, marks and individual student progress, kept clean and separate behind sign-in."
@@ -162,6 +164,7 @@ window.PROJECTS = [
     title: "Mr. Tandoors",
     url: "https://tandoor-global.vercel.app",
     category: "business",
+    status: "progress",
     blurb: {
       fr: "Un site orienté commande pour un restaurant indien tandoor 100% halal à Fréjus — menu, histoire et commande à emporter en un clic.",
       en: "An ordering-focused site for a 100% halal Indian tandoor restaurant in Fréjus — menu, story and click-to-order takeaway."
