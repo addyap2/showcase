@@ -23,6 +23,36 @@
     });
   }
 
+  // ---- staggered word reveal for headings (.reveal-text) ----
+  var textIO = null;
+  if (!reduce && "IntersectionObserver" in window) {
+    textIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("words-in"); textIO.unobserve(e.target); }
+      });
+    }, { threshold: 0.2, rootMargin: "0px 0px -8% 0px" });
+  }
+  function splitText(root) {
+    (root || document).querySelectorAll(".reveal-text").forEach(function (el) {
+      if (el.querySelector(".w")) return;           // already split for current text
+      var text = el.textContent.replace(/\s+/g, " ").trim();
+      if (!text) return;
+      var words = text.split(" ");
+      el.textContent = "";
+      words.forEach(function (word, i) {
+        var w = document.createElement("span"); w.className = "w";
+        var inner = document.createElement("i"); inner.textContent = word;
+        inner.style.setProperty("--wi", i);
+        w.appendChild(inner);
+        el.appendChild(w);
+        if (i < words.length - 1) el.appendChild(document.createTextNode(" "));
+      });
+      if (reduce || !textIO) { el.classList.add("words-in"); return; }
+      el.classList.remove("words-in");
+      textIO.observe(el);
+    });
+  }
+
   // ---- image blur-up ----
   function watchImages(root) {
     (root || document).querySelectorAll(".shot img").forEach(function (img) {
@@ -61,6 +91,7 @@
   window.motion = {
     refresh: function () {
       observeReveals(document);
+      splitText(document);
       watchImages(document);
       bindTilt(document);
     }
@@ -97,6 +128,7 @@
 
   // ---- init ----
   observeReveals(document);
+  splitText(document);
   watchImages(document);
   bindTilt(document);
   onScrollFrame();

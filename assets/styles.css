@@ -493,10 +493,22 @@ a:focus-visible,button:focus-visible,.card:focus-visible{outline:none;box-shadow
 .reveal{opacity:0;transform:translateY(16px);transition:opacity var(--dur-3) var(--ease-cine),transform var(--dur-3) var(--ease-cine)}
 .reveal.in{opacity:1;transform:none}
 
+/* motion text: staggered word reveal on headings */
+.reveal-text .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.14em;margin-bottom:-.14em}
+.reveal-text .w i{
+  display:inline-block;font-style:inherit;will-change:transform;
+  transform:translateY(115%);opacity:0;
+  transition:transform .62s var(--ease-cine),opacity .62s var(--ease-cine);
+  transition-delay:calc(var(--wi,0)*55ms);
+}
+.reveal-text.words-in .w i{transform:none;opacity:1}
+
 /* ---------- reduced motion: collapse the whole system ---------- */
 @media(prefers-reduced-motion:reduce){
   *,*:before,*:after{animation-duration:.001ms!important;animation-delay:0ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
   .reveal,.card.reveal{opacity:1!important;transform:none!important}
+  .reveal-text .w{overflow:visible;padding-bottom:0;margin-bottom:0}
+  .reveal-text .w i{transform:none!important;opacity:1!important;transition:none!important}
   .hero .kicker,.hero h1,.hero .lead,.hero .hero-cta,.hero .stats{opacity:1!important;animation:none!important}
   .shot img{opacity:1!important;filter:none!important}
   .hero-glow{transform:none!important}
