@@ -8,6 +8,7 @@
   var STRINGS = {
     fr: {
       "doc.title": "Antony Addy — Sites web & outils, conçus et développés avec l'IA",
+      "skip": "Aller au contenu",
       "brand.sub": "Sites web & outils",
       "nav.work": "Réalisations",
       "nav.about": "À propos",
@@ -20,7 +21,7 @@
       "hero.lead": "Je conçois et développe des sites web et des plateformes d'apprentissage rapides et bilingues — des applis pour apprendre les langues aux sites de restaurants, en passant par les projets associatifs et les outils sur mesure. De vrais produits, en ligne, développés avec l'IA et l'œil d'un formateur pour ceux qui les utilisent.",
       "hero.cta1": "Voir les réalisations",
       "hero.cta2": "Démarrer un projet",
-      "stat1.n": "20+", "stat1.l": "Projets en ligne livrés",
+      "stat1.n": "20", "stat1.l": "Projets en ligne livrés",
       "stat2.n": "FR / EN", "stat2.l": "Livraison entièrement bilingue",
       "stat3.n": "Jours", "stat3.l": "De l'idée au site en ligne",
       "stat4.n": "4", "stat4.l": "Domaines, de la formation à la restauration",
@@ -34,6 +35,7 @@
       "video.cta2": "Voir les réalisations",
       "video.sound": "Activer le son",
       "video.sound_on": "Couper le son",
+      "video.aria": "Vidéo : sites web sur mesure, développés en quelques jours",
       "work.eyebrow": "Réalisations choisies",
       "work.h2": "Un portfolio de produits réels, en ligne.",
       "work.p": "Chaque projet ci-dessous est en ligne. Filtrez par domaine, puis cliquez sur une carte pour ouvrir le site.",
@@ -73,6 +75,7 @@
     },
     en: {
       "doc.title": "Antony Addy — Websites & tools, designed and built with AI",
+      "skip": "Skip to content",
       "brand.sub": "Websites & tools",
       "nav.work": "Work",
       "nav.about": "About",
@@ -85,7 +88,7 @@
       "hero.lead": "I design and build fast, bilingual websites and learning platforms — from language-learning apps and restaurant sites to community projects and custom tools. Real, live products, built with AI in the loop and a trainer's eye for the people who use them.",
       "hero.cta1": "See the work",
       "hero.cta2": "Start a project",
-      "stat1.n": "20+", "stat1.l": "Live projects shipped",
+      "stat1.n": "20", "stat1.l": "Live projects shipped",
       "stat2.n": "EN / FR", "stat2.l": "Fully bilingual delivery",
       "stat3.n": "Days", "stat3.l": "From idea to live site",
       "stat4.n": "4", "stat4.l": "Fields, from teaching to hospitality",
@@ -99,6 +102,7 @@
       "video.cta2": "See the work",
       "video.sound": "Turn on sound",
       "video.sound_on": "Mute",
+      "video.aria": "Video: custom websites, built in a few days",
       "work.eyebrow": "Selected work",
       "work.h2": "A portfolio of live, working products.",
       "work.p": "Every project below is deployed and online. Filter by field, then click any card to open the real site.",
@@ -184,6 +188,20 @@
     if (mail) mail.href = "mailto:antony@antonyaddy.com?subject=" + encodeURIComponent(t("mail.subject"));
     var wa = document.getElementById("wa-link");
     if (wa) wa.href = "https://wa.me/33649829826?text=" + encodeURIComponent(t("wa.text"));
+    // video: label follows language (audio is spoken content)
+    var vid = document.getElementById("pitch-video");
+    if (vid) vid.setAttribute("aria-label", t("video.aria"));
+    var sb = document.getElementById("video-sound");
+    if (sb) {
+      sb.setAttribute("data-label-off", t("video.sound"));
+      sb.setAttribute("data-label-on", t("video.sound_on"));
+      var soundOn = sb.getAttribute("aria-pressed") === "true";
+      sb.setAttribute("aria-label", soundOn ? t("video.sound_on") : t("video.sound"));
+    }
+    // language toggle: announce the active language to assistive tech
+    document.querySelectorAll(".lang-toggle button").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.dataset.lang === lang));
+    });
   }
 
   // ---------- filters ----------

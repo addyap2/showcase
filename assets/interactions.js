@@ -43,7 +43,9 @@
 
     var conn = navigator.connection || navigator.webkitConnection || {};
     var saveData = !!conn.saveData;
-    var canAuto = !reduce && !saveData;
+    // Autoplay only on larger screens: keeps mobile data + battery untouched
+    // (on phones the poster shows and the button plays it on tap).
+    var canAuto = !reduce && !saveData && window.innerWidth >= 768;
     // Muted autoplay while the section is in view (captions carry the message).
     if (canAuto && "IntersectionObserver" in window) {
       var io = new IntersectionObserver(function (entries) {
@@ -65,9 +67,11 @@
       soundBtn.addEventListener("click", function () {
         if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
         v.muted = !v.muted;
-        frame.classList.toggle("sound-on", !v.muted);
-        if (!v.muted) v.controls = true;      // let them scrub / pause once engaged
-        soundBtn.setAttribute("aria-pressed", String(!v.muted));
+        var on = !v.muted;
+        frame.classList.toggle("sound-on", on);
+        soundBtn.setAttribute("aria-pressed", String(on));
+        var label = soundBtn.getAttribute(on ? "data-label-on" : "data-label-off");
+        if (label) soundBtn.setAttribute("aria-label", label);
       });
     }
   })();
