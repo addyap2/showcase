@@ -38,6 +38,8 @@
       "work.h2": "Un portfolio de produits réels, en ligne.",
       "work.p": "Chaque projet ci-dessous est en ligne. Filtrez par domaine, puis cliquez sur une carte pour ouvrir le site.",
       "filter.all": "Tout",
+      "group.local": "Créations locales",
+      "group.learning": "Éducation & formation",
       "card.visit": "Voir le site",
       "card.progress": "En cours",
       "card.soon": "Bientôt en ligne",
@@ -105,6 +107,8 @@
       "work.h2": "A portfolio of live, working products.",
       "work.p": "Every project below is deployed and online. Filter by field, then click any card to open the real site.",
       "filter.all": "All work",
+      "group.local": "Local creations",
+      "group.learning": "Learning & training",
       "card.visit": "Visit site",
       "card.progress": "In progress",
       "card.soon": "Coming soon",
@@ -234,14 +238,28 @@
     cats.forEach(function (c) { filterBar.appendChild(pill(c.id, c.label[lang])); });
   }
 
+  // Two super-groups: local client work vs. educational platforms & tools.
+  function groupOf(cat) { return (cat === "business" || cat === "community") ? "local" : "learning"; }
+
   // ---------- cards ----------
   function renderCards() {
     grid.innerHTML = "";
+    var lastGroup = null;
     projects.forEach(function (p, i) {
+      var grp = groupOf(p.category);
+      if (grp !== lastGroup) {
+        var head = document.createElement("div");
+        head.className = "grid-group reveal";
+        head.dataset.group = grp;
+        head.innerHTML = '<span class="grid-group-label">' + t("group." + grp) + "</span>";
+        grid.appendChild(head);
+        lastGroup = grp;
+      }
       var card = document.createElement("article");
       card.className = "card reveal";
       card.style.setProperty("--d", (i % 3) * 90 + "ms");
       card.dataset.category = p.category;
+      card.dataset.group = grp;
       var tags = (p.tags[lang] || []).map(function (x) { return "<span>" + x + "</span>"; }).join("");
       // In-progress projects aren't live yet: show the card but don't link out.
       var inProgress = p.status === "progress";
@@ -304,6 +322,10 @@
   }
 
   function applyFilter(id, animate) {
+    // group headings only make sense on the combined "all" view
+    document.querySelectorAll(".grid-group").forEach(function (h) {
+      h.style.display = id === "all" ? "" : "none";
+    });
     document.querySelectorAll(".card").forEach(function (card) {
       var show = id === "all" || card.dataset.category === id;
       card.style.display = show ? "" : "none";

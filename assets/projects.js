@@ -2,14 +2,93 @@
 // Every text field has { fr, en } — French is the default language.
 // category must match one of the CATEGORIES ids below.
 // Optional: add  status: "progress"  to show an "In progress" badge on a card.
+//
+// Order matters: local client work (business + community) is featured first,
+// then the educational platforms & tools. app.js groups these two blocks under
+// labelled headings in the grid.
 window.CATEGORIES = [
-  { id: "learning",  label: { fr: "Applis d'apprentissage", en: "Language Learning Apps" } },
-  { id: "training",  label: { fr: "Formation & enseignement", en: "Training & Teaching" } },
   { id: "business",  label: { fr: "Commerces & restauration", en: "Business & Hospitality" } },
-  { id: "community", label: { fr: "Associations & sport", en: "Community & Sport" } }
+  { id: "community", label: { fr: "Associations & sport", en: "Community & Sport" } },
+  { id: "learning",  label: { fr: "Applis d'apprentissage", en: "Language Learning Apps" } },
+  { id: "training",  label: { fr: "Formation & enseignement", en: "Training & Teaching" } }
 ];
 
 window.PROJECTS = [
+  // ==== Local creations — commerces, services & associations ====
+
+  // ---- Commerces & restauration ----
+  {
+    slug: "ristorante-lola",
+    title: "Ristorante da Lola",
+    url: "https://www.ristorantedalola.it",
+    category: "business",
+    blurb: {
+      fr: "Un site chaleureux en quatre langues pour un restaurant familial des Marches à Fermignano — menu, galerie et réservation, avec une vraie identité de lieu.",
+      en: "A warm, four-language site for a family Marche-region restaurant in Fermignano — menu, gallery and booking, with an unmistakable sense of place."
+    },
+    tags: { fr: ["Restaurant", "4 langues"], en: ["Restaurant", "4 languages"] }
+  },
+  {
+    slug: "tandoor-global",
+    title: "Mr. Tandoors",
+    url: "https://tandoor-global.vercel.app",
+    category: "business",
+    status: "progress",
+    blurb: {
+      fr: "Un site orienté commande pour un restaurant indien tandoor 100% halal à Fréjus — menu, histoire et commande à emporter en un clic.",
+      en: "An ordering-focused site for a 100% halal Indian tandoor restaurant in Fréjus — menu, story and click-to-order takeaway."
+    },
+    tags: { fr: ["Restaurant", "Commande en ligne"], en: ["Restaurant", "Order online"] }
+  },
+  {
+    slug: "stephanie",
+    title: "SR Bien-être",
+    url: "https://www.srbienetre.fr",
+    category: "business",
+    blurb: {
+      fr: "Le site d'une praticienne du bien-être à Saint-Raphaël — sophrologie, soins énergétiques, drainage lymphatique et yoga enfants, avec réservation en ligne.",
+      en: "A wellbeing practitioner's site in Saint-Raphaël — sophrology, energy healing, lymphatic drainage and children's yoga, with online booking."
+    },
+    tags: { fr: ["Bien-être", "Réservation en ligne"], en: ["Wellbeing", "Online booking"] }
+  },
+  {
+    slug: "planb-global-connect",
+    title: "Plan B Concept",
+    url: "https://www.planb-concept.com",
+    category: "business",
+    blurb: {
+      fr: "Un site bilingue de gestion de projet pour la Côte d'Azur — plus de 30 ans d'expérience du bâtiment, du premier croquis à la livraison finale.",
+      en: "A bilingual project-management site for the Côte d'Azur — 30+ years of build experience, from first sketch to final handover."
+    },
+    tags: { fr: ["Gestion de projet", "EN / FR"], en: ["Project mgmt", "EN / FR"] }
+  },
+
+  // ---- Associations & sport ----
+  {
+    slug: "filton-athletic-fc",
+    title: "Filton Athletic FC",
+    url: "https://filtonathletic.co.uk",
+    category: "community",
+    blurb: {
+      fr: "Le site d'un club de football du nord de Bristol — calendrier, résultats, classements, programmes de match et moyens simples de s'impliquer.",
+      en: "A football club site for north Bristol — fixtures, results, league tables, matchday programmes and clear ways to get involved."
+    },
+    tags: { fr: ["Football", "Calendrier & résultats"], en: ["Football", "Fixtures & results"] }
+  },
+  {
+    slug: "filton-social-club",
+    title: "Filton & District Social Club",
+    url: "https://www.filtonsocialclub.co.uk",
+    category: "community",
+    blurb: {
+      fr: "Le site associatif du Filton & District Social Club — événements, installations et adhésion, présentés simplement et clairement.",
+      en: "A community site for the Filton & District Social Club — events, facilities and membership, presented simply and clearly."
+    },
+    tags: { fr: ["Communauté", "Événements"], en: ["Community", "Events"] }
+  },
+
+  // ==== Educational — learning platforms & teaching tools ====
+
   // ---- Applis d'apprentissage ----
   {
     slug: "grammatica",
@@ -145,76 +224,5 @@ window.PROJECTS = [
       en: "A private, secure workspace for a training business — documents, marks and individual student progress, kept clean and separate behind sign-in."
     },
     tags: { fr: ["Tableau de bord", "Connexion"], en: ["Dashboard", "Auth"] }
-  },
-
-  // ---- Commerces & restauration ----
-  {
-    slug: "ristorante-lola",
-    title: "Ristorante da Lola",
-    url: "https://www.ristorantedalola.it",
-    category: "business",
-    blurb: {
-      fr: "Un site chaleureux en quatre langues pour un restaurant familial des Marches à Fermignano — menu, galerie et réservation, avec une vraie identité de lieu.",
-      en: "A warm, four-language site for a family Marche-region restaurant in Fermignano — menu, gallery and booking, with an unmistakable sense of place."
-    },
-    tags: { fr: ["Restaurant", "4 langues"], en: ["Restaurant", "4 languages"] }
-  },
-  {
-    slug: "tandoor-global",
-    title: "Mr. Tandoors",
-    url: "https://tandoor-global.vercel.app",
-    category: "business",
-    status: "progress",
-    blurb: {
-      fr: "Un site orienté commande pour un restaurant indien tandoor 100% halal à Fréjus — menu, histoire et commande à emporter en un clic.",
-      en: "An ordering-focused site for a 100% halal Indian tandoor restaurant in Fréjus — menu, story and click-to-order takeaway."
-    },
-    tags: { fr: ["Restaurant", "Commande en ligne"], en: ["Restaurant", "Order online"] }
-  },
-  {
-    slug: "stephanie",
-    title: "SR Bien-être",
-    url: "https://www.srbienetre.fr",
-    category: "business",
-    blurb: {
-      fr: "Le site d'une praticienne du bien-être à Saint-Raphaël — sophrologie, soins énergétiques, drainage lymphatique et yoga enfants, avec réservation en ligne.",
-      en: "A wellbeing practitioner's site in Saint-Raphaël — sophrology, energy healing, lymphatic drainage and children's yoga, with online booking."
-    },
-    tags: { fr: ["Bien-être", "Réservation en ligne"], en: ["Wellbeing", "Online booking"] }
-  },
-  {
-    slug: "planb-global-connect",
-    title: "Plan B Concept",
-    url: "https://www.planb-concept.com",
-    category: "business",
-    blurb: {
-      fr: "Un site bilingue de gestion de projet pour la Côte d'Azur — plus de 30 ans d'expérience du bâtiment, du premier croquis à la livraison finale.",
-      en: "A bilingual project-management site for the Côte d'Azur — 30+ years of build experience, from first sketch to final handover."
-    },
-    tags: { fr: ["Gestion de projet", "EN / FR"], en: ["Project mgmt", "EN / FR"] }
-  },
-
-  // ---- Associations & sport ----
-  {
-    slug: "filton-athletic-fc",
-    title: "Filton Athletic FC",
-    url: "https://filtonathletic.co.uk",
-    category: "community",
-    blurb: {
-      fr: "Le site d'un club de football du nord de Bristol — calendrier, résultats, classements, programmes de match et moyens simples de s'impliquer.",
-      en: "A football club site for north Bristol — fixtures, results, league tables, matchday programmes and clear ways to get involved."
-    },
-    tags: { fr: ["Football", "Calendrier & résultats"], en: ["Football", "Fixtures & results"] }
-  },
-  {
-    slug: "filton-social-club",
-    title: "Filton & District Social Club",
-    url: "https://www.filtonsocialclub.co.uk",
-    category: "community",
-    blurb: {
-      fr: "Le site associatif du Filton & District Social Club — événements, installations et adhésion, présentés simplement et clairement.",
-      en: "A community site for the Filton & District Social Club — events, facilities and membership, presented simply and clearly."
-    },
-    tags: { fr: ["Communauté", "Événements"], en: ["Community", "Events"] }
   }
 ];
