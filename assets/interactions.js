@@ -12,7 +12,7 @@
       var id = a.getAttribute("href");
       if (id && id.charAt(0) === "#") links[id.slice(1)] = a;
     });
-    var sections = ["work", "about", "services", "faq", "contact"]
+    var sections = ["video", "work", "about", "services", "faq", "contact"]
       .map(function (id) { return document.getElementById(id); })
       .filter(Boolean);
     if (!("IntersectionObserver" in window) || !sections.length) return;
@@ -32,6 +32,44 @@
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll, { passive: true });
     update();
+  })();
+
+  // ---------- video pitch (all devices) ----------
+  (function pitchVideo() {
+    var frame = document.querySelector(".video-frame");
+    var v = document.getElementById("pitch-video");
+    var soundBtn = document.getElementById("video-sound");
+    if (!frame || !v) return;
+
+    var conn = navigator.connection || navigator.webkitConnection || {};
+    var saveData = !!conn.saveData;
+    var canAuto = !reduce && !saveData;
+    // Muted autoplay while the section is in view (captions carry the message).
+    if (canAuto && "IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            frame.classList.add("playing");
+            var p = v.play(); if (p && p.catch) p.catch(function () {});
+          } else if (!v.ended) {
+            v.pause();
+          }
+        });
+      }, { threshold: 0.45 });
+      io.observe(frame);
+    } else {
+      frame.classList.add("manual");
+    }
+
+    if (soundBtn) {
+      soundBtn.addEventListener("click", function () {
+        if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        v.muted = !v.muted;
+        frame.classList.toggle("sound-on", !v.muted);
+        if (!v.muted) v.controls = true;      // let them scrub / pause once engaged
+        soundBtn.setAttribute("aria-pressed", String(!v.muted));
+      });
+    }
   })();
 
   if (!rich) return; // everything below is desktop-only richness

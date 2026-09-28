@@ -52,6 +52,7 @@
         <span>Antony Addy<small data-i18n="brand.sub">Sites web &amp; outils</small></span>
       </a>
       <nav class="nav">
+        <a class="nav-link" href="#video" data-i18n="nav.video">Vidéo</a>
         <a class="nav-link" href="#work" data-i18n="nav.work">Réalisations</a>
         <a class="nav-link" href="#about" data-i18n="nav.about">À propos</a>
         <a class="nav-link" href="#services" data-i18n="nav.services">Services</a>
@@ -96,6 +97,43 @@
           </div>
         </div>
         <div class="hero-wall" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- VIDEO PITCH -->
+    <section class="section video-pitch" id="video">
+      <div class="wrap video-grid">
+        <div class="video-copy reveal">
+          <div class="eyebrow" data-i18n="video.eyebrow">En vidéo · 1 min</div>
+          <h2 data-i18n="video.h2">De l'idée au lancement, en une minute.</h2>
+          <p data-i18n="video.p"></p>
+          <ul class="video-points">
+            <li data-i18n="video.pt1"></li>
+            <li data-i18n="video.pt2"></li>
+            <li data-i18n="video.pt3"></li>
+          </ul>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact" data-magnetic data-i18n="video.cta">Démarrer un projet</a>
+            <a class="btn btn-ghost" href="#work" data-magnetic data-i18n="video.cta2">Voir les réalisations</a>
+          </div>
+        </div>
+
+        <div class="video-frame reveal">
+          <div class="phone">
+            <video id="pitch-video" class="pitch-video"
+                   poster="assets/video/poster.jpg"
+                   muted loop playsinline preload="none"
+                   controlslist="nodownload" disablepictureinpicture
+                   aria-label="Antony Addy — sites web sur mesure, développés en quelques jours">
+              <source src="assets/video/services-ad.mp4" type="video/mp4">
+            </video>
+            <button class="video-sound" id="video-sound" type="button" aria-pressed="false" aria-label="Activer le son">
+              <svg class="ic-muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16 8l6 8M22 8l-6 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <svg class="ic-sound" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 010 7M19 6a8 8 0 010 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <span data-i18n="video.sound">Activer le son</span>
+            </button>
+          </div>
+        </div>
       </div>
     </section>
 
