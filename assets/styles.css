@@ -439,7 +439,7 @@ body:after{
   box-shadow:0 26px 52px -26px rgba(192,122,44,.55);
 }
 .about-photo{
-  position:relative;z-index:1;display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center 30%;
+  position:relative;z-index:1;display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:center;
   border:5px solid var(--paper);border-radius:38px 38px 38px 58px;
   box-shadow:0 22px 46px -20px rgba(16,24,40,.45);
   transform:rotate(1.8deg);
