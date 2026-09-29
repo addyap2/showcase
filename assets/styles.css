@@ -424,6 +424,7 @@ body:after{
 .about h2{font-family:var(--serif);font-weight:560;font-size:clamp(26px,3.6vw,36px);letter-spacing:-.02em;margin:0 0 20px;line-height:1.1}
 .about p{color:var(--ink-soft);font-size:16.5px;margin:0 0 18px;max-width:56ch}
 .facts{display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.about-photo{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-bottom:1px solid var(--line)}
 .fact{display:flex;gap:14px;padding:18px 20px;border-bottom:1px solid var(--line-soft)}
 .fact:last-child{border-bottom:0}
 .fact .k{font-size:13px;color:var(--muted);width:96px;flex-shrink:0;padding-top:2px}
