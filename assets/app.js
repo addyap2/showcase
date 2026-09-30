@@ -373,7 +373,7 @@
   (function heroWall() {
     var wall = document.querySelector(".hero-wall");
     if (!wall) return;
-    var colA = ["ristorante-lola", "wall-street", "grammatica", "filton-athletic-fc", "toeic-success-hub", "tandoor-global"];
+    var colA = ["ristorante-lola", "wall-street", "so-good-diner", "grammatica", "filton-athletic-fc", "toeic-success-hub", "tandoor-global"];
     var colB = ["stephanie", "planb-global-connect", "filton-social-club", "addys-english-pro", "speakup", "listening-english"];
     function col(list, cls) {
       var items = list.concat(list).map(function (s) {
