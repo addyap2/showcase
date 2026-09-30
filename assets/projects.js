@@ -40,6 +40,17 @@ window.PROJECTS = [
     tags: { fr: ["Pub & resto", "Matchs & concerts"], en: ["Pub & food", "Sport & live music"] }
   },
   {
+    slug: "so-good-diner",
+    title: "So Good Diner",
+    url: "https://so-good-diner.vercel.app",
+    category: "business",
+    blurb: {
+      fr: "Un diner gourmet à Fréjus — burgers maison et kumpir généreux, pain du boulanger et viande du boucher, préparés sous vos yeux. Menu, avis et itinéraire.",
+      en: "A gourmet diner in Fréjus — homemade burgers and generous kumpir, baker's bread and butcher's meat, prepared before your eyes. Menu, reviews and directions."
+    },
+    tags: { fr: ["Burgers & kumpir", "Fait maison"], en: ["Burgers & kumpir", "Homemade"] }
+  },
+  {
     slug: "tandoor-global",
     title: "Mr. Tandoors",
     url: "https://tandoor-global.vercel.app",
