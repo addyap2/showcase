@@ -176,7 +176,7 @@ body:after{
 
 .hero-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:36px;align-items:center}
 .hero-content{min-width:0}
-@media(max-width:980px){.hero-grid{grid-template-columns:1fr}.hero-wall{display:none}}
+@media(max-width:980px){.hero-grid{grid-template-columns:1fr}}
 
 /* hero "wall of work" */
 .hero-wall{
@@ -201,6 +201,20 @@ body:after{
 @keyframes marqueeDown{from{transform:translateY(-50%)}to{transform:translateY(0)}}
 .thumb{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow),inset 0 0 0 1px rgba(20,24,30,.05);background:#fff}
 .thumb img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top center}
+/* mobile: the two-column carousel becomes one horizontal scrolling strip below the hero */
+@media(max-width:980px){
+  .hero-wall{
+    height:auto;perspective:none;margin-top:22px;
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  }
+  .hero-wall:after{display:none}
+  .wall-stage{position:static;display:block;transform:none;gap:0}
+  .col-b{display:none}
+  .col-a .wall-track{flex-direction:row;gap:12px;animation:marqueeLeft 45s linear infinite}
+  .col-a .thumb{flex:0 0 auto;width:200px}
+}
+@keyframes marqueeLeft{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* hero entrance */
 @keyframes riseIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
