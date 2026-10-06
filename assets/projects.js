@@ -26,7 +26,17 @@ window.PROJECTS = [
       fr: "Un site chaleureux en quatre langues pour un restaurant familial des Marches à Fermignano — menu, galerie et réservation, avec une vraie identité de lieu.",
       en: "A warm, four-language site for a family Marche-region restaurant in Fermignano — menu, gallery and booking, with an unmistakable sense of place."
     },
-    tags: { fr: ["Restaurant", "4 langues"], en: ["Restaurant", "4 languages"] }
+    tags: { fr: ["Restaurant", "4 langues"], en: ["Restaurant", "4 languages"] },
+    // PLACEHOLDER testimonial — replace quote + name with the real client's words
+    testimonial: {
+      placeholder: true,
+      quote: {
+        fr: "Notre site reflète enfin l'ambiance du restaurant — et les réservations ont suivi.",
+        en: "Our site finally captures the restaurant's atmosphere — and the bookings followed."
+      },
+      name: "Nom du client",
+      role: { fr: "Restaurant · Fermignano", en: "Restaurant · Fermignano" }
+    }
   },
   {
     slug: "wall-street",
@@ -37,7 +47,17 @@ window.PROJECTS = [
       fr: "Un pub-restaurant à Fréjus — concerts live, matchs sur écran géant et cuisine généreuse faite maison, avec menu de la semaine et réservation en ligne.",
       en: "A pub and restaurant in Fréjus — live music, big-screen match days and generous homemade food, with a weekly menu and online booking."
     },
-    tags: { fr: ["Pub & resto", "Matchs & concerts"], en: ["Pub & food", "Sport & live music"] }
+    tags: { fr: ["Pub & resto", "Matchs & concerts"], en: ["Pub & food", "Sport & live music"] },
+    // PLACEHOLDER testimonial — replace quote + name with the real client's words
+    testimonial: {
+      placeholder: true,
+      quote: {
+        fr: "Un site vraiment à notre image : les clients trouvent le menu et les matchs en un clin d'œil.",
+        en: "A site that's truly us — customers find the menu and the match days in seconds."
+      },
+      name: "Nom du client",
+      role: { fr: "Pub-restaurant · Fréjus", en: "Pub & restaurant · Fréjus" }
+    }
   },
   {
     slug: "so-good-diner",
@@ -48,7 +68,17 @@ window.PROJECTS = [
       fr: "Un diner gourmet à Fréjus — burgers maison et kumpir généreux, pain du boulanger et viande du boucher, préparés sous vos yeux. Menu, avis et itinéraire.",
       en: "A gourmet diner in Fréjus — homemade burgers and generous kumpir, baker's bread and butcher's meat, prepared before your eyes. Menu, reviews and directions."
     },
-    tags: { fr: ["Burgers & kumpir", "Fait maison"], en: ["Burgers & kumpir", "Homemade"] }
+    tags: { fr: ["Burgers & kumpir", "Fait maison"], en: ["Burgers & kumpir", "Homemade"] },
+    // PLACEHOLDER testimonial — replace quote + name with the real client's words
+    testimonial: {
+      placeholder: true,
+      quote: {
+        fr: "Rapide, clair et appétissant — exactement ce qu'il fallait pour le diner.",
+        en: "Fast, clear and appetising — exactly right for the diner."
+      },
+      name: "Nom du client",
+      role: { fr: "Diner · Fréjus", en: "Diner · Fréjus" }
+    }
   },
   {
     slug: "tandoor-global",
@@ -60,7 +90,17 @@ window.PROJECTS = [
       fr: "Un site orienté commande pour un restaurant indien tandoor 100% halal à Fréjus — menu, histoire et commande à emporter en un clic.",
       en: "An ordering-focused site for a 100% halal Indian tandoor restaurant in Fréjus — menu, story and click-to-order takeaway."
     },
-    tags: { fr: ["Restaurant", "Commande en ligne"], en: ["Restaurant", "Order online"] }
+    tags: { fr: ["Restaurant", "Commande en ligne"], en: ["Restaurant", "Order online"] },
+    // PLACEHOLDER testimonial — replace quote + name with the real client's words
+    testimonial: {
+      placeholder: true,
+      quote: {
+        fr: "La commande à emporter est devenue simple, et le site donne faim dès la page d'accueil.",
+        en: "Takeaway ordering is simple now, and the site makes you hungry from the homepage."
+      },
+      name: "Nom du client",
+      role: { fr: "Restaurant · Fréjus", en: "Restaurant · Fréjus" }
+    }
   },
   {
     slug: "stephanie",
@@ -71,7 +111,17 @@ window.PROJECTS = [
       fr: "Le site d'une praticienne du bien-être à Saint-Raphaël — sophrologie, soins énergétiques, drainage lymphatique et yoga enfants, avec réservation en ligne.",
       en: "A wellbeing practitioner's site in Saint-Raphaël — sophrology, energy healing, lymphatic drainage and children's yoga, with online booking."
     },
-    tags: { fr: ["Bien-être", "Réservation en ligne"], en: ["Wellbeing", "Online booking"] }
+    tags: { fr: ["Bien-être", "Réservation en ligne"], en: ["Wellbeing", "Online booking"] },
+    // PLACEHOLDER testimonial — replace quote + name with the real client's words
+    testimonial: {
+      placeholder: true,
+      quote: {
+        fr: "Un site apaisant et professionnel ; mes clientes réservent désormais en ligne sans effort.",
+        en: "A calm, professional site; my clients now book online effortlessly."
+      },
+      name: "Nom du client",
+      role: { fr: "Bien-être · Saint-Raphaël", en: "Wellbeing · Saint-Raphaël" }
+    }
   },
   {
     slug: "planb-global-connect",
@@ -82,7 +132,17 @@ window.PROJECTS = [
       fr: "Un site bilingue de gestion de projet pour la Côte d'Azur — plus de 30 ans d'expérience du bâtiment, du premier croquis à la livraison finale.",
       en: "A bilingual project-management site for the Côte d'Azur — 30+ years of build experience, from first sketch to final handover."
     },
-    tags: { fr: ["Gestion de projet", "EN / FR"], en: ["Project mgmt", "EN / FR"] }
+    tags: { fr: ["Gestion de projet", "EN / FR"], en: ["Project mgmt", "EN / FR"] },
+    // PLACEHOLDER testimonial — replace quote + name with the real client's words
+    testimonial: {
+      placeholder: true,
+      quote: {
+        fr: "Bilingue et élégant, il inspire confiance dès la première visite.",
+        en: "Bilingual and elegant — it earns trust from the very first visit."
+      },
+      name: "Nom du client",
+      role: { fr: "Gestion de projet · Côte d'Azur", en: "Project management · Côte d'Azur" }
+    }
   },
 
   // ---- Associations & sport ----

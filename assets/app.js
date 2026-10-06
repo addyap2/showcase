@@ -43,6 +43,7 @@
       "card.visit": "Voir le site",
       "card.progress": "En cours",
       "card.soon": "Bientôt en ligne",
+      "testi.sample": "Exemple de témoignage",
       "about.eyebrow": "À propos",
       "about.h2": "Un concepteur de sites et d'outils, avec l'œil d'un formateur.",
       "about.p1": "Je m'appelle Antony Addy. Je conçois et développe des sites web et des outils sur mesure, en anglais comme en français, depuis le Sud de la France. Formateur bilingue certifié à l'origine, j'ai commencé par créer les outils dont mes propres apprenants avaient besoin ; aujourd'hui, je les conçois pour des restaurants, des commerces, des associations et des entreprises.",
@@ -112,6 +113,7 @@
       "card.visit": "Visit site",
       "card.progress": "In progress",
       "card.soon": "Coming soon",
+      "testi.sample": "Sample testimonial",
       "about.eyebrow": "About",
       "about.h2": "A builder of websites and tools, with a trainer's eye.",
       "about.p1": "I'm Antony Addy. I design and build custom websites and tools — in English and French — from the South of France. A certified bilingual trainer by background, I started by building the tools my own learners needed; today I build them for restaurants, local businesses, community clubs and companies too.",
@@ -270,6 +272,16 @@
       var footHtml = inProgress
         ? '<span class="soon">' + t("card.soon") + "</span>"
         : '<span class="visit">' + t("card.visit") + ' <span class="arr">↗</span></span>';
+      // client testimonial (commercial projects only); placeholder ones carry a visible "Exemple" label
+      var testiHtml = p.testimonial
+        ? '<figure class="testi' + (p.testimonial.placeholder ? " is-sample" : "") + '">' +
+            (p.testimonial.placeholder ? '<span class="testi-tag">' + t("testi.sample") + "</span>" : "") +
+            "<blockquote>" + p.testimonial.quote[lang] + "</blockquote>" +
+            '<figcaption><span class="testi-name">' + p.testimonial.name + "</span>" +
+            (p.testimonial.role ? '<span class="testi-role"> · ' + p.testimonial.role[lang] + "</span>" : "") +
+            "</figcaption>" +
+          "</figure>"
+        : "";
       card.innerHTML =
         coverHtml +
         '<div class="shot">' +
@@ -281,6 +293,7 @@
           '<h3 class="card-link">' + heading + "</h3>" +
           "<p>" + p.blurb[lang] + "</p>" +
           '<div class="tags">' + tags + "</div>" +
+          testiHtml +
           '<div class="card-foot">' + footHtml + "</div>" +
         "</div>";
       var cover = card.querySelector("a.cover");
