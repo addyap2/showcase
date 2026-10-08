@@ -40,9 +40,9 @@
       "filter.all": "Tout",
       "work.count": "projets",
       "hero.preview": "Aperçu des réalisations",
-      "hero.featured": "Un aperçu du travail",
-      "hero.note": "Des univers différents. Le même soin du détail.",
-      "group.local": "Créations locales",
+      "hero.pause": "Mettre l’animation en pause",
+      "hero.resume": "Reprendre l’animation",
+            "group.local": "Créations locales",
       "group.learning": "Éducation & formation",
       "card.visit": "Voir le site",
       "card.progress": "En cours",
@@ -114,9 +114,9 @@
       "filter.all": "All work",
       "work.count": "projects",
       "hero.preview": "Work previews",
-      "hero.featured": "A closer look at the work",
-      "hero.note": "Different worlds. The same attention to detail.",
-      "group.local": "Local creations",
+      "hero.pause": "Pause animation",
+      "hero.resume": "Resume animation",
+            "group.local": "Local creations",
       "group.learning": "Learning & training",
       "card.visit": "Visit site",
       "card.progress": "In progress",
@@ -193,20 +193,18 @@
       a: { fr: "Une idée, même approximative, et le contenu dont vous disposez. Je m'occupe du reste et je vous guide.", en: "A rough idea and whatever content you have. I take care of the rest and guide you through it." } }
   ];
 
-  // Curated, static previews keep the work legible and avoid continuous motion.
+  // The original animated wall of work, with opposing desktop columns.
   function renderHero() {
     var wall = document.querySelector(".hero-wall");
-    if (!wall) return;
-    wall.setAttribute("aria-label", t("hero.preview"));
-    var featured = ["ristorante-lola", "stephanie", "grammatica"];
-    wall.innerHTML = '<div class="preview-heading"><span class="preview-dot" aria-hidden="true"></span>' + t("hero.featured") + '<span class="preview-index" aria-hidden="true">01 — 03</span></div><div class="preview-stage">' + featured.map(function (slug, i) {
-      var p = projects.find(function (item) { return item.slug === slug; });
-      if (!p) return "";
-      return '<a class="preview-window preview-' + i + '" href="' + p.url + '" target="_blank" rel="noopener" aria-label="' + t("card.visit") + ' : ' + p.title + '"><div class="browser-bar"><span class="browser-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>' + host(p.url) + '</span><span aria-hidden="true">↗</span></div><img src="screenshots/' + p.slug + '.jpg" alt="' + p.title + '" width="1200" height="750" decoding="async"' + (i === 0 ? ' fetchpriority="high"' : '') + '></a>';
-    }).join("") + '</div><p class="preview-note">' + t("hero.note") + '</p>';
-    wall.querySelectorAll("a").forEach(function (a, i) {
-      a.addEventListener("click", function () { track("project_visit", { slug: featured[i], placement: "hero" }); });
-    });
+    if (!wall || wall.querySelector(".wall-stage")) return;
+    var colA = ["ristorante-lola", "wall-street", "so-good-diner", "grammatica", "filton-athletic-fc", "toeic-success-hub", "tandoor-global"];
+    var colB = ["stephanie", "planb-global-connect", "filton-social-club", "addys-english-pro", "speakup", "listening-english"];
+    function col(list, cls) {
+      return '<div class="wall-col ' + cls + '"><div class="wall-track">' + list.concat(list).map(function (slug, i) {
+        return '<figure class="thumb"><img src="screenshots/' + slug + '.jpg" alt="" width="1200" height="750" decoding="async"' + (i > 1 ? ' loading="lazy"' : '') + '></figure>';
+      }).join("") + '</div></div>';
+    }
+    wall.innerHTML = '<div class="wall-stage">' + col(colA, "col-a") + col(colB, "col-b") + '</div>';
   }
 
   // ---------- static text ----------
@@ -214,6 +212,12 @@
     document.documentElement.lang = lang;
     document.title = t("doc.title");
     renderHero();
+    var motionToggle = document.querySelector(".hero-motion-toggle");
+    if (motionToggle) {
+      motionToggle.dataset.labelPause = t("hero.pause");
+      motionToggle.dataset.labelResume = t("hero.resume");
+      motionToggle.textContent = t(motionToggle.getAttribute("aria-pressed") === "true" ? "hero.resume" : "hero.pause");
+    }
     document.querySelector(".filters").setAttribute("aria-label", t("work.eyebrow"));
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var key = el.getAttribute("data-i18n");

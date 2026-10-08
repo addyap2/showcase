@@ -80,6 +80,54 @@
     }
   })();
 
+  // ---------- animated hero (desktop tilt + accessible pause) ----------
+  (function animatedHero() {
+    var hero = document.querySelector(".hero");
+    var stage = document.querySelector(".wall-stage");
+    var button = document.querySelector(".hero-motion-toggle");
+    if (!hero || !stage || !button) return;
+    var preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var pointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+    var frame = null;
+    function updatePreference() {
+      button.hidden = preference.matches;
+      if (preference.matches) stage.style.transform = "";
+    }
+    updatePreference();
+    preference.addEventListener("change", updatePreference);
+    button.addEventListener("click", function () {
+      var paused = hero.classList.toggle("motion-paused");
+      button.setAttribute("aria-pressed", String(paused));
+      button.textContent = paused ? button.dataset.labelResume : button.dataset.labelPause;
+    });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        hero.classList.toggle("hero-offscreen", !entries[0].isIntersecting);
+      }).observe(hero);
+    }
+    document.addEventListener("visibilitychange", function () {
+      hero.classList.toggle("hero-tab-hidden", document.hidden);
+    });
+    hero.addEventListener("pointermove", function (event) {
+      if (preference.matches || !pointer.matches || window.innerWidth <= 980 || hero.classList.contains("motion-paused")) return;
+      if (frame !== null) cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(function () {
+        var rect = hero.getBoundingClientRect();
+        var px = (event.clientX - rect.left) / rect.width - 0.5;
+        var py = (event.clientY - rect.top) / rect.height - 0.5;
+        stage.style.transform = "rotateY(" + (-9 + px * 6).toFixed(2) + "deg) rotateX(" + (4 - py * 6).toFixed(2) + "deg) rotate(1deg)";
+        frame = null;
+      });
+    }, { passive: true });
+    function resetTilt() {
+      if (frame !== null) cancelAnimationFrame(frame);
+      frame = null;
+      stage.style.transform = "";
+    }
+    hero.addEventListener("pointerleave", resetTilt);
+    window.addEventListener("resize", resetTilt, { passive: true });
+  })();
+
   // ---------- mobile menu (all devices) ----------
   (function mobileMenu() {
     var btn = document.querySelector(".nav-toggle");

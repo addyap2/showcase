@@ -9,6 +9,14 @@ Escape closes it and returns keyboard focus to the toggle. Outside clicks and
 resizing to desktop also close the menu. There are no magnetic buttons or
 replacement cursors.
 
+## Hero
+
+The animated screenshots are decorative; the project gallery provides the
+actual visit links. The labelled pause/resume button applies to the wall,
+shimmer and decorative marks, follows the chosen language, and uses
+`aria-pressed` to announce its paused state. Reduced-motion users see a static
+wall. Desktop pointer movement adds the original subtle perspective tilt.
+
 ## Project gallery
 
 Live projects have one full-card link with a meaningful project name, the real

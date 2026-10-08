@@ -1,14 +1,21 @@
 # Motion — Antony Addy showcase
 
-The work and headlines are visible as soon as the page renders. The three hero
-previews are static, linked project screenshots; they do not scroll or tilt.
+The hero restores the original wall of work: two columns of screenshots drift
+in opposite directions with perspective and subtle pointer tilt. At 980px and
+below, the wall becomes a single horizontal moving strip. The heading reveals
+word by word, its italic phrase shimmers, and the numeric project count rises.
+The original small decorative marks and staggered hero entrance are restored.
+
+A labelled pause/resume button controls the continuous hero animation. Motion
+pauses automatically when the hero leaves the viewport or the tab is hidden.
+Duplicated tracks include the gap at the loop boundary to avoid a jump.
 
 ## Tokens and feedback
 
 `--ease: cubic-bezier(.16,1,.3,1)` controls a short, once-only reveal. Buttons
-lift 2px on hover, project screenshots zoom to 1.025, and preview windows lift
-8px. Filters fade their results over 250ms. No custom cursor, pointer tracking,
-continuous shimmer, marquee, count-up, or parallax is used.
+lift 2px on hover and project screenshots zoom to 1.025.
+Filters fade their results over 250ms. Hero pointer tilt is throttled with
+requestAnimationFrame. The native cursor and stable buttons are retained.
 
 ## Scroll reveals
 
@@ -24,5 +31,6 @@ requestAnimationFrame. There is no perpetual animation loop.
 ## Reduced motion
 
 `prefers-reduced-motion: reduce` disables smooth scrolling, reveals, transitions,
-and hover transforms. The layout and controls stay the same. Video autoplay is
+and hover transforms. The hero wall becomes static, words and numbers stay
+visible, and the animation toggle is hidden. Video autoplay is
 also disabled; native playback controls remain available.

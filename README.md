@@ -35,7 +35,7 @@ python3 -m http.server 8777
 
 The page uses a warm paper, navy and amber palette with Fraunces headings and
 Inter body text. Spacing tokens, two-column desktop project cards, a single-column
-phone gallery and three static, linked hero previews provide the visual hierarchy.
+phone gallery and an animated wall of project screenshots provide the visual hierarchy.
 The portfolio comes immediately after the hero. See `MOTION.md` and
 `INTERACTIONS.md` for the interaction and accessibility behavior.
 
