@@ -18,11 +18,11 @@
       "nav.cta": "Démarrer un projet",
       "hero.kicker": "Conçus et développés avec l'IA",
       "hero.h1": "Des sites et des outils soignés, <em>pensés pour votre activité</em>.",
-      "hero.lead": "Je conçois et développe des sites web et des outils sur mesure, rapides et bilingues — des sites de commerces et d'associations aux tableaux de bord et aux plateformes d'apprentissage. De vrais produits, en ligne, développés avec l'IA et l'œil d'un formateur pour ceux qui les utilisent.",
+      "hero.lead": "Des sites web multilingues et des outils sur mesure. Un design soigné, un interlocuteur, de l’idée à la mise en ligne.",
       "hero.cta1": "Voir les réalisations",
       "hero.cta2": "Démarrer un projet",
-      "stat1.n": "20", "stat1.l": "Projets en ligne livrés",
-      "stat2.n": "Multilingue", "stat2.l": "Dans la langue de votre public, quelle qu'elle soit",
+      "stat1.n": "20", "stat1.l": "Projets présentés",
+      "stat2.n": "Multilingue", "stat2.l": "Dans la langue de votre public",
       "video.eyebrow": "En vidéo · 1 min",
       "video.h2": "De l'idée au lancement, en une minute.",
       "video.p": "Une courte vidéo pour comprendre ma façon de travailler : ce qui coince habituellement avec le web, et comment, l'IA dans la boucle, je passe de votre idée à un produit en ligne — soigné et bilingue — en quelques jours.",
@@ -36,9 +36,13 @@
       "video.aria": "Vidéo : sites web sur mesure, développés en quelques jours",
       "work.eyebrow": "Réalisations choisies",
       "work.h2": "Un portfolio de produits réels, en ligne.",
-      "work.p": "Chaque projet ci-dessous est en ligne. Filtrez par domaine, puis cliquez sur une carte pour ouvrir le site.",
+      "work.p": "Des restaurants aux applis d’apprentissage : explorez les projets par domaine et découvrez les sites en ligne.",
       "filter.all": "Tout",
-      "group.local": "Créations locales",
+      "work.count": "projets",
+      "hero.preview": "Aperçu des réalisations",
+      "hero.pause": "Mettre l’animation en pause",
+      "hero.resume": "Reprendre l’animation",
+            "group.local": "Créations locales",
       "group.learning": "Éducation & formation",
       "card.visit": "Voir le site",
       "card.progress": "En cours",
@@ -88,11 +92,11 @@
       "nav.cta": "Start a project",
       "hero.kicker": "Designed & built with AI",
       "hero.h1": "Websites and tools, <em>crafted to fit</em> your business.",
-      "hero.lead": "I design and build fast, bilingual websites and custom tools — from business and community sites to dashboards and learning platforms. Real, live products, built with AI in the loop and a trainer's eye for the people who use them.",
+      "hero.lead": "Multilingual websites and custom tools. Thoughtful design and one person to guide your project, from first idea to launch.",
       "hero.cta1": "See the work",
       "hero.cta2": "Start a project",
-      "stat1.n": "20", "stat1.l": "Live projects shipped",
-      "stat2.n": "Multilingual", "stat2.l": "In your audience's language, whatever it is",
+      "stat1.n": "20", "stat1.l": "Projects showcased",
+      "stat2.n": "Multilingual", "stat2.l": "In your audience’s language",
       "video.eyebrow": "Watch · 1 min",
       "video.h2": "From idea to launch, in one minute.",
       "video.p": "A short video on how I work: what usually makes the web slow and painful, and how — with AI in the loop — I turn your idea into a polished, bilingual, live product in a matter of days.",
@@ -106,9 +110,13 @@
       "video.aria": "Video: custom websites, built in a few days",
       "work.eyebrow": "Selected work",
       "work.h2": "A portfolio of live, working products.",
-      "work.p": "Every project below is deployed and online. Filter by field, then click any card to open the real site.",
+      "work.p": "From restaurants to learning apps: explore the projects by field and visit the live sites.",
       "filter.all": "All work",
-      "group.local": "Local creations",
+      "work.count": "projects",
+      "hero.preview": "Work previews",
+      "hero.pause": "Pause animation",
+      "hero.resume": "Resume animation",
+            "group.local": "Local creations",
       "group.learning": "Learning & training",
       "card.visit": "Visit site",
       "card.progress": "In progress",
@@ -185,12 +193,35 @@
       a: { fr: "Une idée, même approximative, et le contenu dont vous disposez. Je m'occupe du reste et je vous guide.", en: "A rough idea and whatever content you have. I take care of the rest and guide you through it." } }
   ];
 
+  // The original animated wall of work, with opposing desktop columns.
+  function renderHero() {
+    var wall = document.querySelector(".hero-wall");
+    if (!wall || wall.querySelector(".wall-stage")) return;
+    var colA = ["ristorante-lola", "wall-street", "so-good-diner", "grammatica", "filton-athletic-fc", "toeic-success-hub", "tandoor-global"];
+    var colB = ["stephanie", "planb-global-connect", "filton-social-club", "addys-english-pro", "speakup", "listening-english"];
+    function col(list, cls) {
+      return '<div class="wall-col ' + cls + '"><div class="wall-track">' + list.concat(list).map(function (slug, i) {
+        return '<figure class="thumb"><img src="screenshots/' + slug + '.jpg" alt="" width="1200" height="750" decoding="async"' + (i > 1 ? ' loading="lazy"' : '') + '></figure>';
+      }).join("") + '</div></div>';
+    }
+    wall.innerHTML = '<div class="wall-stage">' + col(colA, "col-a") + col(colB, "col-b") + '</div>';
+  }
+
   // ---------- static text ----------
   function applyStatic() {
     document.documentElement.lang = lang;
     document.title = t("doc.title");
+    renderHero();
+    var motionToggle = document.querySelector(".hero-motion-toggle");
+    if (motionToggle) {
+      motionToggle.dataset.labelPause = t("hero.pause");
+      motionToggle.dataset.labelResume = t("hero.resume");
+      motionToggle.textContent = t(motionToggle.getAttribute("aria-pressed") === "true" ? "hero.resume" : "hero.pause");
+    }
+    document.querySelector(".filters").setAttribute("aria-label", t("work.eyebrow"));
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
-      el.textContent = t(el.getAttribute("data-i18n"));
+      var key = el.getAttribute("data-i18n");
+      el.textContent = key === "stat1.n" ? String(projects.length) : t(key);
     });
     document.querySelectorAll("[data-i18n-html]").forEach(function (el) {
       el.innerHTML = t(el.getAttribute("data-i18n-html"));
@@ -207,7 +238,9 @@
       sb.setAttribute("data-label-off", t("video.sound"));
       sb.setAttribute("data-label-on", t("video.sound_on"));
       var soundOn = sb.getAttribute("aria-pressed") === "true";
-      sb.setAttribute("aria-label", soundOn ? t("video.sound_on") : t("video.sound"));
+      var soundLabel = soundOn ? t("video.sound_on") : t("video.sound");
+      sb.setAttribute("aria-label", soundLabel);
+      sb.querySelector("span").textContent = soundLabel;
     }
     // language toggle: announce the active language to assistive tech
     document.querySelectorAll(".lang-toggle button").forEach(function (b) {
@@ -225,12 +258,15 @@
     function pill(id, label) {
       var b = document.createElement("button");
       b.className = "pill" + (id === currentFilter ? " active" : "");
+      b.type = "button";
+      b.setAttribute("aria-pressed", String(id === currentFilter));
       b.dataset.filter = id;
       b.innerHTML = label + '<span class="c">' + counts[id] + "</span>";
       b.addEventListener("click", function () {
         currentFilter = id;
-        document.querySelectorAll(".pill").forEach(function (p) { p.classList.remove("active"); });
+        document.querySelectorAll(".pill").forEach(function (p) { p.classList.remove("active"); p.setAttribute("aria-pressed", "false"); });
         b.classList.add("active");
+        b.setAttribute("aria-pressed", "true");
         applyFilter(id, true);
         track("filter", { category: id });
       });
@@ -259,23 +295,21 @@
       }
       var card = document.createElement("article");
       card.className = "card reveal";
-      card.style.setProperty("--d", (i % 3) * 90 + "ms");
       card.dataset.category = p.category;
       card.dataset.group = grp;
       var tags = (p.tags[lang] || []).map(function (x) { return "<span>" + x + "</span>"; }).join("");
       // In-progress projects aren't live yet: show the card but don't link out.
       var inProgress = p.status === "progress";
       if (inProgress) card.className += " is-progress";
-      var heading = inProgress ? p.title : host(p.url);
+      var heading = p.title;
       var coverHtml = inProgress ? "" :
         '<a class="cover" href="' + p.url + '" target="_blank" rel="noopener" aria-label="' + p.title + '"></a>';
       var footHtml = inProgress
         ? '<span class="soon">' + t("card.soon") + "</span>"
         : '<span class="visit">' + t("card.visit") + ' <span class="arr">↗</span></span>';
-      // client testimonial (commercial projects only); placeholder ones carry a visible "Exemple" label
-      var testiHtml = p.testimonial
-        ? '<figure class="testi' + (p.testimonial.placeholder ? " is-sample" : "") + '">' +
-            (p.testimonial.placeholder ? '<span class="testi-tag">' + t("testi.sample") + "</span>" : "") +
+      // Only publish actual client testimonials.
+      var testiHtml = p.testimonial && !p.testimonial.placeholder
+        ? '<figure class="testi">' +
             "<blockquote>" + p.testimonial.quote[lang] + "</blockquote>" +
             '<figcaption><span class="testi-name">' + p.testimonial.name + "</span>" +
             (p.testimonial.role ? '<span class="testi-role"> · ' + p.testimonial.role[lang] + "</span>" : "") +
@@ -285,16 +319,16 @@
       card.innerHTML =
         coverHtml +
         '<div class="shot">' +
-          '<span class="cat-tag">' + (catLabel[p.category][lang] || "") + "</span>" +
           (inProgress ? '<span class="status-tag">' + t("card.progress") + "</span>" : "") +
-          '<img loading="lazy" src="screenshots/' + p.slug + '.jpg" alt="' + p.title + '">' +
+          '<img loading="lazy" decoding="async" width="1200" height="750" src="screenshots/' + p.slug + '.jpg" alt="' + p.title + '">' +
         "</div>" +
         '<div class="card-body">' +
+          '<div class="card-meta"><span class="card-category">' + (catLabel[p.category][lang] || "") + '</span><span class="project-number">' + String(i + 1).padStart(2, "0") + "</span></div>" +
           '<h3 class="card-link">' + heading + "</h3>" +
           "<p>" + p.blurb[lang] + "</p>" +
           '<div class="tags">' + tags + "</div>" +
           testiHtml +
-          '<div class="card-foot">' + footHtml + "</div>" +
+          '<div class="card-foot"><span class="project-domain">' + (inProgress ? "" : host(p.url)) + "</span>" + footHtml + "</div>" +
         "</div>";
       var cover = card.querySelector("a.cover");
       if (cover) cover.addEventListener("click", function () {
@@ -335,6 +369,8 @@
   }
 
   function applyFilter(id, animate) {
+    var count = projects.filter(function (p) { return id === "all" || p.category === id; }).length;
+    document.getElementById("work-count").textContent = count + " " + t("work.count");
     // group headings only make sense on the combined "all" view
     document.querySelectorAll(".grid-group").forEach(function (h) {
       h.style.display = id === "all" ? "" : "none";
@@ -382,23 +418,7 @@
     b.classList.toggle("active", b.dataset.lang === lang);
   });
 
-  // hero "wall of work" — curated screenshots drifting in two columns
-  (function heroWall() {
-    var wall = document.querySelector(".hero-wall");
-    if (!wall) return;
-    var colA = ["ristorante-lola", "wall-street", "so-good-diner", "grammatica", "filton-athletic-fc", "toeic-success-hub", "tandoor-global"];
-    var colB = ["stephanie", "planb-global-connect", "filton-social-club", "addys-english-pro", "speakup", "listening-english"];
-    function col(list, cls) {
-      var items = list.concat(list).map(function (s) {
-        // lazy: on mobile the wall is display:none, so these never download
-        return '<figure class="thumb"><img src="screenshots/' + s + '.jpg" alt="" loading="lazy" decoding="async"></figure>';
-      }).join("");
-      return '<div class="wall-col ' + cls + '"><div class="wall-track">' + items + "</div></div>";
-    }
-    wall.innerHTML = '<div class="wall-stage">' + col(colA, "col-a") + col(colB, "col-b") + "</div>";
-  })();
-
-  // scroll reveals, image blur-up and card tilt are handled by motion.js
+  // Reveal new content after a language or filter update.
   if (window.motion) window.motion.refresh();
 
   var y = document.getElementById("year");

@@ -1,9 +1,6 @@
-/* Interaction system — see INTERACTIONS.md.
-   Desktop enhancement only; touch + reduced-motion get simpler feedback. */
+/* Navigation and video controls — see INTERACTIONS.md. */
 (function () {
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var fine = window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-  var rich = fine && !reduce;
 
   // ---------- scroll-spy nav (all devices) ----------
   (function spy() {
@@ -12,7 +9,7 @@
       var id = a.getAttribute("href");
       if (id && id.charAt(0) === "#") links[id.slice(1)] = a;
     });
-    var sections = ["video", "work", "about", "services", "faq", "contact"]
+    var sections = ["work", "video", "about", "services", "faq", "contact"]
       .map(function (id) { return document.getElementById(id); })
       .filter(Boolean);
     if (!("IntersectionObserver" in window) || !sections.length) return;
@@ -26,7 +23,11 @@
       // at the very bottom, snap to the final section (it can't reach the line)
       if (window.innerHeight + Math.ceil(window.pageYOffset) >= document.documentElement.scrollHeight - 2)
         current = ids[ids.length - 1];
-      Object.keys(links).forEach(function (k) { links[k].classList.toggle("active", k === current); });
+      Object.keys(links).forEach(function (k) {
+        links[k].classList.toggle("active", k === current);
+        if (k === current) links[k].setAttribute("aria-current", "location");
+        else links[k].removeAttribute("aria-current");
+      });
     }
     function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -51,7 +52,6 @@
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
           if (e.isIntersecting) {
-            frame.classList.add("playing");
             var p = v.play(); if (p && p.catch) p.catch(function () {});
           } else if (!v.ended) {
             v.pause();
@@ -71,10 +71,61 @@
         frame.classList.toggle("sound-on", on);
         soundBtn.setAttribute("aria-pressed", String(on));
         var label = soundBtn.getAttribute(on ? "data-label-on" : "data-label-off");
-        if (label) soundBtn.setAttribute("aria-label", label);
+        if (label) {
+          soundBtn.setAttribute("aria-label", label);
+          soundBtn.querySelector("span").textContent = label;
+        }
         if (on && window.track) window.track("video_sound_on");
       });
     }
+  })();
+
+  // ---------- animated hero (desktop tilt + accessible pause) ----------
+  (function animatedHero() {
+    var hero = document.querySelector(".hero");
+    var stage = document.querySelector(".wall-stage");
+    var button = document.querySelector(".hero-motion-toggle");
+    if (!hero || !stage || !button) return;
+    var preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var pointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+    var frame = null;
+    function updatePreference() {
+      button.hidden = preference.matches;
+      if (preference.matches) stage.style.transform = "";
+    }
+    updatePreference();
+    preference.addEventListener("change", updatePreference);
+    button.addEventListener("click", function () {
+      var paused = hero.classList.toggle("motion-paused");
+      button.setAttribute("aria-pressed", String(paused));
+      button.textContent = paused ? button.dataset.labelResume : button.dataset.labelPause;
+    });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        hero.classList.toggle("hero-offscreen", !entries[0].isIntersecting);
+      }).observe(hero);
+    }
+    document.addEventListener("visibilitychange", function () {
+      hero.classList.toggle("hero-tab-hidden", document.hidden);
+    });
+    hero.addEventListener("pointermove", function (event) {
+      if (preference.matches || !pointer.matches || window.innerWidth <= 980 || hero.classList.contains("motion-paused")) return;
+      if (frame !== null) cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(function () {
+        var rect = hero.getBoundingClientRect();
+        var px = (event.clientX - rect.left) / rect.width - 0.5;
+        var py = (event.clientY - rect.top) / rect.height - 0.5;
+        stage.style.transform = "rotateY(" + (-9 + px * 6).toFixed(2) + "deg) rotateX(" + (4 - py * 6).toFixed(2) + "deg) rotate(1deg)";
+        frame = null;
+      });
+    }, { passive: true });
+    function resetTilt() {
+      if (frame !== null) cancelAnimationFrame(frame);
+      frame = null;
+      stage.style.transform = "";
+    }
+    hero.addEventListener("pointerleave", resetTilt);
+    window.addEventListener("resize", resetTilt, { passive: true });
   })();
 
   // ---------- mobile menu (all devices) ----------
@@ -91,81 +142,11 @@
       set(!nav.classList.contains("open"));
     });
     nav.addEventListener("click", function (e) { if (e.target.closest("a")) set(false); });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape") set(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && nav.classList.contains("open")) { set(false); btn.focus(); } });
     document.addEventListener("click", function (e) {
       if (nav.classList.contains("open") && !nav.contains(e.target) && !btn.contains(e.target)) set(false);
     });
-    window.addEventListener("resize", function () { if (window.innerWidth > 820) set(false); }, { passive: true });
+    window.addEventListener("resize", function () { if (window.innerWidth > 900) set(false); }, { passive: true });
   })();
 
-  if (!rich) return; // everything below is desktop-only richness
-
-  // ---------- custom cursor ----------
-  var ring = document.querySelector(".cursor-ring");
-  var dot = document.querySelector(".cursor-dot");
-  if (ring && dot) {
-    var tx = window.innerWidth / 2, ty = window.innerHeight / 2; // targets
-    var rx = tx, ry = ty; // eased ring pos
-    var active = false;
-
-    window.addEventListener("pointermove", function (e) {
-      if (e.pointerType && e.pointerType !== "mouse") return;
-      tx = e.clientX; ty = e.clientY;
-      dot.style.transform = "translate3d(" + tx + "px," + ty + "px,0)";
-      if (!active) { active = true; document.body.classList.add("cursor-active"); }
-    }, { passive: true });
-
-    window.addEventListener("pointerdown", function () { document.body.classList.add("cursor-down"); });
-    window.addEventListener("pointerup", function () { document.body.classList.remove("cursor-down"); });
-    document.addEventListener("mouseleave", function () { document.body.classList.remove("cursor-active"); active = false; });
-    document.addEventListener("mouseenter", function () { if (active) document.body.classList.add("cursor-active"); });
-
-    // hover lock-on for interactive elements
-    var HOVER = "a, button, .card, .pill, [data-magnetic]";
-    document.addEventListener("pointerover", function (e) {
-      if (e.target.closest && e.target.closest(HOVER)) document.body.classList.add("cursor-hover");
-    });
-    document.addEventListener("pointerout", function (e) {
-      if (e.target.closest && e.target.closest(HOVER) &&
-          !(e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest(HOVER)))
-        document.body.classList.remove("cursor-hover");
-    });
-
-    (function loop() {
-      rx += (tx - rx) * 0.18;
-      ry += (ty - ry) * 0.18;
-      ring.style.transform = "translate3d(" + rx + "px," + ry + "px,0)";
-      requestAnimationFrame(loop);
-    })();
-  }
-
-  // ---------- hero wall: subtle pointer tilt ----------
-  (function heroTilt() {
-    var hero = document.querySelector(".hero");
-    var stage = document.querySelector(".wall-stage");
-    if (!hero || !stage) return;
-    hero.addEventListener("pointermove", function (e) {
-      var r = hero.getBoundingClientRect();
-      var px = (e.clientX - r.left) / r.width - 0.5;
-      var py = (e.clientY - r.top) / r.height - 0.5;
-      stage.style.transform =
-        "rotateY(" + (-9 + px * 6).toFixed(2) + "deg) rotateX(" +
-        (4 - py * 6).toFixed(2) + "deg) rotate(1deg)";
-    });
-    hero.addEventListener("pointerleave", function () { stage.style.transform = ""; });
-  })();
-
-  // ---------- magnetic buttons ----------
-  var STRENGTH = 0.32, CAP = 10;
-  document.querySelectorAll("[data-magnetic]").forEach(function (el) {
-    el.addEventListener("pointermove", function (e) {
-      var r = el.getBoundingClientRect();
-      var dx = e.clientX - (r.left + r.width / 2);
-      var dy = e.clientY - (r.top + r.height / 2);
-      var mx = Math.max(-CAP, Math.min(CAP, dx * STRENGTH));
-      var my = Math.max(-CAP, Math.min(CAP, dy * STRENGTH));
-      el.style.transform = "translate3d(" + mx.toFixed(1) + "px," + my.toFixed(1) + "px,0)";
-    });
-    el.addEventListener("pointerleave", function () { el.style.transform = ""; });
-  });
 })();
