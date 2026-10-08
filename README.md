@@ -30,3 +30,19 @@ python3 -m http.server 8777
 - Or from this folder: `npx vercel` (then `npx vercel --prod`).
 - Suggested domain: a subdomain of your main site, e.g. `work.antonyaddy.com`
   or `studio.antonyaddy.com`.
+
+## Interface
+
+The page uses a warm paper, navy and amber palette with Fraunces headings and
+Inter body text. Spacing tokens, two-column desktop project cards, a single-column
+phone gallery and three static, linked hero previews provide the visual hierarchy.
+The portfolio comes immediately after the hero. See `MOTION.md` and
+`INTERACTIONS.md` for the interaction and accessibility behavior.
+
+French content is also included in the initial HTML so the page remains useful
+before JavaScript loads or when it is unavailable. If project data or French copy
+changes, update this fallback content in `index.html` as well. Runtime rendering
+still uses `assets/projects.js` and `assets/app.js`; no build step is required.
+
+Placeholder testimonials are never rendered. Set `placeholder: false` only when
+replacing a sample with a real, approved client testimonial.
