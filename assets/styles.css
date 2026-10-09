@@ -16,7 +16,7 @@
   --shadow: 0 2px 4px rgb(24 36 60 / 3%), 0 16px 32px -24px rgb(24 36 60 / 20%);
   --shadow-lg: 0 4px 8px rgb(24 36 60 / 5%), 0 24px 48px -16px rgb(24 36 60 / 20%);
   --maxw: 1280px;
-  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --serif: "Fraunces", "Lora", Georgia, "Times New Roman", serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --ease: cubic-bezier(.16, 1, .3, 1);
   --space-1: 4px;
@@ -390,4 +390,39 @@ p { text-wrap: pretty; }
   .wall-stage{transform:none!important}
   .hero-glow,.hero-wall{transform:none!important}
   .btn:hover, .card:hover .shot img { transform: none; }
+}
+
+/* ---------- Arabic & right-to-left ---------- */
+html:lang(ar) {
+  --serif: "Noto Naskh Arabic", "Fraunces", Georgia, serif;
+  --sans: "IBM Plex Sans Arabic", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+/* letter-spacing breaks joined Arabic letters, and synthetic italics distort them */
+html:lang(ar) body, html:lang(ar) body * { letter-spacing: 0 !important; }
+html:lang(ar) em, html:lang(ar) i { font-style: normal; }
+/* Arabic needs more vertical room for its dots, ascenders and descenders */
+html:lang(ar) h1, html:lang(ar) h2, html:lang(ar) h3, html:lang(ar) .stat .n { line-height: 1.4; }
+html:lang(ar) .h1-anim .w, html:lang(ar) .reveal-text .w { overflow: visible; padding-bottom: 0; margin-bottom: 0; }
+
+[dir="rtl"] .skip-link { left: auto; right: 8px; }
+[dir="rtl"] .scroll-progress span { transform-origin: right; }
+[dir="rtl"] .nav-link::after { left: auto; right: 0; transform-origin: right; }
+[dir="rtl"] .lang-globe { left: auto; right: 12px; }
+[dir="rtl"] .lang-select-wrap::after { right: auto; left: 14px; }
+[dir="rtl"] .lang-select { padding: 0 34px 0 30px; }
+[dir="rtl"] .status-tag { right: auto; left: 16px; }
+[dir="rtl"] .video-points li { padding-left: 0; padding-right: 24px; }
+[dir="rtl"] .video-points li::before { left: auto; right: 0; }
+[dir="rtl"] .video-sound { right: auto; left: 16px; }
+[dir="rtl"] .contact-card { text-align: right; }
+[dir="rtl"] .contact-card::before { right: auto; left: -160px; }
+[dir="rtl"] .hero-motion-toggle { margin: 8px auto 0 0; }
+[dir="rtl"] .arr { display: inline-block; transform: scaleX(-1); }
+/* decorative wall: keep its marquee maths left-to-right; mirror the tilt and the edge fade */
+[dir="rtl"] .hero-wall { direction: ltr; }
+[dir="rtl"] .hero-wall:after { background: linear-gradient(270deg, var(--paper), rgba(250, 247, 242, 0) 11%); }
+[dir="rtl"] .wall-stage { transform: rotateY(9deg) rotateX(4deg) rotate(-1deg); }
+@media (max-width: 980px) {
+  [dir="rtl"] .wall-stage { transform: none; }
+  [dir="rtl"] .hero-motion-toggle { margin-left: 0; }
 }
