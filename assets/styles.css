@@ -47,7 +47,7 @@ p { text-wrap: pretty; }
 .scroll-progress span { display: block; height: 100%; background: var(--accent); transform: scaleX(0); transform-origin: left; }
 
 /* A quiet, compact header lets the work lead. */
-.site-header { position: sticky; top: 0; z-index: 50; background: rgb(250 247 242 / 95%); border-bottom: 1px solid var(--line-soft); backdrop-filter: blur(16px); }
+.site-header { position: sticky; top: 0; z-index: 50; background: rgb(250 247 242 / 95%); border-bottom: 1px solid var(--line-soft); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 88px; gap: 32px; }
 .brand { display: inline-flex; align-items: center; flex-shrink: 0; }
 .brand-logo { width: auto; height: 48px; }
