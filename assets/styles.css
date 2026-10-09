@@ -57,12 +57,14 @@ p { text-wrap: pretty; }
 .nav-link:hover, .nav-link.active { color: var(--ink); }
 .nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
 .nav-meta { display: flex; align-items: center; gap: 16px; }
-.lang-select-wrap { position: relative; display: inline-flex; align-items: center; gap: 7px; height: 38px; padding: 0 28px 0 12px; border: 1px solid var(--line); border-radius: 999px; background: #fff; cursor: pointer; transition: border-color .2s ease, box-shadow .2s ease; }
-.lang-select-wrap:hover { border-color: var(--ink-soft); }
-.lang-select-wrap:focus-within { border-color: transparent; box-shadow: 0 0 0 2px var(--paper), 0 0 0 4px var(--accent); }
-.lang-globe { width: 16px; height: 16px; color: var(--muted); flex-shrink: 0; }
-.lang-select { appearance: none; -webkit-appearance: none; border: 0; background: transparent; outline: none; cursor: pointer; font-family: inherit; font-size: 13.5px; font-weight: 600; color: var(--ink); padding: 0; }
-.lang-select-wrap::after { content: ""; position: absolute; right: 13px; top: 50%; width: 6px; height: 6px; border-right: 1.6px solid var(--muted); border-bottom: 1.6px solid var(--muted); transform: translateY(-70%) rotate(45deg); pointer-events: none; }
+/* The <select> itself is the full pill, so the whole control opens the menu.
+   The globe + chevron are pointer-events:none overlays. */
+.lang-select-wrap { position: relative; display: inline-block; height: 38px; }
+.lang-globe { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: var(--muted); pointer-events: none; z-index: 1; }
+.lang-select { appearance: none; -webkit-appearance: none; display: block; width: 100%; min-width: 132px; height: 38px; padding: 0 30px 0 34px; border: 1px solid var(--line); border-radius: 999px; background: #fff; outline: none; cursor: pointer; font-family: inherit; font-size: 13.5px; font-weight: 600; color: var(--ink); transition: border-color .2s ease, box-shadow .2s ease; }
+.lang-select:hover { border-color: var(--ink-soft); }
+.lang-select:focus-visible { border-color: transparent; box-shadow: 0 0 0 2px var(--paper), 0 0 0 4px var(--accent); }
+.lang-select-wrap::after { content: ""; position: absolute; right: 14px; top: 50%; width: 6px; height: 6px; border-right: 1.6px solid var(--muted); border-bottom: 1.6px solid var(--muted); transform: translateY(-70%) rotate(45deg); pointer-events: none; z-index: 1; }
 .nav-wa { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; color: var(--ink-soft); }
 .nav-wa:hover { background: var(--paper-2); }
 .wa-ic { width: 18px; height: 18px; }
