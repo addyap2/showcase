@@ -29,7 +29,7 @@
   --space-8: 96px;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 160px; }
+html { scroll-behavior: smooth; scroll-padding-top: 104px; }
 body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
@@ -323,6 +323,7 @@ p { text-wrap: pretty; }
   .about-grid, .video-grid { gap: 64px; }
 }
 @media (max-width: 900px) {
+  html { scroll-padding-top: 88px; }
   .site-header .wrap { height: 72px; }
   .brand-logo { height: 40px; }
   .nav-toggle { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; width: 48px; height: 48px; padding: 8px; border: 1px solid var(--line); background: transparent; border-radius: 8px; }
@@ -347,7 +348,7 @@ p { text-wrap: pretty; }
   .faq .wrap { grid-template-columns: 1fr; gap: 16px; }
 }
 @media (max-width: 640px) {
-  html { scroll-padding-top: 152px; }
+  html { scroll-padding-top: 88px; }
   .wrap { padding-inline: 24px; }
   .hero { padding: 48px 0; }
   .hero h1 { font-size: clamp(38px, 9.4vw, 56px); }

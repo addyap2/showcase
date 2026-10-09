@@ -16,6 +16,7 @@
       "nav.faq": "FAQ",
       "nav.video": "Vidéo",
       "nav.cta": "Démarrer un projet",
+      "nav.menu": "Menu",
       "hero.kicker": "Conçus et développés avec l'IA",
       "hero.h1": "Des sites et des outils soignés, <em>pensés pour votre activité</em>.",
       "hero.lead": "Des sites web multilingues et des outils sur mesure. Un design soigné, un interlocuteur, de l’idée à la mise en ligne.",
@@ -90,6 +91,7 @@
       "nav.faq": "FAQ",
       "nav.video": "Video",
       "nav.cta": "Start a project",
+      "nav.menu": "Menu",
       "hero.kicker": "Designed & built with AI",
       "hero.h1": "Websites and tools, <em>crafted to fit</em> your business.",
       "hero.lead": "Multilingual websites and custom tools. Thoughtful design and one person to guide your project, from first idea to launch.",
@@ -158,7 +160,7 @@
       "doc.title": "Antony Addy — Sitios web y herramientas, diseñados y creados con IA",
       "skip": "Saltar al contenido",
       "brand.sub": "Sitios web y herramientas",
-      "nav.work": "Proyectos", "nav.about": "Acerca de", "nav.services": "Servicios", "nav.faq": "FAQ", "nav.video": "Vídeo", "nav.cta": "Iniciar un proyecto",
+      "nav.work": "Proyectos", "nav.about": "Acerca de", "nav.services": "Servicios", "nav.faq": "FAQ", "nav.video": "Vídeo", "nav.cta": "Iniciar un proyecto", "nav.menu": "Menú",
       "hero.kicker": "Diseñados y creados con IA",
       "hero.h1": "Sitios y herramientas cuidados, <em>pensados para tu actividad</em>.",
       "hero.lead": "Sitios web multilingües y herramientas a medida. Diseño cuidado y una sola persona para guiar tu proyecto, de la idea al lanzamiento.",
@@ -212,7 +214,7 @@
       "doc.title": "Antony Addy — Siti web e strumenti, progettati e realizzati con l'IA",
       "skip": "Vai al contenuto",
       "brand.sub": "Siti web e strumenti",
-      "nav.work": "Progetti", "nav.about": "Chi sono", "nav.services": "Servizi", "nav.faq": "FAQ", "nav.video": "Video", "nav.cta": "Avviare un progetto",
+      "nav.work": "Progetti", "nav.about": "Chi sono", "nav.services": "Servizi", "nav.faq": "FAQ", "nav.video": "Video", "nav.cta": "Avviare un progetto", "nav.menu": "Menu",
       "hero.kicker": "Progettati e realizzati con l'IA",
       "hero.h1": "Siti e strumenti curati, <em>pensati per la tua attività</em>.",
       "hero.lead": "Siti web multilingue e strumenti su misura. Design curato e un unico interlocutore per guidare il tuo progetto, dall'idea al lancio.",
@@ -266,7 +268,7 @@
       "doc.title": "Antony Addy — Websites & Tools, entworfen und gebaut mit KI",
       "skip": "Zum Inhalt springen",
       "brand.sub": "Websites & Tools",
-      "nav.work": "Projekte", "nav.about": "Über mich", "nav.services": "Leistungen", "nav.faq": "FAQ", "nav.video": "Video", "nav.cta": "Projekt starten",
+      "nav.work": "Projekte", "nav.about": "Über mich", "nav.services": "Leistungen", "nav.faq": "FAQ", "nav.video": "Video", "nav.cta": "Projekt starten", "nav.menu": "Menü",
       "hero.kicker": "Entworfen und gebaut mit KI",
       "hero.h1": "Websites und Tools, <em>maßgeschneidert für Ihr Geschäft</em>.",
       "hero.lead": "Mehrsprachige Websites und maßgeschneiderte Tools. Durchdachtes Design und ein Ansprechpartner, der Ihr Projekt begleitet — von der Idee bis zum Launch.",
@@ -320,7 +322,7 @@
       "doc.title": "Antony Addy — Sites e ferramentas, concebidos e criados com IA",
       "skip": "Saltar para o conteúdo",
       "brand.sub": "Sites e ferramentas",
-      "nav.work": "Projetos", "nav.about": "Sobre", "nav.services": "Serviços", "nav.faq": "FAQ", "nav.video": "Vídeo", "nav.cta": "Iniciar um projeto",
+      "nav.work": "Projetos", "nav.about": "Sobre", "nav.services": "Serviços", "nav.faq": "FAQ", "nav.video": "Vídeo", "nav.cta": "Iniciar um projeto", "nav.menu": "Menu",
       "hero.kicker": "Concebidos e criados com IA",
       "hero.h1": "Sites e ferramentas cuidados, <em>pensados para a sua atividade</em>.",
       "hero.lead": "Sites multilingues e ferramentas à medida. Design cuidado e uma só pessoa para orientar o seu projeto, da ideia ao lançamento.",
@@ -436,6 +438,8 @@
       motionToggle.textContent = t(motionToggle.getAttribute("aria-pressed") === "true" ? "hero.resume" : "hero.pause");
     }
     document.querySelector(".filters").setAttribute("aria-label", t("work.eyebrow"));
+    var navToggle = document.querySelector(".nav-toggle");
+    if (navToggle) navToggle.setAttribute("aria-label", t("nav.menu"));
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var key = el.getAttribute("data-i18n");
       el.textContent = key === "stat1.n" ? String(projects.length) : t(key);
