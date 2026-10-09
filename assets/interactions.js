@@ -115,7 +115,9 @@
         var rect = hero.getBoundingClientRect();
         var px = (event.clientX - rect.left) / rect.width - 0.5;
         var py = (event.clientY - rect.top) / rect.height - 0.5;
-        stage.style.transform = "rotateY(" + (-9 + px * 6).toFixed(2) + "deg) rotateX(" + (4 - py * 6).toFixed(2) + "deg) rotate(1deg)";
+        // Mirror the resting tilt in right-to-left layouts (wall sits on the left).
+        var flip = document.documentElement.dir === "rtl" ? -1 : 1;
+        stage.style.transform = "rotateY(" + (-9 * flip + px * 6).toFixed(2) + "deg) rotateX(" + (4 - py * 6).toFixed(2) + "deg) rotate(" + flip + "deg)";
         frame = null;
       });
     }, { passive: true });

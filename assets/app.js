@@ -373,11 +373,231 @@
       "contact.btn1": "Escreva-me", "contact.whatsapp": "WhatsApp", "contact.btn2": "Ver os projetos",
       "mail.subject": "Pedido de projeto", "wa.text": "Olá Antony, gostaria de falar sobre um projeto.",
       "footer.sub": "Sites e ferramentas, criados com IA"
+    },
+    nl: {
+      "doc.title": "Antony Addy — Websites en tools, ontworpen en gebouwd met AI",
+      "skip": "Naar de inhoud",
+      "brand.sub": "Websites en tools",
+      "nav.work": "Projecten", "nav.about": "Over mij", "nav.services": "Diensten", "nav.faq": "FAQ", "nav.video": "Video", "nav.cta": "Project starten", "nav.menu": "Menu", "nav.lang": "Taal",
+      "hero.kicker": "Ontworpen en gebouwd met AI",
+      "hero.h1": "Websites en tools, <em>op maat van je bedrijf</em>.",
+      "hero.lead": "Meertalige websites en tools op maat. Doordacht ontwerp en één aanspreekpunt om je project te begeleiden, van eerste idee tot lancering.",
+      "hero.cta1": "Bekijk het werk", "hero.cta2": "Project starten",
+      "stat1.n": "20", "stat1.l": "Getoonde projecten",
+      "stat2.n": "Meertalig", "stat2.l": "In de taal van je publiek",
+      "video.eyebrow": "In video · 1 min",
+      "video.h2": "Van idee tot lancering, in één minuut.",
+      "video.p": "Een korte video over hoe ik werk: wat het web meestal traag en ingewikkeld maakt, en hoe ik — met AI in het proces — je idee in enkele dagen omzet in een verzorgd, tweetalig product dat live staat.",
+      "video.pt1": "Van idee tot een live website in dagen, niet in maanden.",
+      "video.pt2": "Volledig tweetalige (EN / FR) sites en tools, tot in de details afgewerkt.",
+      "video.pt3": "Optioneel: een maandplan op maat voor updates en uitbreidingen — afgestemd op je werkelijke behoeften.",
+      "video.cta": "Project starten", "video.cta2": "Bekijk het werk",
+      "video.sound": "Geluid aan", "video.sound_on": "Dempen",
+      "video.aria": "Video: websites op maat, in enkele dagen gebouwd",
+      "work.eyebrow": "Geselecteerd werk",
+      "work.h2": "Een portfolio van live, werkende producten.",
+      "work.p": "Van restaurants tot leer-apps: verken de projecten per vakgebied en bezoek de live sites.",
+      "filter.all": "Alles", "work.count": "projecten",
+      "hero.preview": "Voorbeelden van werk", "hero.pause": "Animatie pauzeren", "hero.resume": "Animatie hervatten",
+      "group.local": "Lokale creaties", "group.learning": "Onderwijs en training",
+      "card.visit": "Bekijk de site", "card.progress": "In ontwikkeling", "card.soon": "Binnenkort",
+      "testi.sample": "Voorbeeldgetuigenis",
+      "about.eyebrow": "Over mij",
+      "about.h2": "Een bouwer van websites en tools, met de blik van een trainer.",
+      "about.p1": "Ik ben Antony Addy. Ik ontwerp en bouw websites en tools op maat — in het Engels en het Frans — vanuit het zuiden van Frankrijk. Van oorsprong een gecertificeerd tweetalig trainer, begon ik met het bouwen van de tools die mijn eigen cursisten nodig hadden; vandaag bouw ik ze ook voor restaurants, lokale ondernemingen, verenigingen en bedrijven.",
+      "about.p2": "Met AI in het proces ga ik opmerkelijk snel van een ruw idee naar een verzorgde, gepubliceerde site — zonder aan vakmanschap in te boeten. Strak ontwerp, heldere taal in de taal waarin je publiek denkt, en producten die echt prettig zijn in gebruik. Horeca, lokale handel, sport, professionele diensten, onderwijs: elk krijgt een site die bij hem past.",
+      "about.p3": "Als je het kunt beschrijven, is de kans groot dat ik het kan bouwen — en sneller online heb dan je verwacht.",
+      "fact.k1": "Gevestigd in", "fact.v1": "Zuid-Frankrijk · Var & Alpes-Maritimes",
+      "fact.k2": "Talen", "fact.v2": "Engels & Frans, volledig tweetalig",
+      "fact.k3": "Achtergrond", "fact.v3": "Gecertificeerd professioneel trainer (FPA)",
+      "fact.k4": "Bouwt", "fact.v4": "Sites · leer-apps · dashboards · tools",
+      "fact.k5": "Aanpak", "fact.v5": "AI-ondersteund, door mensen afgewerkt",
+      "svc.eyebrow": "Wat ik bouw", "svc.h2": "Vier soorten projecten, één niveau van afwerking.",
+      "svc1.h": "Leerplatformen",
+      "svc1.p": "Interactieve apps voor talen en vaardigheden — oefeningen, AI-feedback, audio en voortgangsregistratie, gemaakt om te onderwijzen.",
+      "svc2.h": "Zakelijke & lokale sites",
+      "svc2.p": "Restaurants, praktijken en diensten — meertalig, reserveerbaar en gemaakt om klanten binnen te halen.",
+      "svc3.h": "Professioneel & opleiding",
+      "svc3.p": "Dienstensites en cursusplatformen die je expertise helder presenteren en bezoekers omzetten in aanvragen.",
+      "svc4.h": "Tools & dashboards",
+      "svc4.p": "Privéwerkruimtes, trackers en interne tools — veilig, overzichtelijk en precies op jouw workflow afgestemd.",
+      "faq.eyebrow": "Veelgestelde vragen", "faq.h2": "Wat men mij vaak vraagt.",
+      "contact.eyebrow": "Project starten", "contact.h2": "Heb je iets dat je wilt laten bouwen?",
+      "contact.p": "Vertel me wat je in gedachten hebt — een leer-app, een site voor je bedrijf, een tool om tijd te besparen. Ik zeg je eerlijk wat mogelijk is en hoe snel.",
+      "contact.btn1": "Mail me", "contact.whatsapp": "WhatsApp", "contact.btn2": "Bekijk het werk",
+      "mail.subject": "Projectaanvraag", "wa.text": "Hallo Antony, ik wil graag een project bespreken.",
+      "footer.sub": "Websites en tools, gebouwd met AI"
+    },
+    ru: {
+      "doc.title": "Antony Addy — Сайты и инструменты, созданные с помощью ИИ",
+      "skip": "Перейти к содержанию",
+      "brand.sub": "Сайты и инструменты",
+      "nav.work": "Проекты",
+      "nav.about": "Обо мне",
+      "nav.services": "Услуги",
+      "nav.faq": "Вопросы",
+      "nav.video": "Видео",
+      "nav.cta": "Начать проект",
+      "nav.menu": "Меню",
+      "nav.lang": "Язык",
+      "hero.kicker": "Дизайн и разработка с ИИ",
+      "hero.h1": "Сайты и инструменты, <em>созданные под ваш бизнес</em>.",
+      "hero.lead": "Многоязычные сайты и инструменты на заказ. Продуманный дизайн и один человек, который ведёт ваш проект от первой идеи до запуска.",
+      "hero.cta1": "Смотреть работы",
+      "hero.cta2": "Начать проект",
+      "stat1.n": "20",
+      "stat1.l": "Проектов в портфолио",
+      "stat2.n": "Многоязычность",
+      "stat2.l": "На языке вашей аудитории",
+      "video.eyebrow": "Видео · 1 мин",
+      "video.h2": "От идеи до запуска — за одну минуту.",
+      "video.p": "Короткое видео о том, как я работаю: что обычно делает веб медленным и сложным, и как — с ИИ в процессе — я превращаю вашу идею в аккуратный двуязычный продукт, работающий онлайн, всего за несколько дней.",
+      "video.pt1": "От идеи до работающего сайта за дни, а не месяцы.",
+      "video.pt2": "Полностью двуязычные (EN / FR) сайты и инструменты, проработанные до мелочей.",
+      "video.pt3": "По желанию — ежемесячный план на обновления и доработки, подобранный под ваши реальные задачи.",
+      "video.cta": "Начать проект",
+      "video.cta2": "Смотреть работы",
+      "video.sound": "Включить звук",
+      "video.sound_on": "Выключить звук",
+      "video.aria": "Видео: сайты на заказ, созданные за несколько дней",
+      "work.eyebrow": "Избранные работы",
+      "work.h2": "Портфолио реальных, работающих продуктов.",
+      "work.p": "От ресторанов до обучающих приложений: изучите проекты по направлениям и откройте живые сайты.",
+      "filter.all": "Все",
+      "work.count": "проектов",
+      "hero.preview": "Примеры работ",
+      "hero.pause": "Остановить анимацию",
+      "hero.resume": "Возобновить анимацию",
+      "group.local": "Локальные проекты",
+      "group.learning": "Обучение и тренинги",
+      "card.visit": "Открыть сайт",
+      "card.progress": "В работе",
+      "card.soon": "Скоро",
+      "testi.sample": "Пример отзыва",
+      "about.eyebrow": "Обо мне",
+      "about.h2": "Создаю сайты и инструменты — со взглядом преподавателя.",
+      "about.p1": "Меня зовут Antony Addy. Я проектирую и создаю сайты и инструменты на заказ — на английском и французском — на юге Франции. По образованию я сертифицированный двуязычный преподаватель: начинал с инструментов, которые были нужны моим ученикам, а сегодня создаю их и для ресторанов, местного бизнеса, спортивных клубов и компаний.",
+      "about.p2": "С ИИ в процессе я удивительно быстро прохожу путь от черновой идеи до готового опубликованного сайта — не теряя в качестве. Чистый дизайн, понятный текст на языке, на котором думает ваша аудитория, и продукты, которыми действительно приятно пользоваться. Рестораны, местный бизнес, спорт, профессиональные услуги, обучение — каждому свой сайт.",
+      "about.p3": "Если вы можете это описать, скорее всего, я смогу это создать — и запустить быстрее, чем вы ожидаете.",
+      "fact.k1": "Где",
+      "fact.v1": "Юг Франции · Вар и Приморские Альпы",
+      "fact.k2": "Языки",
+      "fact.v2": "Английский и французский, свободно",
+      "fact.k3": "Опыт",
+      "fact.v3": "Сертифицированный преподаватель (FPA)",
+      "fact.k4": "Создаю",
+      "fact.v4": "Сайты · обучающие приложения · дашборды · инструменты",
+      "fact.k5": "Подход",
+      "fact.v5": "С помощью ИИ, доведено человеком",
+      "svc.eyebrow": "Что я создаю",
+      "svc.h2": "Четыре типа проектов — один уровень качества.",
+      "svc1.h": "Обучающие платформы",
+      "svc1.p": "Интерактивные приложения для языков и навыков — упражнения, обратная связь от ИИ, аудио и отслеживание прогресса, созданные, чтобы учить.",
+      "svc2.h": "Сайты для бизнеса",
+      "svc2.p": "Рестораны, специалисты и сервисы — многоязычные, с онлайн-бронированием и созданные, чтобы приводить клиентов.",
+      "svc3.h": "Профессиональные и учебные",
+      "svc3.p": "Сайты услуг и платформы курсов, которые ясно показывают вашу экспертизу и превращают посетителей в заявки.",
+      "svc4.h": "Инструменты и дашборды",
+      "svc4.p": "Закрытые рабочие пространства, трекеры и внутренние инструменты — надёжные, аккуратные и точно под ваши процессы.",
+      "faq.eyebrow": "Частые вопросы",
+      "faq.h2": "О чём меня обычно спрашивают.",
+      "contact.eyebrow": "Начать проект",
+      "contact.h2": "Хотите что-то создать?",
+      "contact.p": "Расскажите, что вы задумали — обучающее приложение, сайт для вашего бизнеса, инструмент, который сэкономит время. Я честно скажу, что возможно и как быстро.",
+      "contact.btn1": "Написать мне",
+      "contact.whatsapp": "WhatsApp",
+      "contact.btn2": "Смотреть работы",
+      "mail.subject": "Запрос по проекту",
+      "wa.text": "Здравствуйте, Antony! Хочу обсудить проект.",
+      "footer.sub": "Сайты и инструменты, созданные с ИИ"
+    },
+    ar: {
+      "doc.title": "Antony Addy — مواقع وأدوات مصمَّمة ومطوَّرة بالذكاء الاصطناعي",
+      "skip": "انتقل إلى المحتوى",
+      "brand.sub": "مواقع وأدوات",
+      "nav.work": "الأعمال",
+      "nav.about": "من أنا",
+      "nav.services": "الخدمات",
+      "nav.faq": "الأسئلة",
+      "nav.video": "فيديو",
+      "nav.cta": "ابدأ مشروعك",
+      "nav.menu": "القائمة",
+      "nav.lang": "اللغة",
+      "hero.kicker": "تصميم وتطوير بالذكاء الاصطناعي",
+      "hero.h1": "مواقع وأدوات، <em>مصمَّمة لتناسب نشاطك</em>.",
+      "hero.lead": "مواقع إلكترونية متعددة اللغات وأدوات مخصّصة. تصميم مدروس وشخص واحد يرافق مشروعك من الفكرة الأولى حتى الإطلاق.",
+      "hero.cta1": "شاهد الأعمال",
+      "hero.cta2": "ابدأ مشروعك",
+      "stat1.n": "20",
+      "stat1.l": "مشروعًا معروضًا",
+      "stat2.n": "متعدد اللغات",
+      "stat2.l": "بلغة جمهورك",
+      "video.eyebrow": "فيديو · دقيقة واحدة",
+      "video.h2": "من الفكرة إلى الإطلاق في دقيقة واحدة.",
+      "video.p": "فيديو قصير عن طريقة عملي: ما الذي يجعل الويب عادةً بطيئًا ومعقّدًا، وكيف أحوّل فكرتك — بمساعدة الذكاء الاصطناعي — إلى منتج متقن ثنائي اللغة ومنشور على الإنترنت في غضون أيام.",
+      "video.pt1": "من الفكرة إلى موقع منشور في أيام، لا في أشهر.",
+      "video.pt2": "مواقع وأدوات ثنائية اللغة بالكامل (الإنجليزية / الفرنسية)، متقنة حتى أدق التفاصيل.",
+      "video.pt3": "اختياريًا: خطة شهرية مخصّصة للتحديثات والتطويرات، مصمَّمة وفق احتياجاتك الفعلية.",
+      "video.cta": "ابدأ مشروعك",
+      "video.cta2": "شاهد الأعمال",
+      "video.sound": "تشغيل الصوت",
+      "video.sound_on": "كتم الصوت",
+      "video.aria": "فيديو: مواقع مخصّصة تُنجَز في أيام قليلة",
+      "work.eyebrow": "أعمال مختارة",
+      "work.h2": "معرض لمنتجات حقيقية تعمل على الإنترنت.",
+      "work.p": "من المطاعم إلى تطبيقات التعلّم: استكشف المشاريع حسب المجال وزُر المواقع المنشورة.",
+      "filter.all": "الكل",
+      "work.count": "مشروعًا",
+      "hero.preview": "معاينات الأعمال",
+      "hero.pause": "إيقاف الحركة مؤقتًا",
+      "hero.resume": "استئناف الحركة",
+      "group.local": "إبداعات محلية",
+      "group.learning": "التعليم والتدريب",
+      "card.visit": "زيارة الموقع",
+      "card.progress": "قيد الإنجاز",
+      "card.soon": "قريبًا",
+      "testi.sample": "شهادة نموذجية",
+      "about.eyebrow": "من أنا",
+      "about.h2": "مطوّر مواقع وأدوات، بعين مدرّب.",
+      "about.p1": "أنا Antony Addy. أصمّم وأطوّر مواقع وأدوات مخصّصة — بالإنجليزية والفرنسية — من جنوب فرنسا. بدأت مدرّبًا معتمدًا ثنائي اللغة، فكنت أطوّر الأدوات التي يحتاجها متعلّميّ، واليوم أطوّرها أيضًا للمطاعم والمتاجر المحلية والأندية الرياضية والشركات.",
+      "about.p2": "بمساعدة الذكاء الاصطناعي، أنتقل من فكرة أولية إلى موقع متقن ومنشور بسرعة لافتة — دون التفريط في الجودة. تصميم أنيق، ولغة واضحة باللغة التي يفكّر بها جمهورك، ومنتجات ممتعة حقًا في الاستخدام. الضيافة والتجارة المحلية والرياضة والخدمات المهنية والتعليم: لكلٍّ موقع يناسبه.",
+      "about.p3": "إن استطعت وصفه، فالأرجح أنني أستطيع بناءه — وإطلاقه أسرع مما تتوقع.",
+      "fact.k1": "الموقع",
+      "fact.v1": "جنوب فرنسا · الفار والألب البحرية",
+      "fact.k2": "اللغات",
+      "fact.v2": "الإنجليزية والفرنسية بطلاقة",
+      "fact.k3": "الخلفية",
+      "fact.v3": "مدرّب مهني معتمد (FPA)",
+      "fact.k4": "أطوّر",
+      "fact.v4": "مواقع · تطبيقات تعلّم · لوحات تحكّم · أدوات",
+      "fact.k5": "النهج",
+      "fact.v5": "بمساعدة الذكاء الاصطناعي وبلمسة إنسانية",
+      "svc.eyebrow": "ما أطوّره",
+      "svc.h2": "أربعة أنواع من المشاريع، ومستوى واحد من الإتقان.",
+      "svc1.h": "منصّات التعلّم",
+      "svc1.p": "تطبيقات تفاعلية للغات والمهارات — تمارين، وملاحظات بالذكاء الاصطناعي، وصوت، وتتبّع للتقدّم، مصمَّمة للتعليم.",
+      "svc2.h": "مواقع الأعمال المحلية",
+      "svc2.p": "مطاعم وممارسون وخدمات — متعددة اللغات، مع إمكانية الحجز، ومصمَّمة لجلب العملاء.",
+      "svc3.h": "المهنيون والتدريب",
+      "svc3.p": "مواقع خدمات ومنصّات دورات تعرض خبرتك بوضوح وتحوّل الزوار إلى طلبات.",
+      "svc4.h": "أدوات ولوحات تحكّم",
+      "svc4.p": "مساحات عمل خاصة وأدوات متابعة وأدوات داخلية — آمنة ومنظّمة ومصمَّمة تمامًا وفق طريقة عملك.",
+      "faq.eyebrow": "الأسئلة الشائعة",
+      "faq.h2": "ما يسألني عنه الناس عادةً.",
+      "contact.eyebrow": "ابدأ مشروعك",
+      "contact.h2": "هل لديك فكرة تودّ تنفيذها؟",
+      "contact.p": "أخبرني بما يدور في ذهنك — تطبيق تعلّم، أو موقع لنشاطك، أو أداة توفّر وقتك. سأخبرك بصراحة بما هو ممكن وبأي سرعة.",
+      "contact.btn1": "راسلني",
+      "contact.whatsapp": "واتساب",
+      "contact.btn2": "تصفّح الأعمال",
+      "mail.subject": "طلب مشروع",
+      "wa.text": "مرحبًا Antony، أودّ مناقشة مشروع.",
+      "footer.sub": "مواقع وأدوات، مطوَّرة بالذكاء الاصطناعي"
     }
   };
 
-  var LANGS = ["fr", "en", "es", "it", "de", "pt"];
-  var LANG_NAMES = { fr: "Français", en: "English", es: "Español", it: "Italiano", de: "Deutsch", pt: "Português" };
+  var LANGS = ["fr", "en", "es", "it", "de", "pt", "nl", "ru", "ar"];
+  var LANG_NAMES = { fr: "Français", en: "English", es: "Español", it: "Italiano", de: "Deutsch", pt: "Português", nl: "Nederlands", ru: "Русский", ar: "العربية" };
   var lang = "fr";
   try {
     var saved = localStorage.getItem("lang");
@@ -385,6 +605,8 @@
   } catch (e) {}
 
   function t(key) { return (STRINGS[lang] && STRINGS[lang][key]) || (STRINGS.en[key]) || ""; }
+  // Pick the active language from a { fr, en, … } object, falling back to English.
+  function L(o) { return (o && (o[lang] || o.en)) || ""; }
   // Vercel Web Analytics custom event (no-op if analytics isn't loaded / on Hobby)
   function track(name, data) {
     try { if (window.va) window.va("event", data ? { name: name, data: data } : { name: name }); } catch (e) {}
@@ -400,18 +622,18 @@
   var currentFilter = "all";
 
   var FAQS = [
-    { q: { fr: "En combien de temps livrez-vous un site ?", en: "How fast can you deliver a site?", es: "¿En cuánto tiempo entregas un sitio?", it: "In quanto tempo consegni un sito?", de: "Wie schnell liefern Sie eine Website?", pt: "Em quanto tempo entrega um site?" },
-      a: { fr: "Un site vitrine en quelques jours, une plateforme plus complète en une à deux semaines. Je vous donne un délai clair dès le départ.", en: "A brochure site in a few days, a fuller platform in one to two weeks. I give you a clear timeline up front.", es: "Un sitio vitrina en pocos días, una plataforma más completa en una o dos semanas. Te doy un plazo claro desde el principio.", it: "Un sito vetrina in pochi giorni, una piattaforma più completa in una o due settimane. Ti do una tempistica chiara fin dall'inizio.", de: "Eine Visitenkarten-Website in wenigen Tagen, eine umfangreichere Plattform in ein bis zwei Wochen. Ich gebe Ihnen von Anfang an einen klaren Zeitplan.", pt: "Um site vitrine em poucos dias, uma plataforma mais completa em uma a duas semanas. Dou-lhe um prazo claro desde o início." } },
-    { q: { fr: "Travaillez-vous en français et en anglais ?", en: "Do you work in French and English?", es: "¿Trabajas en francés y en inglés?", it: "Lavori in francese e in inglese?", de: "Arbeiten Sie auf Französisch und Englisch?", pt: "Trabalha em francês e em inglês?" },
-      a: { fr: "Oui, entièrement bilingue — les échanges, le contenu et les sites eux-mêmes, souvent multilingues.", en: "Yes, fully bilingual — the conversation, the content and the sites themselves, often multilingual.", es: "Sí, totalmente bilingüe — la conversación, el contenido y los propios sitios, a menudo multilingües.", it: "Sì, completamente bilingue — gli scambi, i contenuti e i siti stessi, spesso multilingue.", de: "Ja, vollständig zweisprachig — die Kommunikation, die Inhalte und die Websites selbst, oft mehrsprachig.", pt: "Sim, totalmente bilingue — a conversa, os conteúdos e os próprios sites, muitas vezes multilingues." } },
-    { q: { fr: "Combien coûte un projet ?", en: "How much does a project cost?", es: "¿Cuánto cuesta un proyecto?", it: "Quanto costa un progetto?", de: "Was kostet ein Projekt?", pt: "Quanto custa um projeto?" },
-      a: { fr: "Cela dépend du périmètre. Après un premier échange, je propose un devis clair et fixe — sans surprise.", en: "It depends on scope. After a short chat I give a clear, fixed quote — no surprises.", es: "Depende del alcance. Tras una breve conversación, te doy un presupuesto claro y cerrado — sin sorpresas.", it: "Dipende dal perimetro. Dopo un primo confronto, fornisco un preventivo chiaro e fisso — senza sorprese.", de: "Das hängt vom Umfang ab. Nach einem kurzen Gespräch gebe ich ein klares Festpreisangebot — ohne Überraschungen.", pt: "Depende do âmbito. Após uma breve conversa, apresento um orçamento claro e fixo — sem surpresas." } },
-    { q: { fr: "Puis-je mettre à jour le site moi-même ensuite ?", en: "Can I update the site myself afterwards?", es: "¿Puedo actualizar el sitio yo mismo después?", it: "Posso aggiornare il sito da solo in seguito?", de: "Kann ich die Website später selbst aktualisieren?", pt: "Posso atualizar o site eu mesmo depois?" },
-      a: { fr: "Oui. Je conçois le site pour que le contenu soit simple à modifier, et je peux vous former ou assurer la maintenance. Pour les mises à jour et évolutions régulières, je propose aussi, en option, un forfait mensuel sur mesure — ajusté à vos besoins réels.", en: "Yes. I build it so the content is easy to edit, and I can train you or handle maintenance. For regular updates and upgrades, I also offer an optional custom monthly plan — sized to your real needs.", es: "Sí. Lo construyo para que el contenido sea fácil de editar, y puedo formarte o encargarme del mantenimiento. Para actualizaciones y mejoras periódicas, ofrezco además, de forma opcional, un plan mensual a medida — ajustado a tus necesidades reales.", it: "Sì. Realizzo il sito in modo che i contenuti siano semplici da modificare e posso formarti o occuparmi della manutenzione. Per aggiornamenti ed evoluzioni regolari offro anche, in opzione, un piano mensile su misura — calibrato sulle tue esigenze reali.", de: "Ja. Ich baue sie so, dass die Inhalte leicht zu bearbeiten sind, und ich kann Sie einarbeiten oder die Wartung übernehmen. Für regelmäßige Updates und Weiterentwicklungen biete ich zudem optional einen maßgeschneiderten Monatsplan an — auf Ihren tatsächlichen Bedarf zugeschnitten.", pt: "Sim. Construo o site para que o conteúdo seja fácil de editar e posso formá-lo ou tratar da manutenção. Para atualizações e evoluções regulares, ofereço ainda, de forma opcional, um plano mensal à medida — ajustado às suas necessidades reais." } },
-    { q: { fr: "Gérez-vous l'hébergement et le nom de domaine ?", en: "Do you handle hosting and the domain?", es: "¿Te encargas del alojamiento y del dominio?", it: "Ti occupi dell'hosting e del nome di dominio?", de: "Kümmern Sie sich um Hosting und Domain?", pt: "Trata do alojamento e do nome de domínio?" },
-      a: { fr: "Oui, je déploie sur un hébergement rapide et fiable et je connecte votre nom de domaine.", en: "Yes, I deploy to fast, reliable hosting and connect your custom domain.", es: "Sí, publico en un alojamiento rápido y fiable y conecto tu dominio.", it: "Sì, pubblico su un hosting veloce e affidabile e collego il tuo nome di dominio.", de: "Ja, ich veröffentliche auf schnellem, zuverlässigem Hosting und binde Ihre eigene Domain an.", pt: "Sim, publico num alojamento rápido e fiável e ligo o seu nome de domínio." } },
-    { q: { fr: "De quoi avez-vous besoin pour démarrer ?", en: "What do you need from me to start?", es: "¿Qué necesitas de mí para empezar?", it: "Di cosa hai bisogno per iniziare?", de: "Was brauchen Sie von mir, um zu starten?", pt: "Do que precisa de mim para começar?" },
-      a: { fr: "Une idée, même approximative, et le contenu dont vous disposez. Je m'occupe du reste et je vous guide.", en: "A rough idea and whatever content you have. I take care of the rest and guide you through it.", es: "Una idea, aunque sea aproximada, y el contenido que tengas. Yo me ocupo del resto y te guío.", it: "Un'idea, anche sommaria, e i contenuti che hai. Penso io al resto e ti guido.", de: "Eine grobe Idee und welche Inhalte Sie haben. Um den Rest kümmere ich mich und führe Sie durch den Prozess.", pt: "Uma ideia, mesmo que aproximada, e os conteúdos que tiver. Eu trato do resto e oriento-o." } }
+    { q: { fr: "En combien de temps livrez-vous un site ?", en: "How fast can you deliver a site?", es: "¿En cuánto tiempo entregas un sitio?", it: "In quanto tempo consegni un sito?", de: "Wie schnell liefern Sie eine Website?", pt: "Em quanto tempo entrega um site?", nl: "Hoe snel kun je een site opleveren?", ru: "Как быстро вы делаете сайт?", ar: "ما المدة التي تحتاجها لتسليم موقع؟" },
+      a: { fr: "Un site vitrine en quelques jours, une plateforme plus complète en une à deux semaines. Je vous donne un délai clair dès le départ.", en: "A brochure site in a few days, a fuller platform in one to two weeks. I give you a clear timeline up front.", es: "Un sitio vitrina en pocos días, una plataforma más completa en una o dos semanas. Te doy un plazo claro desde el principio.", it: "Un sito vetrina in pochi giorni, una piattaforma più completa in una o due settimane. Ti do una tempistica chiara fin dall'inizio.", de: "Eine Visitenkarten-Website in wenigen Tagen, eine umfangreichere Plattform in ein bis zwei Wochen. Ich gebe Ihnen von Anfang an einen klaren Zeitplan.", pt: "Um site vitrine em poucos dias, uma plataforma mais completa em uma a duas semanas. Dou-lhe um prazo claro desde o início.", nl: "Een etalagesite in enkele dagen, een uitgebreider platform in één tot twee weken. Ik geef je vooraf een duidelijke planning.", ru: "Сайт-визитку — за несколько дней, более полную платформу — за одну-две недели. Чёткие сроки я называю сразу.", ar: "موقع تعريفي في أيام قليلة، ومنصّة أكثر اكتمالًا في أسبوع إلى أسبوعين. أحدّد لك جدولًا زمنيًا واضحًا منذ البداية." } },
+    { q: { fr: "Travaillez-vous en français et en anglais ?", en: "Do you work in French and English?", es: "¿Trabajas en francés y en inglés?", it: "Lavori in francese e in inglese?", de: "Arbeiten Sie auf Französisch und Englisch?", pt: "Trabalha em francês e em inglês?", nl: "Werk je in het Frans en het Engels?", ru: "Вы работаете на французском и английском?", ar: "هل تعمل بالفرنسية والإنجليزية؟" },
+      a: { fr: "Oui, entièrement bilingue — les échanges, le contenu et les sites eux-mêmes, souvent multilingues.", en: "Yes, fully bilingual — the conversation, the content and the sites themselves, often multilingual.", es: "Sí, totalmente bilingüe — la conversación, el contenido y los propios sitios, a menudo multilingües.", it: "Sì, completamente bilingue — gli scambi, i contenuti e i siti stessi, spesso multilingue.", de: "Ja, vollständig zweisprachig — die Kommunikation, die Inhalte und die Websites selbst, oft mehrsprachig.", pt: "Sim, totalmente bilingue — a conversa, os conteúdos e os próprios sites, muitas vezes multilingues.", nl: "Ja, volledig tweetalig — de communicatie, de inhoud en de sites zelf, vaak meertalig.", ru: "Да, полностью двуязычно — общение, контент и сами сайты, часто многоязычные.", ar: "نعم، بشكل ثنائي اللغة تمامًا — التواصل والمحتوى والمواقع نفسها، وغالبًا بلغات متعددة." } },
+    { q: { fr: "Combien coûte un projet ?", en: "How much does a project cost?", es: "¿Cuánto cuesta un proyecto?", it: "Quanto costa un progetto?", de: "Was kostet ein Projekt?", pt: "Quanto custa um projeto?", nl: "Wat kost een project?", ru: "Сколько стоит проект?", ar: "كم تكلفة المشروع؟" },
+      a: { fr: "Cela dépend du périmètre. Après un premier échange, je propose un devis clair et fixe — sans surprise.", en: "It depends on scope. After a short chat I give a clear, fixed quote — no surprises.", es: "Depende del alcance. Tras una breve conversación, te doy un presupuesto claro y cerrado — sin sorpresas.", it: "Dipende dal perimetro. Dopo un primo confronto, fornisco un preventivo chiaro e fisso — senza sorprese.", de: "Das hängt vom Umfang ab. Nach einem kurzen Gespräch gebe ich ein klares Festpreisangebot — ohne Überraschungen.", pt: "Depende do âmbito. Após uma breve conversa, apresento um orçamento claro e fixo — sem surpresas.", nl: "Dat hangt af van de omvang. Na een kort gesprek geef ik een duidelijke, vaste offerte — zonder verrassingen.", ru: "Зависит от объёма. После короткого разговора я даю ясную фиксированную смету — без сюрпризов.", ar: "يعتمد ذلك على نطاق العمل. بعد محادثة قصيرة، أقدّم عرض سعر واضحًا وثابتًا — دون مفاجآت." } },
+    { q: { fr: "Puis-je mettre à jour le site moi-même ensuite ?", en: "Can I update the site myself afterwards?", es: "¿Puedo actualizar el sitio yo mismo después?", it: "Posso aggiornare il sito da solo in seguito?", de: "Kann ich die Website später selbst aktualisieren?", pt: "Posso atualizar o site eu mesmo depois?", nl: "Kan ik de site later zelf bijwerken?", ru: "Смогу ли я потом сам обновлять сайт?", ar: "هل يمكنني تحديث الموقع بنفسي لاحقًا؟" },
+      a: { fr: "Oui. Je conçois le site pour que le contenu soit simple à modifier, et je peux vous former ou assurer la maintenance. Pour les mises à jour et évolutions régulières, je propose aussi, en option, un forfait mensuel sur mesure — ajusté à vos besoins réels.", en: "Yes. I build it so the content is easy to edit, and I can train you or handle maintenance. For regular updates and upgrades, I also offer an optional custom monthly plan — sized to your real needs.", es: "Sí. Lo construyo para que el contenido sea fácil de editar, y puedo formarte o encargarme del mantenimiento. Para actualizaciones y mejoras periódicas, ofrezco además, de forma opcional, un plan mensual a medida — ajustado a tus necesidades reales.", it: "Sì. Realizzo il sito in modo che i contenuti siano semplici da modificare e posso formarti o occuparmi della manutenzione. Per aggiornamenti ed evoluzioni regolari offro anche, in opzione, un piano mensile su misura — calibrato sulle tue esigenze reali.", de: "Ja. Ich baue sie so, dass die Inhalte leicht zu bearbeiten sind, und ich kann Sie einarbeiten oder die Wartung übernehmen. Für regelmäßige Updates und Weiterentwicklungen biete ich zudem optional einen maßgeschneiderten Monatsplan an — auf Ihren tatsächlichen Bedarf zugeschnitten.", pt: "Sim. Construo o site para que o conteúdo seja fácil de editar e posso formá-lo ou tratar da manutenção. Para atualizações e evoluções regulares, ofereço ainda, de forma opcional, um plano mensal à medida — ajustado às suas necessidades reais.", nl: "Ja. Ik bouw hem zo dat de inhoud eenvoudig aan te passen is, en ik kan je opleiden of het onderhoud verzorgen. Voor regelmatige updates en uitbreidingen bied ik ook, optioneel, een maandplan op maat — afgestemd op je werkelijke behoeften.", ru: "Да. Я делаю сайт так, чтобы контент было легко менять, и могу обучить вас или взять поддержку на себя. Для регулярных обновлений и доработок также есть, по желанию, ежемесячный план под ваши реальные задачи.", ar: "نعم. أبني الموقع بحيث يسهل تعديل محتواه، ويمكنني تدريبك أو تولّي صيانته. وللتحديثات والتطويرات المنتظمة، أقدّم أيضًا خطة شهرية اختيارية مصمَّمة وفق احتياجاتك الفعلية." } },
+    { q: { fr: "Gérez-vous l'hébergement et le nom de domaine ?", en: "Do you handle hosting and the domain?", es: "¿Te encargas del alojamiento y del dominio?", it: "Ti occupi dell'hosting e del nome di dominio?", de: "Kümmern Sie sich um Hosting und Domain?", pt: "Trata do alojamento e do nome de domínio?", nl: "Regel je de hosting en de domeinnaam?", ru: "Вы занимаетесь хостингом и доменом?", ar: "هل تتولّى الاستضافة واسم النطاق؟" },
+      a: { fr: "Oui, je déploie sur un hébergement rapide et fiable et je connecte votre nom de domaine.", en: "Yes, I deploy to fast, reliable hosting and connect your custom domain.", es: "Sí, publico en un alojamiento rápido y fiable y conecto tu dominio.", it: "Sì, pubblico su un hosting veloce e affidabile e collego il tuo nome di dominio.", de: "Ja, ich veröffentliche auf schnellem, zuverlässigem Hosting und binde Ihre eigene Domain an.", pt: "Sim, publico num alojamento rápido e fiável e ligo o seu nome de domínio.", nl: "Ja, ik publiceer op snelle, betrouwbare hosting en koppel je eigen domeinnaam.", ru: "Да, я размещаю сайт на быстром и надёжном хостинге и подключаю ваш домен.", ar: "نعم، أنشر الموقع على استضافة سريعة وموثوقة وأربط اسم نطاقك الخاص." } },
+    { q: { fr: "De quoi avez-vous besoin pour démarrer ?", en: "What do you need from me to start?", es: "¿Qué necesitas de mí para empezar?", it: "Di cosa hai bisogno per iniziare?", de: "Was brauchen Sie von mir, um zu starten?", pt: "Do que precisa de mim para começar?", nl: "Wat heb je van mij nodig om te starten?", ru: "Что нужно от меня для старта?", ar: "ماذا تحتاج مني للبدء؟" },
+      a: { fr: "Une idée, même approximative, et le contenu dont vous disposez. Je m'occupe du reste et je vous guide.", en: "A rough idea and whatever content you have. I take care of the rest and guide you through it.", es: "Una idea, aunque sea aproximada, y el contenido que tengas. Yo me ocupo del resto y te guío.", it: "Un'idea, anche sommaria, e i contenuti che hai. Penso io al resto e ti guido.", de: "Eine grobe Idee und welche Inhalte Sie haben. Um den Rest kümmere ich mich und führe Sie durch den Prozess.", pt: "Uma ideia, mesmo que aproximada, e os conteúdos que tiver. Eu trato do resto e oriento-o.", nl: "Een idee, al is het ruw, en de inhoud die je hebt. Ik regel de rest en begeleid je erdoorheen.", ru: "Идея, даже приблизительная, и материалы, которые у вас есть. Остальное я беру на себя и проведу вас через весь процесс.", ar: "فكرة، ولو مبدئية، والمحتوى المتوفّر لديك. وأتولّى الباقي وأرافقك خطوة بخطوة." } }
   ];
 
   // The original animated wall of work, with opposing desktop columns.
@@ -431,6 +653,7 @@
   // ---------- static text ----------
   function applyStatic() {
     document.documentElement.lang = lang;
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
     document.title = t("doc.title");
     renderHero();
     var motionToggle = document.querySelector(".hero-motion-toggle");
@@ -497,7 +720,7 @@
       return b;
     }
     filterBar.appendChild(pill("all", t("filter.all")));
-    cats.forEach(function (c) { filterBar.appendChild(pill(c.id, c.label[lang])); });
+    cats.forEach(function (c) { filterBar.appendChild(pill(c.id, L(c.label))); });
   }
 
   // Two super-groups: local client work vs. educational platforms & tools.
@@ -523,7 +746,7 @@
       card.dataset.featured = String(isFeatured);
       card.dataset.category = p.category;
       card.dataset.group = grp;
-      var tags = (p.tags[lang] || []).map(function (x) { return "<span>" + x + "</span>"; }).join("");
+      var tags = (p.tags[lang] || p.tags.en || []).map(function (x) { return "<span>" + x + "</span>"; }).join("");
       // Keep progress labels while letting visitors follow every supplied website URL.
       var inProgress = p.status === "progress";
       if (inProgress) card.className += " is-progress";
@@ -533,9 +756,9 @@
       // Only publish actual client testimonials.
       var testiHtml = p.testimonial && !p.testimonial.placeholder
         ? '<figure class="testi">' +
-            "<blockquote>" + p.testimonial.quote[lang] + "</blockquote>" +
+            "<blockquote>" + L(p.testimonial.quote) + "</blockquote>" +
             '<figcaption><span class="testi-name">' + p.testimonial.name + "</span>" +
-            (p.testimonial.role ? '<span class="testi-role"> · ' + p.testimonial.role[lang] + "</span>" : "") +
+            (p.testimonial.role ? '<span class="testi-role"> · ' + L(p.testimonial.role) + "</span>" : "") +
             "</figcaption>" +
           "</figure>"
         : "";
@@ -545,9 +768,9 @@
           '<img loading="lazy" decoding="async" width="1200" height="750" src="screenshots/' + p.slug + '.jpg" alt="' + p.title + '">' +
         "</div>" +
         '<div class="card-body">' +
-          '<div class="card-meta"><span class="card-category">' + (catLabel[p.category][lang] || "") + '</span><span class="project-number">' + String(i + 1).padStart(2, "0") + "</span></div>" +
+          '<div class="card-meta"><span class="card-category">' + L(catLabel[p.category]) + '</span><span class="project-number">' + String(i + 1).padStart(2, "0") + "</span></div>" +
           '<h3 class="card-link">' + titleHtml + "</h3>" +
-          "<p>" + p.blurb[lang] + "</p>" +
+          "<p>" + L(p.blurb) + "</p>" +
           '<div class="tags">' + tags + "</div>" +
           testiHtml +
           '<div class="card-foot"><span class="project-name">' + p.title + "</span>" + footHtml + "</div>" +
@@ -567,9 +790,9 @@
     if (!el) return;
     el.innerHTML = FAQS.map(function (f) {
       return '<details class="faq-item">' +
-        '<summary><span class="faq-q">' + f.q[lang] + "</span>" +
+        '<summary><span class="faq-q">' + L(f.q) + "</span>" +
         '<svg class="faq-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>' +
-        '<div class="faq-a"><p>' + f.a[lang] + "</p></div>" +
+        '<div class="faq-a"><p>' + L(f.a) + "</p></div>" +
         "</details>";
     }).join("");
     injectFaqSchema();
@@ -582,7 +805,7 @@
       "@type": "FAQPage",
       "inLanguage": lang,
       "mainEntity": FAQS.map(function (f) {
-        return { "@type": "Question", "name": f.q[lang], "acceptedAnswer": { "@type": "Answer", "text": f.a[lang] } };
+        return { "@type": "Question", "name": L(f.q), "acceptedAnswer": { "@type": "Answer", "text": L(f.a) } };
       })
     };
     var s = document.getElementById("faq-schema");
