@@ -185,6 +185,21 @@ window.PROJECTS = [
       role: { fr: "Gestion de projet · Côte d'Azur", en: "Project management · Côte d'Azur", es: "Gestión de proyectos · Côte d'Azur", it: "Project management · Côte d'Azur", de: "Projektmanagement · Côte d'Azur", pt: "Gestão de projetos · Côte d'Azur" }
     }
   },
+  {
+    slug: "lumbacure", title: "LumbaCure", url: "https://lumba-phi.vercel.app", category: "business",
+    blurb: {
+      fr: "Le site produit de LumbaCure, un siège robotisé qui mobilise le bassin et le bas du dos — pour la rééducation, la prévention, le sport et le bien vieillir, appuyé par une étude pilote hospitalière. Bilingue FR/EN.",
+      en: "The product site for LumbaCure, a robotic seat that moves the pelvis and lower back — for rehabilitation, prevention, sport and healthy ageing, backed by a hospital pilot study. Bilingual FR/EN.",
+      es: "El sitio de producto de LumbaCure, un asiento robótico que moviliza la pelvis y la zona lumbar — para rehabilitación, prevención, deporte y envejecimiento saludable, respaldado por un estudio piloto hospitalario. Bilingüe FR/EN.",
+      it: "Il sito prodotto di LumbaCure, una seduta robotica che mobilizza il bacino e la zona lombare — per riabilitazione, prevenzione, sport e invecchiamento sano, supportato da uno studio pilota ospedaliero. Bilingue FR/EN.",
+      de: "Die Produktseite von LumbaCure, einem robotischen Sitz, der Becken und unteren Rücken bewegt — für Rehabilitation, Prävention, Sport und gesundes Altern, gestützt auf eine klinische Pilotstudie. Zweisprachig FR/EN.",
+      pt: "O site de produto da LumbaCure, um assento robótico que mobiliza a pélvis e a zona lombar — para reabilitação, prevenção, desporto e envelhecimento saudável, apoiado por um estudo-piloto hospitalar. Bilingue FR/EN.",
+      nl: "De productsite van LumbaCure, een robotstoel die het bekken en de onderrug in beweging brengt — voor revalidatie, preventie, sport en gezond ouder worden, onderbouwd met een pilotstudie in een ziekenhuis. Tweetalig FR/EN.",
+      ru: "Сайт продукта LumbaCure — роботизированного кресла, которое мобилизует таз и поясницу: для реабилитации, профилактики, спорта и активного долголетия, с подтверждением пилотным исследованием в больнице. На французском и английском.",
+      ar: "موقع منتج LumbaCure، مقعد روبوتي يحرّك الحوض وأسفل الظهر — لإعادة التأهيل والوقاية والرياضة والشيخوخة الصحية، مدعوم بدراسة تجريبية في مستشفى. ثنائي اللغة FR/EN."
+    },
+    tags: { fr: ["Dispositif médical", "Étude clinique"], en: ["Medical device", "Clinical study"], es: ["Dispositivo médico", "Estudio clínico"], it: ["Dispositivo medico", "Studio clinico"], de: ["Medizinprodukt", "Klinische Studie"], pt: ["Dispositivo médico", "Estudo clínico"], nl: ["Medisch hulpmiddel", "Klinische studie"], ru: ["Медицинское устройство", "Клиническое исследование"], ar: ["جهاز طبي", "دراسة سريرية"] }
+  },
 
   // ---- Associations & sport ----
   {

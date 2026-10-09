@@ -641,7 +641,7 @@
     var wall = document.querySelector(".hero-wall");
     if (!wall || wall.querySelector(".wall-stage")) return;
     var colA = ["ristorante-lola", "wall-street", "so-good-diner", "grammatica", "filton-athletic-fc", "toeic-success-hub", "tandoor-global"];
-    var colB = ["stephanie", "planb-global-connect", "filton-social-club", "addys-english-pro", "speakup", "listening-english"];
+    var colB = ["stephanie", "planb-global-connect", "lumbacure", "filton-social-club", "addys-english-pro", "speakup", "listening-english"];
     function col(list, cls) {
       return '<div class="wall-col ' + cls + '"><div class="wall-track">' + list.concat(list).map(function (slug, i) {
         return '<figure class="thumb"><img src="screenshots/' + slug + '.jpg" alt="" width="1200" height="750" decoding="async"' + (i > 1 ? ' loading="lazy"' : '') + '></figure>';
