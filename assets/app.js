@@ -732,6 +732,7 @@
     var lastGroup = null;
     projects.forEach(function (p, i) {
       var grp = groupOf(p.category);
+      var isFeatured = grp !== lastGroup;
       if (grp !== lastGroup) {
         var head = document.createElement("div");
         head.className = "grid-group reveal";
@@ -742,18 +743,16 @@
       }
       var card = document.createElement("article");
       card.className = "card reveal";
+      card.dataset.featured = String(isFeatured);
       card.dataset.category = p.category;
       card.dataset.group = grp;
       var tags = (p.tags[lang] || p.tags.en || []).map(function (x) { return "<span>" + x + "</span>"; }).join("");
-      // In-progress projects aren't live yet: show the card but don't link out.
+      // Keep progress labels while letting visitors follow every supplied website URL.
       var inProgress = p.status === "progress";
       if (inProgress) card.className += " is-progress";
-      var heading = p.title;
-      var coverHtml = inProgress ? "" :
-        '<a class="cover" href="' + p.url + '" target="_blank" rel="noopener" aria-label="' + p.title + '"></a>';
-      var footHtml = inProgress
-        ? '<span class="soon">' + t("card.soon") + "</span>"
-        : '<span class="visit">' + t("card.visit") + ' <span class="arr">↗</span></span>';
+      var heading = host(p.url);
+      var titleHtml = '<a class="project-title-link" href="' + p.url + '" target="_blank" rel="noopener" aria-label="' + heading + ' — ' + p.title + '"><span>' + heading + '</span><span class="title-arrow" aria-hidden="true">↗</span></a>';
+      var footHtml = '<span class="visit">' + t("card.visit") + ' <span class="arr" aria-hidden="true">↗</span></span>';
       // Only publish actual client testimonials.
       var testiHtml = p.testimonial && !p.testimonial.placeholder
         ? '<figure class="testi">' +
@@ -764,21 +763,20 @@
           "</figure>"
         : "";
       card.innerHTML =
-        coverHtml +
-        '<div class="shot">' +
+        '<div class="shot"><div class="project-browser" aria-hidden="true"><span class="browser-lights"><i></i><i></i><i></i></span><span>' + p.title + '</span></div>' +
           (inProgress ? '<span class="status-tag">' + t("card.progress") + "</span>" : "") +
           '<img loading="lazy" decoding="async" width="1200" height="750" src="screenshots/' + p.slug + '.jpg" alt="' + p.title + '">' +
         "</div>" +
         '<div class="card-body">' +
           '<div class="card-meta"><span class="card-category">' + L(catLabel[p.category]) + '</span><span class="project-number">' + String(i + 1).padStart(2, "0") + "</span></div>" +
-          '<h3 class="card-link">' + heading + "</h3>" +
+          '<h3 class="card-link">' + titleHtml + "</h3>" +
           "<p>" + L(p.blurb) + "</p>" +
           '<div class="tags">' + tags + "</div>" +
           testiHtml +
-          '<div class="card-foot"><span class="project-domain">' + (inProgress ? "" : host(p.url)) + "</span>" + footHtml + "</div>" +
+          '<div class="card-foot"><span class="project-name">' + p.title + "</span>" + footHtml + "</div>" +
         "</div>";
-      var cover = card.querySelector("a.cover");
-      if (cover) cover.addEventListener("click", function () {
+      var titleLink = card.querySelector(".project-title-link");
+      if (titleLink) titleLink.addEventListener("click", function () {
         track("project_visit", { slug: p.slug, category: p.category });
       });
       grid.appendChild(card);
@@ -825,6 +823,7 @@
     document.querySelectorAll(".card").forEach(function (card) {
       var show = id === "all" || card.dataset.category === id;
       card.style.display = show ? "" : "none";
+      card.classList.toggle("is-featured", show && id === "all" && card.dataset.featured === "true");
       if (show && animate) {
         card.classList.remove("filter-in");
         void card.offsetWidth;            // restart the animation

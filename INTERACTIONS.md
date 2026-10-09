@@ -19,10 +19,13 @@ wall. Desktop pointer movement adds the original subtle perspective tilt.
 
 ## Project gallery
 
-Live projects have one full-card link with a meaningful project name, the real
-host, and a visible visit action. Links open in a new tab. In-progress projects
-are clearly labelled and have no outbound link. Actual client testimonials can
-be displayed; placeholder testimonials are excluded.
+Every project title displays its website address as an actual link. A stretched
+hit area keeps the full card clickable with one keyboard stop. The accessible
+name includes both the address and project name. Links open in a new tab.
+In-progress projects retain their status badge and link to their supplied URL.
+The first project in each group uses a larger split layout on desktop; category
+filters restore a consistent card grid. Browser frames use subtle category
+colors. Actual client testimonials can be displayed; placeholders are excluded.
 
 Filters use buttons with `aria-pressed`. They update a live result count and
 hide nonmatching cards immediately. Small-screen filters scroll horizontally.

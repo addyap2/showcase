@@ -36,7 +36,9 @@ python3 -m http.server 8777
 The page uses a warm paper, navy and amber palette with Fraunces headings and
 Inter body text. Spacing tokens, two-column desktop project cards, a single-column
 phone gallery and an animated wall of project screenshots provide the visual hierarchy.
-The portfolio comes immediately after the hero. See `MOTION.md` and
+The portfolio comes immediately after the hero. Website addresses are clickable
+project titles, with the project names retained underneath. Browser frames and
+larger featured projects introduce variety in the unfiltered desktop gallery. See `MOTION.md` and
 `INTERACTIONS.md` for the interaction and accessibility behavior.
 
 French content is also included in the initial HTML so the page remains useful
