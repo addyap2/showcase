@@ -596,6 +596,10 @@
     }
   };
 
+  Object.keys(window.SHOWCASE_COPY || {}).forEach(function (locale) {
+    Object.assign(STRINGS[locale], window.SHOWCASE_COPY[locale]);
+  });
+
   var LANGS = ["fr", "en", "es", "it", "de", "pt", "nl", "ru", "ar"];
   var LANG_NAMES = { fr: "Français", en: "English", es: "Español", it: "Italiano", de: "Deutsch", pt: "Português", nl: "Nederlands", ru: "Русский", ar: "العربية" };
   var lang = "fr";
@@ -604,7 +608,7 @@
     if (saved && LANGS.indexOf(saved) !== -1) lang = saved;
   } catch (e) {}
 
-  function t(key) { return (STRINGS[lang] && STRINGS[lang][key]) || (STRINGS.en[key]) || ""; }
+  function t(key) { return ((STRINGS[lang] && STRINGS[lang][key]) || STRINGS.en[key] || "").replace("{count}", String(projects.length)); }
   // Pick the active language from a { fr, en, … } object, falling back to English.
   function L(o) { return (o && (o[lang] || o.en)) || ""; }
   // Vercel Web Analytics custom event (no-op if analytics isn't loaded / on Hobby)
@@ -620,6 +624,32 @@
   var grid = document.getElementById("grid");
   var filterBar = document.getElementById("filters");
   var currentFilter = "all";
+  var expanded = false;
+  var selectedSlugs = ["speakup", "wall-street", "listening-english", "ristorante-lola", "toeic-success-hub", "stephanie"];
+  var orderedProjects = selectedSlugs.map(function (slug) {
+    return projects.find(function (p) { return p.slug === slug; });
+  }).filter(Boolean).concat(projects.filter(function (p) { return selectedSlugs.indexOf(p.slug) === -1; }));
+  var demoStep = 0;
+
+  function previewAttributes(slug, featured) {
+    var sizes = '(max-width: 640px) calc(100vw - 48px), (max-width: 900px) calc(100vw - 64px), ' +
+      (featured ? '(max-width: 1280px) calc((100vw - 64px) * .565), 688px' : '(max-width: 1280px) calc((100vw - 96px) / 2), 592px');
+    return 'src="screenshots/' + slug + '.jpg" srcset="screenshots/responsive/' + slug + '-480.webp 480w, screenshots/responsive/' + slug + '-960.webp 960w, screenshots/' + slug + '.jpg 1200w" sizes="' + sizes + '"';
+  }
+
+  function renderDemo() {
+    var demo = document.getElementById("ai-example");
+    if (!demo) return;
+    demo.dataset.step = String(demoStep);
+    document.getElementById("sample-reply").hidden = demoStep !== 1;
+    document.getElementById("sample-conversation").hidden = demoStep === 2;
+    document.getElementById("sample-report").hidden = demoStep !== 2;
+    var button = document.getElementById("demo-next");
+    button.hidden = false;
+    button.textContent = t(["lab.next", "lab.feedback", "lab.restart"][demoStep]) + " ↗";
+    document.getElementById("demo-step").textContent = "0" + (demoStep + 1) + " / 03";
+    demo.querySelectorAll(".demo-dot").forEach(function (dot, i) { dot.classList.toggle("active", i <= demoStep); });
+  }
 
   var FAQS = [
     { q: { fr: "En combien de temps livrez-vous un site ?", en: "How fast can you deliver a site?", es: "¿En cuánto tiempo entregas un sitio?", it: "In quanto tempo consegni un sito?", de: "Wie schnell liefern Sie eine Website?", pt: "Em quanto tempo entrega um site?", nl: "Hoe snel kun je een site opleveren?", ru: "Как быстро вы делаете сайт?", ar: "ما المدة التي تحتاجها لتسليم موقع؟" },
@@ -644,7 +674,7 @@
     var colB = ["stephanie", "planb-global-connect", "lumbacure", "filton-social-club", "addys-english-pro", "speakup", "listening-english"];
     function col(list, cls) {
       return '<div class="wall-col ' + cls + '"><div class="wall-track">' + list.concat(list).map(function (slug, i) {
-        return '<figure class="thumb"><img src="screenshots/' + slug + '.jpg" alt="" width="1200" height="750" decoding="async"' + (i > 1 ? ' loading="lazy"' : '') + '></figure>';
+        return '<figure class="thumb"><img ' + previewAttributes(slug, false).replace(/sizes="[^"]*"/, 'sizes="(max-width: 980px) 200px, (max-width: 1280px) 25vw, 300px"') + ' alt="" width="1200" height="750" decoding="async"' + (i > 1 ? ' loading="lazy"' : '') + '></figure>';
       }).join("") + '</div></div>';
     }
     wall.innerHTML = '<div class="wall-stage">' + col(colA, "col-a") + col(colB, "col-b") + '</div>';
@@ -690,6 +720,10 @@
       sb.setAttribute("aria-label", soundLabel);
       sb.querySelector("span").textContent = soundLabel;
     }
+    renderDemo();
+    if (vid) Array.prototype.forEach.call(vid.textTracks, function (caption) {
+      caption.mode = caption.language === lang && lang !== "fr" ? "showing" : "disabled";
+    });
     // language picker: keep the select in sync with the active language
     var langSel = document.getElementById("lang-select");
     if (langSel && langSel.value !== lang) langSel.value = lang;
@@ -720,32 +754,20 @@
       return b;
     }
     filterBar.appendChild(pill("all", t("filter.all")));
-    cats.forEach(function (c) { filterBar.appendChild(pill(c.id, L(c.label))); });
+    cats.forEach(function (c) { filterBar.appendChild(pill(c.id, t("filter." + c.id))); });
   }
-
-  // Two super-groups: local client work vs. educational platforms & tools.
-  function groupOf(cat) { return (cat === "business" || cat === "community") ? "local" : "learning"; }
 
   // ---------- cards ----------
   function renderCards() {
     grid.innerHTML = "";
-    var lastGroup = null;
-    projects.forEach(function (p, i) {
-      var grp = groupOf(p.category);
-      var isFeatured = grp !== lastGroup;
-      if (grp !== lastGroup) {
-        var head = document.createElement("div");
-        head.className = "grid-group reveal";
-        head.dataset.group = grp;
-        head.innerHTML = '<span class="grid-group-label">' + t("group." + grp) + "</span>";
-        grid.appendChild(head);
-        lastGroup = grp;
-      }
+    orderedProjects.forEach(function (p, i) {
+      var isFeatured = p.slug === "speakup" || p.slug === "ristorante-lola";
       var card = document.createElement("article");
       card.className = "card reveal";
       card.dataset.featured = String(isFeatured);
+      card.dataset.selected = String(selectedSlugs.indexOf(p.slug) !== -1);
       card.dataset.category = p.category;
-      card.dataset.group = grp;
+      card.dataset.slug = p.slug;
       var tags = (p.tags[lang] || p.tags.en || []).map(function (x) { return "<span>" + x + "</span>"; }).join("");
       // Keep progress labels while letting visitors follow every supplied website URL.
       var inProgress = p.status === "progress";
@@ -762,17 +784,21 @@
             "</figcaption>" +
           "</figure>"
         : "";
+      var noteId = p.slug === "speakup" ? "speak" : p.slug === "ristorante-lola" ? "lola" : null;
+      var story = noteId ? '<details class="project-story"><summary>' + t("story.open") + '<span aria-hidden="true">+</span></summary><ol>' + [1, 2, 3].map(function (n) {
+        return '<li><p>' + t("story." + noteId + "." + n) + '</p></li>';
+      }).join("") + '</ol></details>' : "";
       card.innerHTML =
         '<div class="shot"><div class="project-browser" aria-hidden="true"><span class="browser-lights"><i></i><i></i><i></i></span><span>' + p.title + '</span></div>' +
           (inProgress ? '<span class="status-tag">' + t("card.progress") + "</span>" : "") +
-          '<img loading="lazy" decoding="async" width="1200" height="750" src="screenshots/' + p.slug + '.jpg" alt="' + p.title + '">' +
+          '<img loading="lazy" decoding="async" width="1200" height="750" ' + previewAttributes(p.slug, isFeatured) + ' alt="' + p.title + '">' +
         "</div>" +
         '<div class="card-body">' +
           '<div class="card-meta"><span class="card-category">' + L(catLabel[p.category]) + '</span><span class="project-number">' + String(i + 1).padStart(2, "0") + "</span></div>" +
           '<h3 class="card-link">' + titleHtml + "</h3>" +
           "<p>" + L(p.blurb) + "</p>" +
           '<div class="tags">' + tags + "</div>" +
-          testiHtml +
+          testiHtml + story +
           '<div class="card-foot"><span class="project-name">' + p.title + "</span>" + footHtml + "</div>" +
         "</div>";
       var titleLink = card.querySelector(".project-title-link");
@@ -815,22 +841,35 @@
 
   function applyFilter(id, animate) {
     var count = projects.filter(function (p) { return id === "all" || p.category === id; }).length;
-    document.getElementById("work-count").textContent = count + " " + t("work.count");
-    // group headings only make sense on the combined "all" view
-    document.querySelectorAll(".grid-group").forEach(function (h) {
-      h.style.display = id === "all" ? "" : "none";
-    });
+    document.getElementById("work-count").textContent = id === "all" && !expanded ? t("work.selected") : count + " " + t("work.count");
+    var more = document.getElementById("work-more");
+    more.hidden = id !== "all";
+    more.textContent = t(expanded ? "work.less" : "work.more") + (expanded ? " ↑" : " ↗");
+    more.setAttribute("aria-expanded", String(expanded));
     document.querySelectorAll(".card").forEach(function (card) {
-      var show = id === "all" || card.dataset.category === id;
-      card.style.display = show ? "" : "none";
+      var show = id === "all" ? expanded || card.dataset.selected === "true" : card.dataset.category === id;
+      card.hidden = !show;
       card.classList.toggle("is-featured", show && id === "all" && card.dataset.featured === "true");
       if (show && animate) {
         card.classList.remove("filter-in");
-        void card.offsetWidth;            // restart the animation
+        void card.offsetWidth;
         card.classList.add("filter-in");
       }
     });
+    if (window.motion) window.motion.refresh();
   }
+
+  document.getElementById("work-more").addEventListener("click", function () {
+    expanded = !expanded;
+    applyFilter(currentFilter, true);
+    if (!expanded) document.getElementById("work").scrollIntoView();
+    track("gallery_expand", { expanded: expanded });
+  });
+  document.getElementById("demo-next").addEventListener("click", function () {
+    demoStep = (demoStep + 1) % 3;
+    renderDemo();
+    track("ai_example_step", { step: demoStep + 1 });
+  });
 
   // ---------- language toggle ----------
   function setLang(next) {
