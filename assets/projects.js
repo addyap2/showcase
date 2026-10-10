@@ -239,17 +239,17 @@ window.PROJECTS = [
   {
     slug: "grammatica", title: "Grammatica", url: "https://grammatica.antonyaddy.com", category: "learning",
     blurb: {
-      fr: "La grammaire anglaise expliquée en huit langues, avec des exercices auto-corrigés — pour étudier chaque règle dans la langue où l'on pense vraiment.",
-      en: "English grammar explained in eight languages, with self-correcting exercises — so learners study each rule in the language they actually think in.",
-      es: "La gramática inglesa explicada en ocho idiomas, con ejercicios autocorregidos — para estudiar cada regla en el idioma en el que realmente piensas.",
-      it: "La grammatica inglese spiegata in otto lingue, con esercizi autocorretti — per studiare ogni regola nella lingua in cui pensi davvero.",
-      de: "Englische Grammatik in acht Sprachen erklärt, mit selbstkorrigierenden Übungen — damit man jede Regel in der Sprache lernt, in der man wirklich denkt.",
-      pt: "A gramática inglesa explicada em oito idiomas, com exercícios autocorrigidos — para estudar cada regra no idioma em que realmente pensa.",
-      nl: "Engelse grammatica uitgelegd in acht talen, met zelfcorrigerende oefeningen — zodat leerlingen elke regel bestuderen in de taal waarin ze echt denken.",
-      ru: "Английская грамматика с объяснениями на восьми языках и упражнениями с автопроверкой — чтобы каждое правило изучалось на языке, на котором учащийся думает.",
-      ar: "قواعد اللغة الإنجليزية مشروحة بثماني لغات، مع تمارين ذاتية التصحيح — ليدرس المتعلّم كل قاعدة باللغة التي يفكّر بها فعلًا."
+      fr: "La grammaire anglaise expliquée en neuf langues, avec des exercices auto-corrigés — pour étudier chaque règle dans la langue où l'on pense vraiment.",
+      en: "English grammar explained in nine languages, with self-correcting exercises — so learners study each rule in the language they actually think in.",
+      es: "La gramática inglesa explicada en nueve idiomas, con ejercicios autocorregidos — para estudiar cada regla en el idioma en el que realmente piensas.",
+      it: "La grammatica inglese spiegata in nove lingue, con esercizi autocorretti — per studiare ogni regola nella lingua in cui pensi davvero.",
+      de: "Englische Grammatik in neun Sprachen erklärt, mit selbstkorrigierenden Übungen — damit man jede Regel in der Sprache lernt, in der man wirklich denkt.",
+      pt: "A gramática inglesa explicada em nove idiomas, com exercícios autocorrigidos — para estudar cada regra no idioma em que realmente pensa.",
+      nl: "Engelse grammatica uitgelegd in negen talen, met zelfcorrigerende oefeningen — zodat leerlingen elke regel bestuderen in de taal waarin ze echt denken.",
+      ru: "Английская грамматика с объяснениями на девяти языках и упражнениями с автопроверкой — чтобы каждое правило изучалось на языке, на котором учащийся думает.",
+      ar: "قواعد اللغة الإنجليزية مشروحة بتسع لغات، مع تمارين ذاتية التصحيح — ليدرس المتعلّم كل قاعدة باللغة التي يفكّر بها فعلًا."
     },
-    tags: { fr: ["8 langues", "Auto-correction"], en: ["8 languages", "Self-marking"], es: ["8 idiomas", "Autocorrección"], it: ["8 lingue", "Autocorrezione"], de: ["8 Sprachen", "Selbstkontrolle"], pt: ["8 idiomas", "Autocorreção"], nl: ["8 talen", "Zelfcorrectie"], ru: ["8 языков", "Автопроверка"], ar: ["8 لغات", "تصحيح ذاتي"] }
+    tags: { fr: ["9 langues", "Auto-correction"], en: ["9 languages", "Self-marking"], es: ["9 idiomas", "Autocorrección"], it: ["9 lingue", "Autocorrezione"], de: ["9 Sprachen", "Selbstkontrolle"], pt: ["9 idiomas", "Autocorreção"], nl: ["9 talen", "Zelfcorrectie"], ru: ["9 языков", "Автопроверка"], ar: ["9 لغات", "تصحيح ذاتي"] }
   },
   {
     slug: "speakup", title: "SpeakUp AI", url: "https://speak.antonyaddy.com", category: "learning",

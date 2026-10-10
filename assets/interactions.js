@@ -1,7 +1,5 @@
 /* Navigation and video controls — see INTERACTIONS.md. */
 (function () {
-  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
   // ---------- scroll-spy nav (all devices) ----------
   (function spy() {
     var links = {};
@@ -9,7 +7,7 @@
       var id = a.getAttribute("href");
       if (id && id.charAt(0) === "#") links[id.slice(1)] = a;
     });
-    var sections = ["work", "video", "about", "services", "faq", "contact"]
+    var sections = ["work", "lab", "video", "about", "services", "faq", "contact"]
       .map(function (id) { return document.getElementById(id); })
       .filter(Boolean);
     if (!("IntersectionObserver" in window) || !sections.length) return;
@@ -42,30 +40,32 @@
     var soundBtn = document.getElementById("video-sound");
     if (!frame || !v) return;
 
-    var conn = navigator.connection || navigator.webkitConnection || {};
-    var saveData = !!conn.saveData;
-    // Autoplay only on larger screens: keeps mobile data + battery untouched
-    // (on phones the poster shows and the button plays it on tap).
-    var canAuto = !reduce && !saveData && window.innerWidth >= 768;
-    // Muted autoplay while the section is in view (captions carry the message).
-    if (canAuto && "IntersectionObserver" in window) {
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) {
-            var p = v.play(); if (p && p.catch) p.catch(function () {});
-          } else if (!v.ended) {
-            v.pause();
-          }
-        });
-      }, { threshold: 0.45 });
-      io.observe(frame);
-    } else {
-      frame.classList.add("manual");
+    var playButton = document.getElementById("video-play");
+    var error = document.getElementById("video-error");
+    frame.classList.add("manual");
+    function play() {
+      if (error) error.hidden = true;
+      var attempt = v.play();
+      if (attempt && attempt.catch) attempt.catch(function () { if (error) error.hidden = false; });
     }
+    if (playButton) {
+      playButton.hidden = false;
+      playButton.addEventListener("click", play);
+      v.addEventListener("play", function () { playButton.hidden = true; });
+      v.addEventListener("pause", function () { playButton.hidden = false; });
+    }
+    v.addEventListener("error", function () { if (error) error.hidden = false; });
+    // Playback is intentional and stops when the film or tab is no longer visible.
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        if (!entries[0].isIntersecting) v.pause();
+      }, { threshold: 0.1 }).observe(frame);
+    }
+    document.addEventListener("visibilitychange", function () { if (document.hidden) v.pause(); });
 
     if (soundBtn) {
       soundBtn.addEventListener("click", function () {
-        if (v.paused) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        if (v.paused) play();
         v.muted = !v.muted;
         var on = !v.muted;
         frame.classList.toggle("sound-on", on);
@@ -148,7 +148,7 @@
     document.addEventListener("click", function (e) {
       if (nav.classList.contains("open") && !nav.contains(e.target) && !btn.contains(e.target)) set(false);
     });
-    window.addEventListener("resize", function () { if (window.innerWidth > 900) set(false); }, { passive: true });
+    window.addEventListener("resize", function () { if (window.innerWidth > 1100) set(false); }, { passive: true });
   })();
 
 })();
